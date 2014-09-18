@@ -1,6 +1,14 @@
 
 import java.awt.Color;
+import java.awt.Image;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+//import java.awt.BuferredImage;
 
 
 /*
@@ -50,6 +58,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setTitle("BAC San Jose");
         setBackground(new java.awt.Color(242, 36, 36));
         setFocusCycleRoot(false);
+        setPreferredSize(new java.awt.Dimension(567, 380));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -67,7 +76,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Logo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(353, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Nombre))
@@ -83,16 +92,39 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
 
         BtncambiarLogo.setText("Cambiar Logo");
+        BtncambiarLogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtncambiarLogoActionPerformed(evt);
+            }
+        });
 
         BtnCambiarNombre.setText("Cambiar Nombre");
+        BtnCambiarNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCambiarNombreActionPerformed(evt);
+            }
+        });
 
         EtiquetaCantidadDeCajas.setText("Cantidad de Cajas:");
+
+        CantidadCajas.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+        CantidadCajas.setToolTipText("");
 
         jScrollPane1.setViewportView(TxtNombre);
 
         BtnAceptar.setText("Aceptar");
+        BtnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAceptarActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,8 +172,56 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        CantidadCajas.getAccessibleContext().setAccessibleDescription("");
+        CantidadCajas.getAccessibleContext().setAccessibleParent(CantidadCajas);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        // TODO add your handling code here:
+        Nombre.setText("Sistema de Atención a Clientes BAC");
+        
+    }//GEN-LAST:event_BtnCancelarActionPerformed
+
+    private void BtnCambiarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCambiarNombreActionPerformed
+        // TODO add your handling code here:
+        if (TxtNombre.getText()!="");
+            Nombre.setText(TxtNombre.getText());
+            TxtNombre.setText("");
+        
+    }//GEN-LAST:event_BtnCambiarNombreActionPerformed
+
+    private void BtncambiarLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtncambiarLogoActionPerformed
+        // TODO add your handling code here:
+        //Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("\\Imagenes\\wallpaper-1133041.jpg")));
+        JFileChooser elemento = new JFileChooser();  //Crea un objeto de dialogo JFileChooser
+        int option = elemento.showOpenDialog(this);  // Abre la ventana en dialogo
+        if (option == JFileChooser.APPROVE_OPTION){
+            try {
+                String file = elemento.getSelectedFile().getPath();  //Obtener ruta y nombre al hacer click
+                //Muestra nombre del archivo
+                
+            } catch (Exception ex) {
+                Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+                                            
+    }//GEN-LAST:event_BtncambiarLogoActionPerformed
+
+    private void BtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAceptarActionPerformed
+        // TODO add your handling code here:
+        if (CantidadCajas.getValue().equals(0)){
+            JOptionPane.showMessageDialog(null,"No ha seleccionado la cantidad de cajas");
+        }
+        else{
+            VentanaMenu MenuTrabajar = new VentanaMenu ();
+            MenuTrabajar.setVisible(true);
+            hide();
+            
+        }
+    }//GEN-LAST:event_BtnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
