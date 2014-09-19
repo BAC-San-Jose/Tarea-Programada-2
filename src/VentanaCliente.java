@@ -1,3 +1,7 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +18,16 @@ public class VentanaCliente extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public VentanaCliente() {
+        Discapacitados = new ArrayList();
+        Embarazadas = new ArrayList();
+        Corporativos = new ArrayList();
+        Regulares = new ArrayList();
+        CorreoDiscapacitados = new ArrayList();
+        CorreoMayores = new ArrayList();
+        CorreoEmbarazadas = new ArrayList();
+        CorreoCorporativos = new ArrayList();
+        CorreoRegulares = new ArrayList();
+        Mayores = new ArrayList();
         initComponents();
     }
 
@@ -139,17 +153,23 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckClienteDActionPerformed
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
-        Nombre=NombreCliente.getText();
-        Correo=CorreoCliente.getText();
-        if(CheckClienteD.isSelected()){
-        }
-        else if(CheckClienteM.isSelected()){
-        }
-        else if(CheckClienteE.isSelected()){
-        }
-        else if(CheckClienteC.isSelected()){
-        }
-        else if(CheckClienteR.isSelected()){
+        Nombre = NombreCliente.getText();
+        Correo = CorreoCliente.getText();
+        if (CheckClienteD.isSelected()) {
+            Discapacitados.add(Nombre);
+            CorreoDiscapacitados.add(Correo);
+        } else if (CheckClienteM.isSelected()) {
+            Mayores.add(Nombre);
+            CorreoMayores.add(Correo);
+        } else if (CheckClienteE.isSelected()) {
+            Embarazadas.add(Nombre);
+            CorreoEmbarazadas.add(Correo);
+        } else if (CheckClienteC.isSelected()) {
+            Corporativos.add(Nombre);
+            CorreoCorporativos.add(Correo);
+        } else if (CheckClienteR.isSelected()) {
+            Regulares.add(Nombre);
+            CorreoRegulares.add(Correo);
         }
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
@@ -203,4 +223,14 @@ public class VentanaCliente extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private String Nombre;
     private String Correo;
+    ArrayList Discapacitados;
+    ArrayList Mayores;
+    ArrayList Embarazadas;
+    ArrayList Corporativos;
+    ArrayList Regulares;
+    ArrayList CorreoDiscapacitados;
+    ArrayList CorreoMayores;
+    ArrayList CorreoEmbarazadas;
+    ArrayList CorreoCorporativos;
+    ArrayList CorreoRegulares;
 }

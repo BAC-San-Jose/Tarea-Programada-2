@@ -25,12 +25,12 @@ class ArrayList {
     }
     /**
      * Agregar elementos al arreglo con la condición sea menor al maximo la lista, sino que tire error
-     * @param direccionDeElemento (ruta del elemento agregado)
+     * @param Dato
      */
-    public void add (String direccionDeElemento) {
+    public void add (String Dato) {
 
 	if (this.size < this.maxSize) {
-		this.arreglo [this.size] = direccionDeElemento;
+		this.arreglo [this.size] = Dato;
 		this.size ++;
 	}
 	else {
@@ -50,6 +50,7 @@ class ArrayList {
     public String getElemento (int indice) throws Exception {
                         
 	if ((indice >= 0 ) && (indice <= this.size)){
+            System.out.println(this.arreglo [indice]);
             return this.arreglo [indice];
         }
         if (indice == 0) {
@@ -72,18 +73,3 @@ class ArrayList {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
