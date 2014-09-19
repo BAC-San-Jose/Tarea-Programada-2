@@ -52,7 +52,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TxtNombre = new javax.swing.JTextPane();
         BtnAceptar = new javax.swing.JButton();
-        BtnCancelar = new javax.swing.JButton();
+        BtnPredeterminado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BAC San Jose");
@@ -119,10 +119,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        BtnCancelar.setText("Cancelar");
-        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        BtnPredeterminado.setText("Predeterminado");
+        BtnPredeterminado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCancelarActionPerformed(evt);
+                BtnPredeterminadoActionPerformed(evt);
             }
         });
 
@@ -148,7 +148,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnAceptar)
                 .addGap(26, 26, 26)
-                .addComponent(BtnCancelar)
+                .addComponent(BtnPredeterminado)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -168,7 +168,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAceptar)
-                    .addComponent(BtnCancelar))
+                    .addComponent(BtnPredeterminado))
                 .addContainerGap())
         );
 
@@ -178,17 +178,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+    private void BtnPredeterminadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPredeterminadoActionPerformed
         // TODO add your handling code here:
         Nombre.setText("Sistema de Atención a Clientes BAC");
-        
-    }//GEN-LAST:event_BtnCancelarActionPerformed
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Imagenes/Logo BAC.gif")));
+        this.setTitle("BAC San Jose");
+    }//GEN-LAST:event_BtnPredeterminadoActionPerformed
 
     private void BtnCambiarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCambiarNombreActionPerformed
-        // TODO add your handling code here:
-        if (TxtNombre.getText()!="");
+        // TODO add your handling code here:  
+        if("".equals(TxtNombre.getText())){}
+        else{
             Nombre.setText(TxtNombre.getText());
+            this.setTitle(TxtNombre.getText());
             TxtNombre.setText("");
+        }
+            
         
     }//GEN-LAST:event_BtnCambiarNombreActionPerformed
 
@@ -200,7 +205,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (option == JFileChooser.APPROVE_OPTION){
             try {
                 String file = elemento.getSelectedFile().getPath();  //Obtener ruta y nombre al hacer click
-                //Muestra nombre del archivo
+                ImageIcon fot = new ImageIcon(file); 
+                Icon icono = new ImageIcon(fot.getImage().getScaledInstance(Logo.getWidth(), Logo.getHeight(), Image.SCALE_DEFAULT)); 
+                Logo.setIcon(icono); 
+                this.repaint();
                 
             } catch (Exception ex) {
                 Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -215,7 +223,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (CantidadCajas.getValue().equals(0)){
             JOptionPane.showMessageDialog(null,"No ha seleccionado la cantidad de cajas");
         }
-        else{
+        if (CantidadCajas.getValue()!=""){
             VentanaMenu MenuTrabajar = new VentanaMenu ();
             MenuTrabajar.setVisible(true);
             hide();
@@ -262,7 +270,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAceptar;
     private javax.swing.JButton BtnCambiarNombre;
-    private javax.swing.JButton BtnCancelar;
+    private javax.swing.JButton BtnPredeterminado;
     private javax.swing.JButton BtncambiarLogo;
     private javax.swing.JSpinner CantidadCajas;
     private javax.swing.JLabel EtiquetaCantidadDeCajas;
