@@ -8,12 +8,12 @@
  *
  * @author javier2
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class VentanaCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public NewJFrame() {
+    public VentanaCliente() {
         initComponents();
     }
 
@@ -27,7 +27,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         NombreCliente = new javax.swing.JTextField();
-        CorreolCliente = new javax.swing.JTextField();
+        CorreoCliente = new javax.swing.JTextField();
         LabelNombre = new javax.swing.JLabel();
         LabelCorreo = new javax.swing.JLabel();
         CheckClienteD = new javax.swing.JCheckBox();
@@ -35,8 +35,8 @@ public class NewJFrame extends javax.swing.JFrame {
         CheckClienteE = new javax.swing.JCheckBox();
         CheckClienteC = new javax.swing.JCheckBox();
         CheckClienteR = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BotonRegistrar = new javax.swing.JButton();
+        BotonCancelRegistro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,9 +59,14 @@ public class NewJFrame extends javax.swing.JFrame {
 
         CheckClienteR.setText("Cliente Regular");
 
-        jButton1.setText("Aceptar");
+        BotonRegistrar.setText("Aceptar");
+        BotonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonRegistrarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Cancelar");
+        BotonCancelRegistro.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,7 +83,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(NombreCliente)
-                            .addComponent(CorreolCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)))
+                            .addComponent(CorreoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -90,12 +95,12 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CheckClienteR)
                             .addComponent(CheckClienteC)
-                            .addComponent(jButton2))
+                            .addComponent(BotonCancelRegistro))
                         .addGap(66, 66, 66)))
                 .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jButton1)
+                .addComponent(BotonRegistrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,7 +112,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(LabelNombre))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CorreolCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelCorreo))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -121,8 +126,8 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(CheckClienteE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(BotonRegistrar)
+                    .addComponent(BotonCancelRegistro))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -132,6 +137,21 @@ public class NewJFrame extends javax.swing.JFrame {
     private void CheckClienteDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CheckClienteDActionPerformed
+
+    private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
+        Nombre=NombreCliente.getText();
+        Correo=CorreoCliente.getText();
+        if(CheckClienteD.isSelected()){
+        }
+        else if(CheckClienteM.isSelected()){
+        }
+        else if(CheckClienteE.isSelected()){
+        }
+        else if(CheckClienteC.isSelected()){
+        }
+        else if(CheckClienteR.isSelected()){
+        }
+    }//GEN-LAST:event_BotonRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,35 +170,37 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NewJFrame().setVisible(true);
+                new VentanaCliente().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonCancelRegistro;
+    private javax.swing.JButton BotonRegistrar;
     private javax.swing.JCheckBox CheckClienteC;
     private javax.swing.JCheckBox CheckClienteD;
     private javax.swing.JCheckBox CheckClienteE;
     private javax.swing.JCheckBox CheckClienteM;
     private javax.swing.JCheckBox CheckClienteR;
-    private javax.swing.JTextField CorreolCliente;
+    private javax.swing.JTextField CorreoCliente;
     private javax.swing.JLabel LabelCorreo;
     private javax.swing.JLabel LabelNombre;
     private javax.swing.JTextField NombreCliente;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
+    private String Nombre;
+    private String Correo;
 }
