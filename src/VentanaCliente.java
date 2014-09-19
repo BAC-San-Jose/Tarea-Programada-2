@@ -1,6 +1,7 @@
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +19,7 @@ public class VentanaCliente extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public VentanaCliente() {
+        //EnvioEmail = new Email();
         Discapacitados = new ArrayList();
         Embarazadas = new ArrayList();
         Corporativos = new ArrayList();
@@ -153,6 +155,8 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckClienteDActionPerformed
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
+        //EnvioEmail = null;
+        String clave = "AAAaaa123";
         Nombre = NombreCliente.getText();
         Correo = CorreoCliente.getText();
         if (CheckClienteD.isSelected()) {
@@ -171,6 +175,8 @@ public class VentanaCliente extends javax.swing.JFrame {
             Regulares.add(Nombre);
             CorreoRegulares.add(Correo);
         }
+        //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
+        
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
     /**
@@ -233,4 +239,6 @@ public class VentanaCliente extends javax.swing.JFrame {
     ArrayList CorreoEmbarazadas;
     ArrayList CorreoCorporativos;
     ArrayList CorreoRegulares;
+    //public EmailClientes EnvioEmail;
+    
 }
