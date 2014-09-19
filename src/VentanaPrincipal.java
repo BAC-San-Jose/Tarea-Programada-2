@@ -220,14 +220,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void BtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAceptarActionPerformed
         // TODO add your handling code here:
+        
         if (CantidadCajas.getValue().equals(0)){
-            JOptionPane.showMessageDialog(null,"No ha seleccionado la cantidad de cajas");
+            JOptionPane.showMessageDialog(null,"No ha seleccionado la cantidad de cajas");   
         }
-        if (CantidadCajas.getValue()!=""){
+        
+        else{
+            System.out.print(CantidadCajas.getValue());
             VentanaMenu MenuTrabajar = new VentanaMenu ();
             MenuTrabajar.setVisible(true);
-            hide();
-            
+            hide(); 
         }
     }//GEN-LAST:event_BtnAceptarActionPerformed
 
