@@ -49,7 +49,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setTitle("BAC San Jose");
         setBackground(new java.awt.Color(242, 36, 36));
         setFocusCycleRoot(false);
-        setPreferredSize(new java.awt.Dimension(567, 380));
+        //setPreferredSize(new java.awt.Dimension(567, 380));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
