@@ -16,6 +16,10 @@ public class VentanaMenu extends javax.swing.JFrame {
         initComponents();
     }
 
+    VentanaMenu(VentanaPrincipal ventanaPrincipal, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,19 +32,29 @@ public class VentanaMenu extends javax.swing.JFrame {
         BtnGraficos = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        VentanaCliente = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         BtnGraficos.setText("Gráficos");
+        BtnGraficos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGraficosActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("jButton1");
 
         jButton3.setText("jButton1");
 
-        jButton4.setText("jButton1");
+        VentanaCliente.setText("Ventana Cliente");
+        VentanaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VentanaClienteActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("jButton1");
 
@@ -64,7 +78,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(BtnGraficos, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(VentanaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(102, 102, 102))
         );
         layout.setVerticalGroup(
@@ -73,7 +87,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnGraficos)
-                    .addComponent(jButton4))
+                    .addComponent(VentanaCliente))
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -87,6 +101,17 @@ public class VentanaMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGraficosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnGraficosActionPerformed
+
+    private void VentanaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VentanaClienteActionPerformed
+        // TODO add your handling code here:
+        VentanaCliente Clientes = new VentanaCliente ();
+        Clientes.setVisible(true);
+        hide();
+    }//GEN-LAST:event_VentanaClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,9 +150,9 @@ public class VentanaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGraficos;
+    private javax.swing.JButton VentanaCliente;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     // End of variables declaration//GEN-END:variables
