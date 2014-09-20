@@ -29,7 +29,7 @@
                   <Group type="102" attributes="0">
                       <Component id="jButton3" min="-2" pref="97" max="-2" attributes="0"/>
                       <EmptySpace pref="213" max="32767" attributes="0"/>
-                      <Component id="jButton6" min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="botonSalir" min="-2" pref="97" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jButton2" min="-2" pref="97" max="-2" attributes="0"/>
@@ -62,7 +62,7 @@
               <EmptySpace pref="77" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
           </Group>
@@ -74,6 +74,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Gr&#xe1;ficos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGraficosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
@@ -95,10 +98,13 @@
         <Property name="text" type="java.lang.String" value="jButton1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="botonSalir">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSalirActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

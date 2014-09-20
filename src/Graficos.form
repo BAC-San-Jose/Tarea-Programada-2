@@ -43,16 +43,18 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                      <Component id="radioPastelDia" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="radioBarrasDia" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="botonGraficar" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="radioPastelDia" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonGraficar" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="radioBarrasDia" max="32767" attributes="0"/>
+                          <Component id="botonSalir" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Component id="capas" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -86,8 +88,11 @@
                           <Component id="radioBarrasDia" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="botonGraficar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="botonGraficar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="botonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="52" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -291,7 +296,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="540" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="544" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -413,5 +418,16 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="botonSalir">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="20" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Salir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSalirActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

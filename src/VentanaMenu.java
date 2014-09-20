@@ -30,11 +30,16 @@ public class VentanaMenu extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         BtnGraficos.setText("Gráficos");
+        BtnGraficos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGraficosActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("jButton1");
 
@@ -44,7 +49,12 @@ public class VentanaMenu extends javax.swing.JFrame {
 
         jButton5.setText("jButton1");
 
-        jButton6.setText("jButton1");
+        botonSalir.setText("Salir");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,7 +66,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -81,12 +91,24 @@ public class VentanaMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton6))
+                    .addComponent(botonSalir))
                 .addGap(74, 74, 74))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGraficosActionPerformed
+        Graficos graficos = new Graficos ();
+        graficos.setVisible(true);
+        hide();
+    }//GEN-LAST:event_BtnGraficosActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        VentanaPrincipal salir = new VentanaPrincipal ();
+        salir.setVisible(true);
+        hide();
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,10 +147,10 @@ public class VentanaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGraficos;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 //import java.awt.BuferredImage;
 
 
@@ -172,7 +173,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        CantidadCajas.getAccessibleContext().setAccessibleDescription("");
         CantidadCajas.getAccessibleContext().setAccessibleParent(CantidadCajas);
 
         pack();
@@ -201,6 +201,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("\\Imagenes\\wallpaper-1133041.jpg")));
         JFileChooser elemento = new JFileChooser();  //Crea un objeto de dialogo JFileChooser
+        elemento.setFileFilter(filter);
         int option = elemento.showOpenDialog(this);  // Abre la ventana en dialogo
         if (option == JFileChooser.APPROVE_OPTION){
             try {
@@ -282,7 +283,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-
+    private static final FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivo JPG","jpg");
+    
     private void setvisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

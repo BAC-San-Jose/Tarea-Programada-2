@@ -59,6 +59,7 @@ public class Graficos extends javax.swing.JFrame {
         capaBarrasHora = new javax.swing.JPanel();
         capaPastelDia = new javax.swing.JPanel();
         capaBarrasDia = new javax.swing.JPanel();
+        botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,7 +145,7 @@ public class Graficos extends javax.swing.JFrame {
         capaPastelTipo.setLayout(capaPastelTipoLayout);
         capaPastelTipoLayout.setHorizontalGroup(
             capaPastelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGap(0, 544, Short.MAX_VALUE)
         );
         capaPastelTipoLayout.setVerticalGroup(
             capaPastelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,6 +256,14 @@ public class Graficos extends javax.swing.JFrame {
         capas.setLayer(capaPastelDia, javax.swing.JLayeredPane.DEFAULT_LAYER);
         capas.setLayer(capaBarrasDia, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        botonSalir.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        botonSalir.setText("Salir");
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -277,13 +286,14 @@ public class Graficos extends javax.swing.JFrame {
                         .addComponent(radioBarrasHora))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(radioPastelDia)
-                        .addGap(38, 38, 38)
-                        .addComponent(radioBarrasDia))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(botonGraficar)))
-                .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radioPastelDia)
+                            .addComponent(botonGraficar))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(radioBarrasDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(39, 39, 39)
                 .addComponent(capas)
                 .addContainerGap())
         );
@@ -312,8 +322,10 @@ public class Graficos extends javax.swing.JFrame {
                             .addComponent(radioPastelDia)
                             .addComponent(radioBarrasDia))
                         .addGap(29, 29, 29)
-                        .addComponent(botonGraficar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(botonGraficar)
+                            .addComponent(botonSalir))
+                        .addGap(0, 52, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -556,6 +568,12 @@ public class Graficos extends javax.swing.JFrame {
        radioPastelTipo.setSelected(false);
     }//GEN-LAST:event_radioBarrasDiaActionPerformed
 
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        VentanaMenu ventanaMenu = new VentanaMenu ();
+        ventanaMenu.setVisible(true);
+        hide();
+    }//GEN-LAST:event_botonSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -593,6 +611,7 @@ public class Graficos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonGraficar;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JPanel capaBarrasDia;
     private javax.swing.JPanel capaBarrasHora;
     private javax.swing.JPanel capaBarrasTipo;
