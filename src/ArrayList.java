@@ -8,10 +8,10 @@ class ArrayList {
     /**
      * Declaracion de variables a utilizar
      */
-    private int size;
-    private int maxSize;
-    private String[] arreglo;
-    private final int MAX_SIZE = 777;
+    public static int size;
+    public  int maxSize;
+    public  String[] arreglo;
+    public final int MAX_SIZE = 777;
 
     /**
      * Constructor de la clase
@@ -36,6 +36,10 @@ class ArrayList {
 	else {
 		System.out.println ("Error");
 	}
+    }
+    
+    public static int getSize (){
+        return ArrayList.size;
     }
     /**
      * Obtener un elemento a travez de un indice mientras que el indice

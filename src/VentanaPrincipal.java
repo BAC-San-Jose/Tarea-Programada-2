@@ -222,7 +222,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         
         else{
-             
+            //System.out.print(CantidadCajas.getValue());
+            VentanaMenu MenuTrabajar = new VentanaMenu ();
+            MenuTrabajar.setVisible(true);
+            hide(); 
         }
     }//GEN-LAST:event_BtnAceptarActionPerformed
 

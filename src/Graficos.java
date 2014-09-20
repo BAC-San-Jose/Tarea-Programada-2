@@ -282,17 +282,20 @@ public class Graficos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(radioPastelHora)
-                        .addGap(32, 32, 32)
+                        .addGap(33, 33, 33)
                         .addComponent(radioBarrasHora))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(radioPastelDia)
                             .addComponent(botonGraficar))
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(radioBarrasDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(radioBarrasDia)))))
                 .addGap(39, 39, 39)
                 .addComponent(capas)
                 .addContainerGap())
@@ -351,7 +354,7 @@ public class Graficos extends javax.swing.JFrame {
         ChartPanel panel;
         JFreeChart chart = null;        
         
-        //Grafico de TIPO
+        //Grafico de Cantidad de clientes por TIPO
         if (radioBarrasTipo.isSelected()){
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             
@@ -363,7 +366,11 @@ public class Graficos extends javax.swing.JFrame {
             String clienteCorporativo = "Cliente Corporativo";
             String clienteRegular = "Cliente Regular";
             
-            data.addValue(14, clientes, discapacitado);
+            int hola = VentanaCliente.Discapacitados.getSize();
+            System.out.println(hola);
+            
+            data.addValue(hola, clientes, discapacitado);
+            
             data.addValue(30, clientes, adultoMayor);
             data.addValue(50, clientes, mujerEmbarazada);
             data.addValue(22, clientes, clienteCorporativo);
@@ -569,7 +576,9 @@ public class Graficos extends javax.swing.JFrame {
     }//GEN-LAST:event_radioBarrasDiaActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-      
+        VentanaMenu ventanaMenu = new VentanaMenu ();
+        ventanaMenu.setVisible(true);
+        hide();
     }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
