@@ -19,6 +19,7 @@ public class ListaClientes extends javax.swing.JFrame {
     public ListaClientes() {
         initComponents();
         TablaClientes.setVisible(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
