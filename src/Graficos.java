@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.Image;
+import java.util.Calendar;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -41,6 +42,12 @@ public class Graficos extends javax.swing.JFrame {
         setResizable(false);
         setImagen();
         setTexto();
+        
+        Reloj hora = new Reloj(jLabel6);
+        hora.start();
+        Calendar Cal= Calendar.getInstance();
+        String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
+        jLabel7.setText(fec);
     }
 
     @SuppressWarnings("unchecked")
@@ -68,10 +75,14 @@ public class Graficos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
         NombreVentana = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        radioPastelTipo.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        radioPastelTipo.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         radioPastelTipo.setForeground(new java.awt.Color(254, 254, 254));
         radioPastelTipo.setText("Pastel");
         radioPastelTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +91,7 @@ public class Graficos extends javax.swing.JFrame {
             }
         });
 
-        radioBarrasTipo.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        radioBarrasTipo.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         radioBarrasTipo.setForeground(new java.awt.Color(254, 254, 254));
         radioBarrasTipo.setText("Barras");
         radioBarrasTipo.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +100,7 @@ public class Graficos extends javax.swing.JFrame {
             }
         });
 
-        botonGraficar.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        botonGraficar.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         botonGraficar.setText("Graficar");
         botonGraficar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +120,7 @@ public class Graficos extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(254, 254, 254));
         jLabel3.setText("Cantidad de Clientes por Día");
 
-        radioPastelHora.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        radioPastelHora.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         radioPastelHora.setForeground(new java.awt.Color(254, 254, 254));
         radioPastelHora.setText("Pastel");
         radioPastelHora.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +129,7 @@ public class Graficos extends javax.swing.JFrame {
             }
         });
 
-        radioBarrasHora.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        radioBarrasHora.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         radioBarrasHora.setForeground(new java.awt.Color(254, 254, 254));
         radioBarrasHora.setText("Barras");
         radioBarrasHora.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +138,7 @@ public class Graficos extends javax.swing.JFrame {
             }
         });
 
-        radioPastelDia.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        radioPastelDia.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         radioPastelDia.setForeground(new java.awt.Color(254, 254, 254));
         radioPastelDia.setText("Pastel");
         radioPastelDia.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +147,7 @@ public class Graficos extends javax.swing.JFrame {
             }
         });
 
-        radioBarrasDia.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        radioBarrasDia.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         radioBarrasDia.setForeground(new java.awt.Color(254, 254, 254));
         radioBarrasDia.setText("Barras");
         radioBarrasDia.addActionListener(new java.awt.event.ActionListener() {
@@ -264,7 +275,7 @@ public class Graficos extends javax.swing.JFrame {
         capas.setLayer(capaPastelDia, javax.swing.JLayeredPane.DEFAULT_LAYER);
         capas.setLayer(capaBarrasDia, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        botonSalir.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
+        botonSalir.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         botonSalir.setText("Salir");
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,6 +316,22 @@ public class Graficos extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel4.setText("Fecha:");
+
+        jLabel5.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel5.setText("Hora:");
+
+        jLabel6.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel6.setText("Hora:");
+
+        jLabel7.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel7.setText("fecha");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -328,15 +355,25 @@ public class Graficos extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radioPastelDia)
-                            .addComponent(botonGraficar))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(radioPastelDia)
+                                    .addComponent(botonGraficar))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(radioBarrasDia))))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(radioBarrasDia)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4))
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))))))
                 .addGap(39, 39, 39)
                 .addComponent(capas)
                 .addContainerGap())
@@ -371,7 +408,15 @@ public class Graficos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonGraficar)
                             .addComponent(botonSalir))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -674,6 +719,10 @@ public class Graficos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton radioBarrasDia;
     private javax.swing.JRadioButton radioBarrasHora;
