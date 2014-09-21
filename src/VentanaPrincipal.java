@@ -18,6 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
         getContentPane().setBackground(new java.awt.Color(229,55,55));
         Nombre.setBackground(Color.white);
         Nombre.setOpaque(true);
@@ -177,6 +178,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         Nombre.setText("Sistema de Atención a Clientes BAC");
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Imagenes/Logo BAC.gif")));
+        imagen = "Imagenes/Logo BAC.gif";
         this.setTitle("BAC San Jose");
     }//GEN-LAST:event_BtnPredeterminadoActionPerformed
 
@@ -196,7 +198,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("\\Imagenes\\wallpaper-1133041.jpg")));
         JFileChooser elemento = new JFileChooser();  //Crea un objeto de dialogo JFileChooser
-        elemento.setFileFilter(filter);
+        elemento.setFileFilter(jpg);
+        elemento.setFileFilter(png);
+        elemento.setFileFilter(gif);
         int option = elemento.showOpenDialog(this);  // Abre la ventana en dialogo
         if (option == JFileChooser.APPROVE_OPTION){
             try {
@@ -205,6 +209,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 Icon icono = new ImageIcon(fot.getImage().getScaledInstance(Logo.getWidth(), Logo.getHeight(), Image.SCALE_DEFAULT)); 
                 Logo.setIcon(icono); 
                 this.repaint();
+                imagen = file;
                 
             } catch (Exception ex) {
                 Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -278,7 +283,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-    private static final FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivo JPG","jpg");
+    private static final FileNameExtensionFilter jpg = new FileNameExtensionFilter("Archivo JPG","jpg");
+    private static final FileNameExtensionFilter png = new FileNameExtensionFilter("Archivo PNG","png");
+    private static final FileNameExtensionFilter gif = new FileNameExtensionFilter("Archivo GIF","gif");
+    public static String imagen = "/Imagenes/Logo BAC.gif";
     
     private void setvisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

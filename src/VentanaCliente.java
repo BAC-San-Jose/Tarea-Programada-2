@@ -24,6 +24,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         initComponents();
         getContentPane().setBackground(new java.awt.Color(229,55,55));
         setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
