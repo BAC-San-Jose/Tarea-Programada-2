@@ -409,7 +409,7 @@ public class Graficos extends javax.swing.JFrame {
             String clienteCorporativo = "Cliente Corporativo";
             String clienteRegular = "Cliente Regular";
             
-            int hola = VentanaCliente.Discapacitados.getSize();
+            int hola = VentanaCliente.Discapacitados.getSize() - 1;
             System.out.println(hola);
             
             data.addValue(hola, clientes, discapacitado);

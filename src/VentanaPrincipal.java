@@ -225,13 +225,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void BtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAceptarActionPerformed
         // TODO add your handling code here:
-        
         if (CantidadCajas.getValue().equals(0)){
             JOptionPane.showMessageDialog(null,"No ha seleccionado la cantidad de cajas");   
         }
         
         else{
             //System.out.print(CantidadCajas.getValue());
+            cantidadCajas = (int) CantidadCajas.getValue();
             VentanaMenu MenuTrabajar = new VentanaMenu ();
             MenuTrabajar.setVisible(true);
             hide(); 
@@ -292,6 +292,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private static final FileNameExtensionFilter gif = new FileNameExtensionFilter("Archivo GIF","gif");
     public static String imagen = "/Imagenes/Logo BAC.gif";
     public static String texto = "Sistema de Atención a Clientes BAC";
+    public static int cantidadCajas;
     
     private void setvisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
