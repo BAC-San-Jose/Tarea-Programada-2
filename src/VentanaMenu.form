@@ -274,6 +274,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Caja # 1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Caja1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="Caja2">
       <Properties>

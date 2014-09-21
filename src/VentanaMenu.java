@@ -118,6 +118,11 @@ public class VentanaMenu extends javax.swing.JFrame {
         Caja1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja1.setForeground(new java.awt.Color(254, 254, 254));
         Caja1.setText("Caja # 1");
+        Caja1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja1ActionPerformed(evt);
+            }
+        });
 
         Caja2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja2.setForeground(new java.awt.Color(254, 254, 254));
@@ -440,6 +445,10 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void Caja15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja15ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Caja15ActionPerformed
+
+    private void Caja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Caja1ActionPerformed
 
     /**
      * @param args the command line arguments
