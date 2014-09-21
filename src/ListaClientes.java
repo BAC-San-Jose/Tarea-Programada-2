@@ -18,6 +18,7 @@ public class ListaClientes extends javax.swing.JFrame {
      */
     public ListaClientes() {
         initComponents();
+        TablaClientes.setVisible(false);
     }
 
     /**
@@ -139,6 +140,7 @@ public class ListaClientes extends javax.swing.JFrame {
         Clientes.addRow(Cliente);
         Clientes.addRow(Cliente2);
         TablaClientes.setModel(Clientes);
+        TablaClientes.setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed
 
     private void OrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarActionPerformed
