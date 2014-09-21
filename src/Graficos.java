@@ -1,5 +1,8 @@
 
 import java.awt.Color;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 import org.jfree.chart.*;
@@ -36,6 +39,8 @@ public class Graficos extends javax.swing.JFrame {
         capaPastelDia.setBackground(new java.awt.Color(229,55,55));
         capaBarrasDia.setBackground(new java.awt.Color(229,55,55));
         setResizable(false);
+        setImagen();
+        setTexto();
     }
 
     @SuppressWarnings("unchecked")
@@ -60,6 +65,9 @@ public class Graficos extends javax.swing.JFrame {
         capaPastelDia = new javax.swing.JPanel();
         capaBarrasDia = new javax.swing.JPanel();
         botonSalir = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        Logo = new javax.swing.JLabel();
+        NombreVentana = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -149,7 +157,7 @@ public class Graficos extends javax.swing.JFrame {
         );
         capaPastelTipoLayout.setVerticalGroup(
             capaPastelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 359, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         capaBarrasTipo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -264,6 +272,39 @@ public class Graficos extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo BAC.gif"))); // NOI18N
+
+        NombreVentana.setBackground(new java.awt.Color(255, 255, 255));
+        NombreVentana.setFont(new java.awt.Font("Candara", 1, 28)); // NOI18N
+        NombreVentana.setForeground(new java.awt.Color(229, 55, 55));
+        NombreVentana.setText("Sistema de Atención a Clientes BAC");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Logo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(NombreVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NombreVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -299,11 +340,13 @@ public class Graficos extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addComponent(capas)
                 .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(capas)
                     .addGroup(layout.createSequentialGroup()
@@ -328,7 +371,7 @@ public class Graficos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonGraficar)
                             .addComponent(botonSalir))
-                        .addGap(0, 52, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -617,6 +660,8 @@ public class Graficos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Logo;
+    private javax.swing.JLabel NombreVentana;
     private javax.swing.JButton botonGraficar;
     private javax.swing.JButton botonSalir;
     private javax.swing.JPanel capaBarrasDia;
@@ -629,6 +674,7 @@ public class Graficos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton radioBarrasDia;
     private javax.swing.JRadioButton radioBarrasHora;
     private javax.swing.JRadioButton radioBarrasTipo;
@@ -636,4 +682,26 @@ public class Graficos extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioPastelHora;
     private javax.swing.JRadioButton radioPastelTipo;
     // End of variables declaration//GEN-END:variables
+    
+    public void setImagen(){
+        if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
+            String file = VentanaPrincipal.imagen;
+            ImageIcon fot = new ImageIcon(file); 
+            Icon icono = new ImageIcon(fot.getImage().getScaledInstance(Logo.getWidth(), Logo.getHeight(), Image.SCALE_DEFAULT)); 
+            Logo.setIcon(icono); 
+            this.repaint();
+        }
+    }
+    
+    public void setTexto (){
+        String texto = VentanaPrincipal.texto;
+        if (!"Sistema de Atención a Clientes BAC".equals(texto)){
+            NombreVentana.setText(texto);
+            this.setTitle(texto);
+        }
+        else {
+            this.setTitle("BAC San Jose");
+        }
+    }
+
 }

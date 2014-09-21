@@ -20,8 +20,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         getContentPane().setBackground(new java.awt.Color(229,55,55));
-        Nombre.setBackground(Color.white);
-        Nombre.setOpaque(true);
+        NombreVentana.setBackground(Color.white);
+        NombreVentana.setOpaque(true);
         setResizable(false);
     }
 
@@ -36,7 +36,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
-        Nombre = new javax.swing.JLabel();
+        NombreVentana = new javax.swing.JLabel();
         BtncambiarLogo = new javax.swing.JButton();
         BtnCambiarNombre = new javax.swing.JButton();
         EtiquetaCantidadDeCajas = new javax.swing.JLabel();
@@ -56,10 +56,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo BAC.gif"))); // NOI18N
 
-        Nombre.setBackground(new java.awt.Color(255, 255, 255));
-        Nombre.setFont(new java.awt.Font("Candara", 1, 28)); // NOI18N
-        Nombre.setForeground(new java.awt.Color(229, 55, 55));
-        Nombre.setText("Sistema de Atención a Clientes BAC");
+        NombreVentana.setBackground(new java.awt.Color(255, 255, 255));
+        NombreVentana.setFont(new java.awt.Font("Candara", 1, 28)); // NOI18N
+        NombreVentana.setForeground(new java.awt.Color(229, 55, 55));
+        NombreVentana.setText("Sistema de Atención a Clientes BAC");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,7 +71,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NombreVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -80,7 +80,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(NombreVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -176,19 +176,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void BtnPredeterminadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPredeterminadoActionPerformed
         // TODO add your handling code here:
-        Nombre.setText("Sistema de Atención a Clientes BAC");
+        NombreVentana.setText("Sistema de Atención a Clientes BAC");
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Imagenes/Logo BAC.gif")));
         imagen = "Imagenes/Logo BAC.gif";
         this.setTitle("BAC San Jose");
+        imagen = "/Imagenes/Logo BAC.gif";
+        texto = "Sistema de Atención a Clientes BAC";
     }//GEN-LAST:event_BtnPredeterminadoActionPerformed
 
     private void BtnCambiarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCambiarNombreActionPerformed
         // TODO add your handling code here:  
         if("".equals(TxtNombre.getText())){}
         else{
-            Nombre.setText(TxtNombre.getText());
+            NombreVentana.setText(TxtNombre.getText());
             this.setTitle(TxtNombre.getText());
+            texto = TxtNombre.getText();
             TxtNombre.setText("");
+            
         }
             
         
@@ -278,7 +282,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSpinner CantidadCajas;
     private javax.swing.JLabel EtiquetaCantidadDeCajas;
     private javax.swing.JLabel Logo;
-    private javax.swing.JLabel Nombre;
+    private javax.swing.JLabel NombreVentana;
     private javax.swing.JTextPane TxtNombre;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -287,6 +291,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private static final FileNameExtensionFilter png = new FileNameExtensionFilter("Archivo PNG","png");
     private static final FileNameExtensionFilter gif = new FileNameExtensionFilter("Archivo GIF","gif");
     public static String imagen = "/Imagenes/Logo BAC.gif";
+    public static String texto = "Sistema de Atención a Clientes BAC";
     
     private void setvisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

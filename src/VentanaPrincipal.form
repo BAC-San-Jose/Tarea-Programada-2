@@ -113,7 +113,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="43" max="32767" attributes="0"/>
-                  <Component id="Nombre" min="-2" pref="625" max="-2" attributes="0"/>
+                  <Component id="NombreVentana" min="-2" pref="625" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -124,7 +124,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Logo" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Nombre" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="NombreVentana" min="-2" pref="33" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -138,7 +138,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="Nombre">
+        <Component class="javax.swing.JLabel" name="NombreVentana">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
