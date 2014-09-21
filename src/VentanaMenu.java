@@ -385,66 +385,6 @@ public class VentanaMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void Caja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja1ActionPerformed
-
-    private void Caja4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja4ActionPerformed
-
-    private void Caja2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja2ActionPerformed
-
-    private void Caja7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja7ActionPerformed
-
-    private void Caja5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja5ActionPerformed
-
-    private void Caja8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja8ActionPerformed
-
-    private void Caja11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja11ActionPerformed
-
-    private void Caja10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja10ActionPerformed
-
-    private void Caja3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja3ActionPerformed
-
-    private void Caja6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja6ActionPerformed
-
-    private void Caja15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja15ActionPerformed
-
-    private void Caja9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja9ActionPerformed
-
-    private void Caja12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja12ActionPerformed
-
-    private void Caja13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja13ActionPerformed
-
-    private void Caja14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Caja14ActionPerformed
-
     /**
      * @param args the command line arguments
      */
