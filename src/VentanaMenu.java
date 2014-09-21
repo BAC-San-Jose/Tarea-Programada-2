@@ -19,7 +19,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         BtnGraficos = new javax.swing.JButton();
@@ -121,63 +121,137 @@ public class VentanaMenu extends javax.swing.JFrame {
         Caja1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja1.setForeground(new java.awt.Color(254, 254, 254));
         Caja1.setText("Caja # 1");
+        Caja1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja1ActionPerformed(evt);
+            }
+        });
 
         Caja2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja2.setForeground(new java.awt.Color(254, 254, 254));
         Caja2.setText("Caja # 2");
+        Caja2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja2ActionPerformed(evt);
+            }
+        });
 
         Caja3.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja3.setForeground(new java.awt.Color(254, 254, 254));
         Caja3.setText("Caja # 3");
+        Caja3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja3ActionPerformed(evt);
+            }
+        });
 
         Caja4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja4.setForeground(new java.awt.Color(254, 254, 254));
         Caja4.setText("Caja # 4");
-        
+        Caja4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja4ActionPerformed(evt);
+            }
+        });
 
         Caja5.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja5.setForeground(new java.awt.Color(254, 254, 254));
         Caja5.setText("Caja # 5");
+        Caja5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja5ActionPerformed(evt);
+            }
+        });
 
         Caja6.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja6.setForeground(new java.awt.Color(254, 254, 254));
         Caja6.setText("Caja # 6");
+        Caja6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja6ActionPerformed(evt);
+            }
+        });
 
         Caja7.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja7.setForeground(new java.awt.Color(254, 254, 254));
         Caja7.setText("Caja # 7");
+        Caja7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja7ActionPerformed(evt);
+            }
+        });
 
         Caja8.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja8.setForeground(new java.awt.Color(254, 254, 254));
         Caja8.setText("Caja # 8");
+        Caja8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja8ActionPerformed(evt);
+            }
+        });
 
         Caja9.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja9.setForeground(new java.awt.Color(254, 254, 254));
         Caja9.setText("Caja # 9");
+        Caja9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja9ActionPerformed(evt);
+            }
+        });
 
         Caja10.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja10.setForeground(new java.awt.Color(254, 254, 254));
         Caja10.setText("Caja # 10");
+        Caja10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja10ActionPerformed(evt);
+            }
+        });
 
         Caja11.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja11.setForeground(new java.awt.Color(254, 254, 254));
         Caja11.setText("Caja # 11");
+        Caja11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja11ActionPerformed(evt);
+            }
+        });
 
         Caja12.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja12.setForeground(new java.awt.Color(254, 254, 254));
         Caja12.setText("Caja # 12");
+        Caja12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja12ActionPerformed(evt);
+            }
+        });
 
         Caja13.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja13.setForeground(new java.awt.Color(254, 254, 254));
         Caja13.setText("Caja # 13");
+        Caja13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja13ActionPerformed(evt);
+            }
+        });
 
         Caja14.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja14.setForeground(new java.awt.Color(254, 254, 254));
         Caja14.setText("Caja # 14");
+        Caja14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja14ActionPerformed(evt);
+            }
+        });
 
         Caja15.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         Caja15.setForeground(new java.awt.Color(254, 254, 254));
         Caja15.setText("Caja # 15");
+        Caja15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Caja15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -285,31 +359,91 @@ public class VentanaMenu extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void BtnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGraficosActionPerformed
+    private void BtnGraficosActionPerformed(java.awt.event.ActionEvent evt) {                                            
         Graficos graficos = new Graficos ();
         graficos.setVisible(true);
         hide();
-    }//GEN-LAST:event_BtnGraficosActionPerformed
+    }                                           
 
-    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {                                           
         VentanaPrincipal.imagen = "/Imagenes/Logo BAC.gif";
         VentanaPrincipal.texto = "Sistema de Atención a Clientes BAC";
         VentanaPrincipal salir = new VentanaPrincipal ();
         salir.setVisible(true);
         hide();
-    }//GEN-LAST:event_botonSalirActionPerformed
+    }                                          
 
-    private void ventanaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventanaClienteActionPerformed
+    private void ventanaClienteActionPerformed(java.awt.event.ActionEvent evt) {                                               
         VentanaCliente cliente = new VentanaCliente ();
         cliente.setVisible(true);
         hide();
-    }//GEN-LAST:event_ventanaClienteActionPerformed
+    }                                              
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
+
+    private void Caja1ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja2ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja3ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja4ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja5ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja6ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja7ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void Caja8ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void Caja9ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja10ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja11ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void Caja12ActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        // TODO add your handling code here:
+    }                                     
+
+    private void Caja13ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void Caja14ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void Caja15ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
 
     /**
      * @param args the command line arguments
@@ -346,7 +480,7 @@ public class VentanaMenu extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton BtnGraficos;
     private javax.swing.JCheckBox Caja1;
     private javax.swing.JCheckBox Caja10;
@@ -372,7 +506,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton ventanaCliente;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
