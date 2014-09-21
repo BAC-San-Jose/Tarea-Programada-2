@@ -8,9 +8,9 @@ class ArrayList {
     /**
      * Declaracion de variables a utilizar
      */
-    public static int size;
-    public  int maxSize;
-    public  String[] arreglo;
+    public int size;
+    public int maxSize;
+    public String[] arreglo;
     public final int MAX_SIZE = 777;
 
     /**
@@ -30,16 +30,18 @@ class ArrayList {
     public void add (String Dato) {
 
 	if (this.size < this.maxSize) {
-		this.arreglo [this.size] = Dato;
-		this.size ++;
+            System.out.println(this.size);
+            this.arreglo [this.size] = Dato;
+            this.size ++;
+            System.out.println(this.size);
 	}
 	else {
-		System.out.println ("Error");
+            System.out.println ("Error");
 	}
     }
     
-    public static int getSize (){
-        return ArrayList.size;
+    public int getSize (){
+        return this.size;
     }
     /**
      * Obtener un elemento a travez de un indice mientras que el indice

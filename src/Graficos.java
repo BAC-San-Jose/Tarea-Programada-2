@@ -454,17 +454,13 @@ public class Graficos extends javax.swing.JFrame {
             String clienteCorporativo = "Cliente Corporativo";
             String clienteRegular = "Cliente Regular";
             
-            int hola = VentanaCliente.Discapacitados.getSize() - 1;
-            System.out.println(hola);
+            data.addValue(VentanaCliente.sizeDiscapacitados, clientes, discapacitado);
+            data.addValue(VentanaCliente.sizeMayores, clientes, adultoMayor);
+            data.addValue(VentanaCliente.sizeEmbarazadas, clientes, mujerEmbarazada);
+            data.addValue(VentanaCliente.sizeCorporativos, clientes, clienteCorporativo);
+            data.addValue(VentanaCliente.sizeRegulares, clientes, clienteRegular);
             
-            data.addValue(hola, clientes, discapacitado);
-            
-            data.addValue(30, clientes, adultoMayor);
-            data.addValue(50, clientes, mujerEmbarazada);
-            data.addValue(22, clientes, clienteCorporativo);
-            data.addValue(100, clientes, clienteRegular);
-            
-            chart = ChartFactory.createBarChart("Gráfico Cantidad Clientes por Tipo", "Tipo", "Cantidad", 
+            chart = ChartFactory.createBarChart("Cantidad Clientes por Tipo", "Tipo", "Cantidad", 
                     data, 
                     PlotOrientation.HORIZONTAL,
                     true, true, true);
@@ -474,13 +470,13 @@ public class Graficos extends javax.swing.JFrame {
         }
         if (radioPastelTipo.isSelected()){
             DefaultPieDataset data = new DefaultPieDataset();
-            data.setValue("Discapacitado", 1000);
-            data.setValue("Adulto Mayor", 60);
-            data.setValue("Mujer Embarazada", 20);
-            data.setValue("Cliente Corporativo", 20);
-            data.setValue("Cliente Regular", 20);
+            data.setValue("Discapacitado", VentanaCliente.sizeDiscapacitados);
+            data.setValue("Adulto Mayor", VentanaCliente.sizeMayores);
+            data.setValue("Mujer Embarazada", VentanaCliente.sizeEmbarazadas);
+            data.setValue("Cliente Corporativo", VentanaCliente.sizeCorporativos);
+            data.setValue("Cliente Regular", VentanaCliente.sizeRegulares);
 
-            chart = ChartFactory.createPieChart3D("Gráfico Cantidad Clientes por Tipo", data, true, true, true);
+            chart = ChartFactory.createPieChart3D("Cantidad Clientes por Tipo", data, true, true, true);
             
         }
         
@@ -502,7 +498,7 @@ public class Graficos extends javax.swing.JFrame {
             data.addValue(38, clientes, clienteCorporativo);
             data.addValue(29, clientes, clienteRegular);
             
-            chart = ChartFactory.createBarChart("Gráfico Cantidad Clientes por Hora", "Tipo", "Cantidad", 
+            chart = ChartFactory.createBarChart("Cantidad Clientes por Hora", "Tipo", "Cantidad", 
                     data, 
                     PlotOrientation.HORIZONTAL,
                     true, true, true);
@@ -518,7 +514,7 @@ public class Graficos extends javax.swing.JFrame {
             data.setValue("Cliente Corporativo", 21);
             data.setValue("Cliente Regular", 30);
 
-            chart = ChartFactory.createPieChart3D("Gráfico Cantidad Clientes por Hora", data, true, true, true);
+            chart = ChartFactory.createPieChart3D("Clientes por Hora", data, true, true, true);
             
         }
         if (radioBarrasDia.isSelected()){
@@ -538,7 +534,7 @@ public class Graficos extends javax.swing.JFrame {
             data.addValue(889, clientes, clienteCorporativo);
             data.addValue(333, clientes, clienteRegular);
             
-            chart = ChartFactory.createBarChart("Gráfico Cantidad Clientes por Dia", "Tipo", "Cantidad", 
+            chart = ChartFactory.createBarChart("Cantidad Clientes por Dia", "Tipo", "Cantidad", 
                     data, 
                     PlotOrientation.HORIZONTAL,
                     true, true, true);
@@ -554,7 +550,7 @@ public class Graficos extends javax.swing.JFrame {
             data.setValue("Cliente Corporativo", 16);
             data.setValue("Cliente Regular", 24);
 
-            chart = ChartFactory.createPieChart3D("Gráfico Cantidad Clientes por Dia", data, true, true, true);
+            chart = ChartFactory.createPieChart3D("Cantidad Clientes por Dia", data, true, true, true);
             
         }
         

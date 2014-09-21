@@ -278,18 +278,23 @@ public class VentanaCliente extends javax.swing.JFrame {
         if (CheckClienteD.isSelected()) {
             Discapacitados.add(Nombre);
             CorreoDiscapacitados.add(Correo);
+            sizeDiscapacitados = Discapacitados.getSize();
         } else if (CheckClienteM.isSelected()) {
             Mayores.add(Nombre);
             CorreoMayores.add(Correo);
+            sizeMayores = Mayores.getSize();
         } else if (CheckClienteE.isSelected()) {
             Embarazadas.add(Nombre);
             CorreoEmbarazadas.add(Correo);
+            sizeEmbarazadas = Embarazadas.getSize();
         } else if (CheckClienteC.isSelected()) {
             Corporativos.add(Nombre);
             CorreoCorporativos.add(Correo);
+            sizeCorporativos = Corporativos.getSize();
         } else if (CheckClienteR.isSelected()) {
             Regulares.add(Nombre);
             CorreoRegulares.add(Correo);
+            sizeRegulares = Regulares.getSize();
         }
         //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
         
@@ -398,6 +403,11 @@ public class VentanaCliente extends javax.swing.JFrame {
     public static ArrayList CorreoRegulares;
     public static int contador = 0;
     //public EmailClientes EnvioEmail;
+    public static int sizeDiscapacitados;
+    public static int sizeMayores;
+    public static int sizeEmbarazadas;
+    public static int sizeCorporativos;
+    public static int sizeRegulares;
     
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
