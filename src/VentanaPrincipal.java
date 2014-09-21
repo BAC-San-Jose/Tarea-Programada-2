@@ -18,6 +18,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form Ventana
      */
     public VentanaPrincipal() {
+        
+        Discapacitados = new ArrayList();
+        Embarazadas = new ArrayList();
+        Corporativos = new ArrayList();
+        Regulares = new ArrayList();
+        CorreoDiscapacitados = new ArrayList();
+        CorreoMayores = new ArrayList();
+        CorreoEmbarazadas = new ArrayList();
+        CorreoCorporativos = new ArrayList();
+        CorreoRegulares = new ArrayList();
+        Mayores = new ArrayList();
+        
         initComponents();
         this.setLocationRelativeTo(null);
         getContentPane().setBackground(new java.awt.Color(229,55,55));
@@ -346,6 +358,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static String imagen = "/Imagenes/Logo BAC.gif";
     public static String texto = "Sistema de Atención a Clientes BAC";
     public static int cantidadCajas;
+    
+    public static ArrayList Discapacitados;
+    public static ArrayList Mayores;
+    public static ArrayList Embarazadas;
+    public static ArrayList Corporativos;
+    public static ArrayList Regulares;
+    public static ArrayList CorreoDiscapacitados;
+    public static ArrayList CorreoMayores;
+    public static ArrayList CorreoEmbarazadas;
+    public static ArrayList CorreoCorporativos;
+    public static ArrayList CorreoRegulares;
     
     private void setvisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

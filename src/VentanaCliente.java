@@ -15,16 +15,7 @@ public class VentanaCliente extends javax.swing.JFrame {
      */
     public VentanaCliente() {
         //EnvioEmail = new Email();
-        Discapacitados = new ArrayList();
-        Embarazadas = new ArrayList();
-        Corporativos = new ArrayList();
-        Regulares = new ArrayList();
-        CorreoDiscapacitados = new ArrayList();
-        CorreoMayores = new ArrayList();
-        CorreoEmbarazadas = new ArrayList();
-        CorreoCorporativos = new ArrayList();
-        CorreoRegulares = new ArrayList();
-        Mayores = new ArrayList();
+        
         initComponents();
         getContentPane().setBackground(new java.awt.Color(229,55,55));
         setResizable(false);
@@ -276,25 +267,25 @@ public class VentanaCliente extends javax.swing.JFrame {
         Nombre = NombreCliente.getText();
         Correo = CorreoCliente.getText();
         if (CheckClienteD.isSelected()) {
-            Discapacitados.add(Nombre);
-            CorreoDiscapacitados.add(Correo);
-            sizeDiscapacitados = Discapacitados.getSize();
+            VentanaPrincipal.Discapacitados.add(Nombre);
+            VentanaPrincipal.CorreoDiscapacitados.add(Correo);
+            sizeDiscapacitados = VentanaPrincipal.Discapacitados.getSize();
         } else if (CheckClienteM.isSelected()) {
-            Mayores.add(Nombre);
-            CorreoMayores.add(Correo);
-            sizeMayores = Mayores.getSize();
+            VentanaPrincipal.Mayores.add(Nombre);
+            VentanaPrincipal.CorreoMayores.add(Correo);
+            sizeMayores = VentanaPrincipal.Mayores.getSize();
         } else if (CheckClienteE.isSelected()) {
-            Embarazadas.add(Nombre);
-            CorreoEmbarazadas.add(Correo);
-            sizeEmbarazadas = Embarazadas.getSize();
+            VentanaPrincipal.Embarazadas.add(Nombre);
+            VentanaPrincipal.CorreoEmbarazadas.add(Correo);
+            sizeEmbarazadas = VentanaPrincipal.Embarazadas.getSize();
         } else if (CheckClienteC.isSelected()) {
-            Corporativos.add(Nombre);
-            CorreoCorporativos.add(Correo);
-            sizeCorporativos = Corporativos.getSize();
+            VentanaPrincipal.Corporativos.add(Nombre);
+            VentanaPrincipal.CorreoCorporativos.add(Correo);
+            sizeCorporativos = VentanaPrincipal.Corporativos.getSize();
         } else if (CheckClienteR.isSelected()) {
-            Regulares.add(Nombre);
-            CorreoRegulares.add(Correo);
-            sizeRegulares = Regulares.getSize();
+            VentanaPrincipal.Regulares.add(Nombre);
+            VentanaPrincipal.CorreoRegulares.add(Correo);
+            sizeRegulares = VentanaPrincipal.Regulares.getSize();
         }
         //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
         
@@ -391,16 +382,6 @@ public class VentanaCliente extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private String Nombre;
     private String Correo;
-    public static ArrayList Discapacitados;
-    public static ArrayList Mayores;
-    public static ArrayList Embarazadas;
-    public static ArrayList Corporativos;
-    public static ArrayList Regulares;
-    public static ArrayList CorreoDiscapacitados;
-    public static ArrayList CorreoMayores;
-    public static ArrayList CorreoEmbarazadas;
-    public static ArrayList CorreoCorporativos;
-    public static ArrayList CorreoRegulares;
     public static int contador = 0;
     //public EmailClientes EnvioEmail;
     public static int sizeDiscapacitados;
