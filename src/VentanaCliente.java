@@ -265,25 +265,37 @@ public class VentanaCliente extends javax.swing.JFrame {
         String clave = "AAAaaa123";
         Nombre = NombreCliente.getText();
         Correo = CorreoCliente.getText();
+        Hora = jLabel1.getText();
+        Fecha = jLabel2.getText();
         if (CheckClienteD.isSelected()) {
             VentanaPrincipal.Discapacitados.add(Nombre);
             VentanaPrincipal.CorreoDiscapacitados.add(Correo);
+            VentanaPrincipal.HorasDiscapacitados.add(Hora);
+            VentanaPrincipal.FechaDiscapacitados.add(Fecha);
             sizeDiscapacitados = VentanaPrincipal.Discapacitados.getSize();
         } else if (CheckClienteM.isSelected()) {
             VentanaPrincipal.Mayores.add(Nombre);
             VentanaPrincipal.CorreoMayores.add(Correo);
+            VentanaPrincipal.HorasMayores.add(Hora);
+            VentanaPrincipal.FechaMayores.add(Fecha);
             sizeMayores = VentanaPrincipal.Mayores.getSize();
         } else if (CheckClienteE.isSelected()) {
             VentanaPrincipal.Embarazadas.add(Nombre);
             VentanaPrincipal.CorreoEmbarazadas.add(Correo);
+            VentanaPrincipal.HorasEmbarazadas.add(Hora);
+            VentanaPrincipal.FechaEmbarazadas.add(Fecha);
             sizeEmbarazadas = VentanaPrincipal.Embarazadas.getSize();
         } else if (CheckClienteC.isSelected()) {
             VentanaPrincipal.Corporativos.add(Nombre);
             VentanaPrincipal.CorreoCorporativos.add(Correo);
+            VentanaPrincipal.HorasCorporativo.add(Hora);
+            VentanaPrincipal.FechaCorporativo.add(Fecha);
             sizeCorporativos = VentanaPrincipal.Corporativos.getSize();
         } else if (CheckClienteR.isSelected()) {
             VentanaPrincipal.Regulares.add(Nombre);
             VentanaPrincipal.CorreoRegulares.add(Correo);
+            VentanaPrincipal.HorasRegulares.add(Hora);
+            VentanaPrincipal.FechaRegulares.add(Fecha);
             sizeRegulares = VentanaPrincipal.Regulares.getSize();
         }
         //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
@@ -381,6 +393,8 @@ public class VentanaCliente extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private String Nombre;
     private String Correo;
+    private String Hora;
+    private String Fecha;
     public static int contador = 0;
     //public EmailClientes EnvioEmail;
     public static int sizeDiscapacitados;

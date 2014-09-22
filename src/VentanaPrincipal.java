@@ -29,6 +29,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         CorreoCorporativos = new ArrayList();
         CorreoRegulares = new ArrayList();
         Mayores = new ArrayList();
+        HorasDiscapacitados = new ArrayList();
+        HorasMayores = new ArrayList();
+        HorasEmbarazadas = new ArrayList();
+        HorasCorporativo = new ArrayList();
+        HorasRegulares = new ArrayList();
+        FechaDiscapacitados = new ArrayList();
+        FechaMayores = new ArrayList();
+        FechaEmbarazadas = new ArrayList();
+        FechaCorporativo = new ArrayList();
+        FechaRegulares = new ArrayList();
         
         initComponents();
         this.setLocationRelativeTo(null);
@@ -369,7 +379,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static ArrayList CorreoEmbarazadas;
     public static ArrayList CorreoCorporativos;
     public static ArrayList CorreoRegulares;
-    
+    public static ArrayList HorasDiscapacitados;
+    public static ArrayList HorasMayores;
+    public static ArrayList HorasEmbarazadas;
+    public static ArrayList HorasCorporativo;
+    public static ArrayList HorasRegulares;
+    public static ArrayList FechaDiscapacitados;
+    public static ArrayList FechaMayores;
+    public static ArrayList FechaEmbarazadas;
+    public static ArrayList FechaCorporativo;
+    public static ArrayList FechaRegulares;
     private void setvisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
