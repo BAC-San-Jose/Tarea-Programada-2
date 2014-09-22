@@ -660,8 +660,8 @@ public class Graficos extends javax.swing.JFrame {
     }//GEN-LAST:event_radioBarrasDiaActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        VentanaMenu ventanaMenu = new VentanaMenu ();
-        ventanaMenu.setVisible(true);
+        //VentanaMenu ventanaMenu = new VentanaMenu ();
+        //ventanaMenu.setVisible(true);
         hide();
     }//GEN-LAST:event_botonSalirActionPerformed
 

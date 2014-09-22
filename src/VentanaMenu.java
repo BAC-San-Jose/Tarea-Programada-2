@@ -414,7 +414,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void BtnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGraficosActionPerformed
         Graficos graficos = new Graficos ();
         graficos.setVisible(true);
-        hide();
+        //hide();
     }//GEN-LAST:event_BtnGraficosActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -428,7 +428,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void ventanaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventanaClienteActionPerformed
         VentanaCliente cliente = new VentanaCliente ();
         cliente.setVisible(true);
-        hide();
+        //hide();
     }//GEN-LAST:event_ventanaClienteActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -319,8 +319,8 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckClienteRActionPerformed
 
     private void BotonCancelRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelRegistroActionPerformed
-        VentanaMenu menu = new VentanaMenu ();
-        menu.setVisible(true);
+        //VentanaMenu menu = new VentanaMenu ();
+        //menu.setVisible(true);
         hide();
     }//GEN-LAST:event_BotonCancelRegistroActionPerformed
 
