@@ -54,7 +54,7 @@ public class EmailClientes {
         this(usuarioCorre,password,"","",destinatario,asunto,mensaje);
     }    
 
-    public boolean sendMail(){
+    public boolean sendMail(String caja){
         try
         {
             Properties props = new Properties();
@@ -66,7 +66,7 @@ public class EmailClientes {
 
             Session session = Session.getDefaultInstance(props, null);
             BodyPart texto = new MimeBodyPart();
-            texto.setText(mensaje);
+            texto.setText(mensaje + caja);
 
             BodyPart adjunto = new MimeBodyPart();
             if (!rutaArchivo.equals("")){
@@ -105,7 +105,7 @@ public class EmailClientes {
     public static void main(String[] args){
         String clave = "AAAaaa123"; 
         EmailClientes e = new EmailClientes("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL","mell9413@hotmail.com","PRUEBA","TROLL!!");
-        if (e.sendMail()){
+        if (e.sendMail("hola")){
             JOptionPane.showMessageDialog(null,"El email se mandó correctamente");
         }else{
             JOptionPane.showMessageDialog(null,"El email no se mandó correctamente");

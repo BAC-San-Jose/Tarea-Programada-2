@@ -15,7 +15,6 @@ public class VentanaCliente extends javax.swing.JFrame {
      */
     public VentanaCliente() {
         //EnvioEmail = new Email();
-        
         initComponents();
         getContentPane().setBackground(new java.awt.Color(229,55,55));
         setResizable(false);

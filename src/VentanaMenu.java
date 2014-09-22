@@ -24,6 +24,8 @@ public class VentanaMenu extends javax.swing.JFrame {
         Calendar Cal= Calendar.getInstance();
         String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
         jLabel2.setText(fec);
+        
+        email = new EmailClientes("tecbanco67@gmail.com","AAAaaa123","/home/mell/NetBeansProjects/Reproductor/NetBeansProjects/Reproductor/src/Imagenes/iconos/10613976_10202981559034008_418052797_n.jpg","imagen.jpg","mell9413@hotmail.com","Es su turno","Estimado cliente, por favor pase a la ");
     }
 
     @SuppressWarnings("unchecked")
@@ -434,63 +436,63 @@ public class VentanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void Caja2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja2ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja2ActionPerformed
 
     private void Caja3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja3ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja3ActionPerformed
 
     private void Caja4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja4ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja4ActionPerformed
 
     private void Caja5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja5ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja5ActionPerformed
 
     private void Caja6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja6ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja6ActionPerformed
 
     private void Caja7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja7ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja7ActionPerformed
 
     private void Caja8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja8ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja8ActionPerformed
 
     private void Caja9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja9ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja9ActionPerformed
 
     private void Caja10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja10ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja10ActionPerformed
 
     private void Caja11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja11ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja11ActionPerformed
 
     private void Caja12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja12ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja12ActionPerformed
 
     private void Caja13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja13ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja13ActionPerformed
 
     private void Caja14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja14ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja14ActionPerformed
 
     private void Caja15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja15ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja15ActionPerformed
 
     private void Caja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja1ActionPerformed
-        // TODO add your handling code here:
+        sendEmail();
     }//GEN-LAST:event_Caja1ActionPerformed
 
     /**
@@ -530,21 +532,21 @@ public class VentanaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGraficos;
-    private javax.swing.JCheckBox Caja1;
-    private javax.swing.JCheckBox Caja10;
-    private javax.swing.JCheckBox Caja11;
-    private javax.swing.JCheckBox Caja12;
-    private javax.swing.JCheckBox Caja13;
-    private javax.swing.JCheckBox Caja14;
-    private javax.swing.JCheckBox Caja15;
-    private javax.swing.JCheckBox Caja2;
-    private javax.swing.JCheckBox Caja3;
-    private javax.swing.JCheckBox Caja4;
-    private javax.swing.JCheckBox Caja5;
-    private javax.swing.JCheckBox Caja6;
-    private javax.swing.JCheckBox Caja7;
-    private javax.swing.JCheckBox Caja8;
-    private javax.swing.JCheckBox Caja9;
+    public static javax.swing.JCheckBox Caja1;
+    public static javax.swing.JCheckBox Caja10;
+    public static javax.swing.JCheckBox Caja11;
+    public static javax.swing.JCheckBox Caja12;
+    public static javax.swing.JCheckBox Caja13;
+    public static javax.swing.JCheckBox Caja14;
+    public static javax.swing.JCheckBox Caja15;
+    public static javax.swing.JCheckBox Caja2;
+    public static javax.swing.JCheckBox Caja3;
+    public static javax.swing.JCheckBox Caja4;
+    public static javax.swing.JCheckBox Caja5;
+    public static javax.swing.JCheckBox Caja6;
+    public static javax.swing.JCheckBox Caja7;
+    public static javax.swing.JCheckBox Caja8;
+    public static javax.swing.JCheckBox Caja9;
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel NombreVentana;
     private javax.swing.JButton botonSalir;
@@ -559,7 +561,8 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton ventanaCliente;
     // End of variables declaration//GEN-END:variables
-
+    public static EmailClientes email;
+    
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
             String file = VentanaPrincipal.imagen;
@@ -644,4 +647,51 @@ public class VentanaMenu extends javax.swing.JFrame {
         }
     }}}}}}}}}}}}}}
 
+    public void sendEmail(){
+        if (Caja1.isSelected() == false && Caja1.isVisible()== true){
+            email.sendMail("Caja #1");
+        }
+        else if (Caja2.isSelected() == false && Caja2.isVisible()== true){
+            email.sendMail("Caja #2");
+        }
+        else if (Caja3.isSelected() == false && Caja3.isVisible()== true){
+            email.sendMail("Caja #3");
+        }
+        else if (Caja4.isSelected() == false && Caja4.isVisible()== true){
+            email.sendMail("Caja #4");
+        }
+        else if (Caja5.isSelected() == false && Caja5.isVisible()== true){
+            email.sendMail("Caja #5");
+        }
+        else if (Caja6.isSelected() == false && Caja6.isVisible()== true){
+            email.sendMail("Caja #6");
+        }
+        else if (Caja7.isSelected() == false && Caja7.isVisible()== true){
+            email.sendMail("Caja #7");
+        }
+        else if (Caja8.isSelected() == false && Caja8.isVisible()== true){
+            email.sendMail("Caja #8");
+        }
+        else if (Caja9.isSelected() == false && Caja9.isVisible()== true){
+            email.sendMail("Caja #9");
+        }
+        else if (Caja10.isSelected() == false && Caja10.isVisible()== true){
+            email.sendMail("Caja #10");
+        }
+        else if (Caja11.isSelected() == false && Caja11.isVisible()== true){
+            email.sendMail("Caja #11");
+        }
+        else if (Caja12.isSelected() == false && Caja12.isVisible()== true){
+            email.sendMail("Caja #12");
+        } 
+        else if (Caja13.isSelected() == false && Caja13.isVisible()== true){
+            email.sendMail("Caja #13");
+        }
+        else if (Caja14.isSelected() == false && Caja14.isVisible()== true){
+            email.sendMail("Caja #14");
+        }
+        else if (Caja15.isSelected() == false && Caja15.isVisible()== true){
+            email.sendMail("Caja #15");
+        }
+    }
 }
