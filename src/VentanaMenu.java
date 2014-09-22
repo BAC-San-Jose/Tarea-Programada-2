@@ -584,6 +584,22 @@ public class VentanaMenu extends javax.swing.JFrame {
         }
     }
     
+    public boolean nextLista(){
+        if(VentanaPrincipal.Discapacitados.getSize()==0){
+            if(VentanaPrincipal.Mayores.getSize()==0){
+                if(VentanaPrincipal.Embarazadas.getSize()==0){
+                    if(VentanaPrincipal.Corporativos.getSize()==0){
+                        if(VentanaPrincipal.Regulares.getSize()==0){
+                            System.out.println("NO se manda mail");
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("Se manda mail");
+        return true;
+    }
     public void setCajas() {
         Caja1.setVisible(false);
         Caja2.setVisible(false);
@@ -648,7 +664,10 @@ public class VentanaMenu extends javax.swing.JFrame {
     }}}}}}}}}}}}}}
 
     public void sendEmail(){
-        if (Caja1.isSelected() == false && Caja1.isVisible()== true){
+        if (nextLista() == false){
+            
+        }
+        else if (Caja1.isSelected() == false && Caja1.isVisible()== true){
             email.sendMail("Caja #1");
         }
         else if (Caja2.isSelected() == false && Caja2.isVisible()== true){
