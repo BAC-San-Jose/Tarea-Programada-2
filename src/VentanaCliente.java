@@ -1,4 +1,5 @@
 
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.util.Calendar;
 import java.util.logging.Level;
@@ -10,6 +11,7 @@ import java.sql.*;
 import static org.omg.CORBA.AnySeqHelper.insert;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class VentanaCliente extends javax.swing.JFrame {
@@ -273,26 +275,88 @@ public class VentanaCliente extends javax.swing.JFrame {
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
         //EnvioEmail = null;
+        String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
         try
         {
-        String nl = System.getProperty("line.separator");
-        //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-        File archivo=new File("Clientes.txt");
+            if (CheckClienteD.isSelected()==true) {
+                //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
+                File archivo=new File("Clientes\\Discapacitados.txt");
 
-        //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
-        FileWriter escribir=new FileWriter(archivo,true);
 
-        //Escribimos en el archivo con el metodo write 
-        escribir.write(contador+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+nl);
-        contador++;
+                //Escribimos en el archivo con el metodo write
+                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
+                        FileWriter escribir = new FileWriter(archivo,true)) {
+                    //Escribimos en el archivo con el metodo write
+                    escribir.write(contadorDiscapacitados+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    contadorDiscapacitados++;
+                    
+                    //Cerramos la conexion
+                }
+                JOptionPane.showMessageDialog(null,"Datos Guardados");  
+                }
+            
+             else if (CheckClienteM.isSelected()==true) {
+                    //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
+                File archivo=new File("Clientes\\Mayores.txt");
 
-        //Cerramos la conexion
-        escribir.close();
-        JOptionPane.showMessageDialog(null,"Datos Guardados");  
+
+                //Escribimos en el archivo con el metodo write
+                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
+                        FileWriter escribir = new FileWriter(archivo,true)) {
+                    //Escribimos en el archivo con el metodo write
+                    escribir.write(contadorMayores+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    contadorMayores++;
+                    
+                    //Cerramos la conexion
+                }
+                JOptionPane.showMessageDialog(null,"Datos Guardados");  
+                
+
+            } else if (CheckClienteE.isSelected()==true) {
+                
+                     //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
+                File archivo=new File("Clientes\\Embarazadas.txt");
+
+
+                //Escribimos en el archivo con el metodo write
+                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
+                        FileWriter escribir = new FileWriter(archivo,true)) {
+                    //Escribimos en el archivo con el metodo write
+                    escribir.write(contadorEmbarazadas+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    contadorEmbarazadas++;
+                    
+                    //Cerramos la conexion
+                }
+                JOptionPane.showMessageDialog(null,"Datos Guardados");  
+                
+            } else if (CheckClienteC.isSelected()==true) {
+                File archivo=new File("Clientes\\Corporativos.txt");
+                //Escribimos en el archivo con el metodo write
+                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
+                        FileWriter escribir = new FileWriter(archivo,true)) {
+                    //Escribimos en el archivo con el metodo write
+                    escribir.write(contadorCorporativos+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    contadorCorporativos++;
+                    
+                    //Cerramos la conexion
+                }
+
+            } else if (CheckClienteR.isSelected()==true) {
+                File archivo=new File("Clientes\\Regulares.txt");
+                //Escribimos en el archivo con el metodo write
+                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
+                        FileWriter escribir = new FileWriter(archivo,true)) {
+                    //Escribimos en el archivo con el metodo write
+                    escribir.write(contadorRegulares+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    contadorRegulares++;
+                    
+                    //Cerramos la conexion
+                }
+
+            }
         }
         
-        //Si existe un problema al escribir cae aqui
-        catch(Exception e)
+        catch(IOException | HeadlessException e)
         {
         JOptionPane.showMessageDialog(null,"Error en los datos dados");
         }
@@ -433,7 +497,11 @@ public class VentanaCliente extends javax.swing.JFrame {
     private String Correo;
     private String Hora;
     private String Fecha;
-    public static int contador = 0;
+    public static int contadorDiscapacitados = 0;
+    public static int contadorMayores = 0;
+    public static int contadorEmbarazadas = 0;
+    public static int contadorCorporativos = 0;
+    public static int contadorRegulares = 0;
     //public EmailClientes EnvioEmail;
     public static int sizeDiscapacitados;
     public static int sizeMayores;

@@ -1,2 +1,0 @@
-0   jose   joseCorreo
-1   carlos   carloscorreo
