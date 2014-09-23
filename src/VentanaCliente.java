@@ -276,8 +276,7 @@ public class VentanaCliente extends javax.swing.JFrame {
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
         //EnvioEmail = null;
         String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
-        try
-        {
+        try {
             if (CheckClienteD.isSelected()==true) {
                 //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
                 File archivo=new File("Clientes\\Discapacitados.txt");
@@ -292,10 +291,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                     
                     //Cerramos la conexion
                 }
-                JOptionPane.showMessageDialog(null,"Datos Guardados");  
-                }
-            
-             else if (CheckClienteM.isSelected()==true) {
+            }
+            else if (CheckClienteM.isSelected()==true) {
                     //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
                 File archivo=new File("Clientes\\Mayores.txt");
 
@@ -309,10 +306,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                     
                     //Cerramos la conexion
                 }
-                JOptionPane.showMessageDialog(null,"Datos Guardados");  
-                
-
-            } else if (CheckClienteE.isSelected()==true) {
+            }
+            else if (CheckClienteE.isSelected()==true) {
                 
                      //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
                 File archivo=new File("Clientes\\Embarazadas.txt");
@@ -327,9 +322,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                     
                     //Cerramos la conexion
                 }
-                JOptionPane.showMessageDialog(null,"Datos Guardados");  
-                
-            } else if (CheckClienteC.isSelected()==true) {
+            }
+            else if (CheckClienteC.isSelected()==true) {
                 File archivo=new File("Clientes\\Corporativos.txt");
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
@@ -340,8 +334,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                     
                     //Cerramos la conexion
                 }
-
-            } else if (CheckClienteR.isSelected()==true) {
+            } 
+            else if (CheckClienteR.isSelected()==true) {
                 File archivo=new File("Clientes\\Regulares.txt");
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
@@ -352,13 +346,13 @@ public class VentanaCliente extends javax.swing.JFrame {
                     
                     //Cerramos la conexion
                 }
+                
 
             }
+            JOptionPane.showMessageDialog(null,"Datos Guardados");
         }
-        
-        catch(IOException | HeadlessException e)
-        {
-        JOptionPane.showMessageDialog(null,"Error en los datos dados");
+        catch(IOException | HeadlessException e){
+            JOptionPane.showMessageDialog(null,"Error en los datos dados");
         }
         String clave = "AAAaaa123";
         Nombre = NombreCliente.getText();
@@ -397,6 +391,10 @@ public class VentanaCliente extends javax.swing.JFrame {
             sizeRegulares = VentanaPrincipal.Regulares.getSize();
         }
         //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
+        
+        
+        //VentanaMenu.sendEmail();
+        
         
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 

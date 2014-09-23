@@ -584,7 +584,7 @@ public class VentanaMenu extends javax.swing.JFrame {
         }
     }
     
-    public boolean nextLista(){
+    public static boolean nextLista(){
         if(VentanaPrincipal.Discapacitados.getSize()==0){
             if(VentanaPrincipal.Mayores.getSize()==0){
                 if(VentanaPrincipal.Embarazadas.getSize()==0){
@@ -663,7 +663,7 @@ public class VentanaMenu extends javax.swing.JFrame {
         }
     }}}}}}}}}}}}}}
 
-    public void sendEmail(){
+    public static void sendEmail(){
         if (nextLista() == false){
             
         }
