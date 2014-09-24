@@ -591,9 +591,34 @@ public class VentanaMenu extends javax.swing.JFrame {
                             System.out.println("NO se manda mail");
                             return false;
                         }
+                        else{
+                            VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Regulares.getPersona());
+                            VentanaPrincipal.Regulares.deque();
+                            System.out.println("si esta vacia regulares");
+                        }
+                    }
+                    else{
+                        VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Corporativos.getPersona());
+                        VentanaPrincipal.Corporativos.deque();
+                        System.out.println("si esta vacia corporativos");
                     }
                 }
+                else{
+                    VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Embarazadas.getPersona());
+                    VentanaPrincipal.Embarazadas.deque();
+                    System.out.println("si esta vacia Embarazadas");
+                }
             }
+            else{
+                VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Mayores.getPersona());
+                VentanaPrincipal.Mayores.deque();
+                System.out.println("si esta vacia Mayores");
+            }
+        }
+        else{
+            VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Discapacitados.getPersona());
+            VentanaPrincipal.Discapacitados.deque();
+            System.out.println("si esta vacia discapacitados");
         }
         System.out.println("Se manda mail");
         return true;
@@ -663,54 +688,56 @@ public class VentanaMenu extends javax.swing.JFrame {
     }}}}}}}}}}}}}}
 
     public static void sendEmail(){
-        /*if (nextLista() == false){
-            
-        }*/
-        if (Caja1.isSelected() == false && Caja1.isVisible()== true){
-            email.sendMail("Caja #1",VentanaPrincipal.Discapacitados.getPersona().getNombre(),VentanaPrincipal.Discapacitados.getPersona().getCorreo());
-            VentanaPrincipal.Discapacitados.deque();
-        }/*
-        else if (Caja2.isSelected() == false && Caja2.isVisible()== true){
-            email.sendMail("Caja #2");
+        if (nextLista() == true){
+            String Nombre = VentanaPrincipal.Prioridad.getPersona().getNombre();
+            String Correo = VentanaPrincipal.Prioridad.getPersona().getCorreo();
+            System.out.println(Nombre + " "+ Correo);
+            if (Caja1.isSelected() == false && Caja1.isVisible()== true){
+                email.sendMail("Caja #1",Nombre,Correo);
+            }
+            else if (Caja2.isSelected() == false && Caja2.isVisible()== true){
+                email.sendMail("Caja #2",Nombre,Correo);
+            }
+            else if (Caja3.isSelected() == false && Caja3.isVisible()== true){
+                email.sendMail("Caja #3",Nombre,Correo);
+            }
+            else if (Caja4.isSelected() == false && Caja4.isVisible()== true){
+                email.sendMail("Caja #4",Nombre,Correo);
+            }
+            else if (Caja5.isSelected() == false && Caja5.isVisible()== true){
+                email.sendMail("Caja #5",Nombre,Correo);
+            }
+            else if (Caja6.isSelected() == false && Caja6.isVisible()== true){
+                email.sendMail("Caja #6",Nombre,Correo);
+            }
+            else if (Caja7.isSelected() == false && Caja7.isVisible()== true){
+                email.sendMail("Caja #7",Nombre,Correo);
+            }
+            else if (Caja8.isSelected() == false && Caja8.isVisible()== true){
+                email.sendMail("Caja #8",Nombre,Correo);
+            }
+            else if (Caja9.isSelected() == false && Caja9.isVisible()== true){
+                email.sendMail("Caja #9",Nombre,Correo);
+            }
+            else if (Caja10.isSelected() == false && Caja10.isVisible()== true){
+                email.sendMail("Caja #10",Nombre,Correo);
+            }
+            else if (Caja11.isSelected() == false && Caja11.isVisible()== true){
+                email.sendMail("Caja #11",Nombre,Correo);
+            }
+            else if (Caja12.isSelected() == false && Caja12.isVisible()== true){
+                email.sendMail("Caja #12",Nombre,Correo);
+            } 
+            else if (Caja13.isSelected() == false && Caja13.isVisible()== true){
+                email.sendMail("Caja #13",Nombre,Correo);
+            }
+            else if (Caja14.isSelected() == false && Caja14.isVisible()== true){
+                email.sendMail("Caja #14",Nombre,Correo);
+            }
+            else if (Caja15.isSelected() == false && Caja15.isVisible()== true){
+                email.sendMail("Caja #15",Nombre,Correo);
+            }
+            VentanaPrincipal.Prioridad.deque();
         }
-        else if (Caja3.isSelected() == false && Caja3.isVisible()== true){
-            email.sendMail("Caja #3");
-        }
-        else if (Caja4.isSelected() == false && Caja4.isVisible()== true){
-            email.sendMail("Caja #4");
-        }
-        else if (Caja5.isSelected() == false && Caja5.isVisible()== true){
-            email.sendMail("Caja #5");
-        }
-        else if (Caja6.isSelected() == false && Caja6.isVisible()== true){
-            email.sendMail("Caja #6");
-        }
-        else if (Caja7.isSelected() == false && Caja7.isVisible()== true){
-            email.sendMail("Caja #7");
-        }
-        else if (Caja8.isSelected() == false && Caja8.isVisible()== true){
-            email.sendMail("Caja #8");
-        }
-        else if (Caja9.isSelected() == false && Caja9.isVisible()== true){
-            email.sendMail("Caja #9");
-        }
-        else if (Caja10.isSelected() == false && Caja10.isVisible()== true){
-            email.sendMail("Caja #10");
-        }
-        else if (Caja11.isSelected() == false && Caja11.isVisible()== true){
-            email.sendMail("Caja #11");
-        }
-        else if (Caja12.isSelected() == false && Caja12.isVisible()== true){
-            email.sendMail("Caja #12");
-        } 
-        else if (Caja13.isSelected() == false && Caja13.isVisible()== true){
-            email.sendMail("Caja #13");
-        }
-        else if (Caja14.isSelected() == false && Caja14.isVisible()== true){
-            email.sendMail("Caja #14");
-        }
-        else if (Caja15.isSelected() == false && Caja15.isVisible()== true){
-            email.sendMail("Caja #15");
-        }*/
     }
 }

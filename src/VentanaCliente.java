@@ -364,33 +364,36 @@ public class VentanaCliente extends javax.swing.JFrame {
             VentanaPrincipal.Discapacitados.queue(cliente);
             VentanaPrincipal.HorasDiscapacitados.add(Hora);
             VentanaPrincipal.FechaDiscapacitados.add(Fecha);
-            sizeDiscapacitados = VentanaPrincipal.Discapacitados.getSize();
-        } /*
+            sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
+        } 
         else if (CheckClienteM.isSelected()) {
-            VentanaPrincipal.Mayores.add(Nombre);
-            VentanaPrincipal.CorreoMayores.add(Correo);
+            Persona cliente = new Persona (Nombre,Correo,"M");
+            VentanaPrincipal.Mayores.queue(cliente);
             VentanaPrincipal.HorasMayores.add(Hora);
             VentanaPrincipal.FechaMayores.add(Fecha);
-            sizeMayores = VentanaPrincipal.Mayores.getSize();
-        } else if (CheckClienteE.isSelected()) {
-            VentanaPrincipal.Embarazadas.add(Nombre);
-            VentanaPrincipal.CorreoEmbarazadas.add(Correo);
+            sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
+        } 
+        else if (CheckClienteE.isSelected()) {
+            Persona cliente = new Persona (Nombre,Correo,"E");
+            VentanaPrincipal.Embarazadas.queue(cliente);
             VentanaPrincipal.HorasEmbarazadas.add(Hora);
             VentanaPrincipal.FechaEmbarazadas.add(Fecha);
-            sizeEmbarazadas = VentanaPrincipal.Embarazadas.getSize();
-        } else if (CheckClienteC.isSelected()) {
-            VentanaPrincipal.Corporativos.add(Nombre);
-            VentanaPrincipal.CorreoCorporativos.add(Correo);
+            sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
+        } 
+        else if (CheckClienteC.isSelected()) {
+            Persona cliente = new Persona (Nombre,Correo,"C");
+            VentanaPrincipal.Corporativos.queue(cliente);
             VentanaPrincipal.HorasCorporativo.add(Hora);
             VentanaPrincipal.FechaCorporativo.add(Fecha);
-            sizeCorporativos = VentanaPrincipal.Corporativos.getSize();
-        } else if (CheckClienteR.isSelected()) {
-            VentanaPrincipal.Regulares.add(Nombre);
-            VentanaPrincipal.CorreoRegulares.add(Correo);
+            sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
+        } 
+        else if (CheckClienteR.isSelected()) {
+            Persona cliente = new Persona (Nombre,Correo,"R");
+            VentanaPrincipal.Regulares.queue(cliente);
             VentanaPrincipal.HorasRegulares.add(Hora);
             VentanaPrincipal.FechaRegulares.add(Fecha);
-            sizeRegulares = VentanaPrincipal.Regulares.getSize();
-        }*/
+            sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
+        }
         //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
         
         

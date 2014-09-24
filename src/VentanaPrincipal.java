@@ -24,11 +24,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Corporativos = new Queue();
         Regulares = new Queue();
         Mayores = new Queue();
-        /*CorreoDiscapacitados = new ArrayList();
-        CorreoMayores = new ArrayList();
-        CorreoEmbarazadas = new ArrayList();
-        CorreoCorporativos = new ArrayList();
-        CorreoRegulares = new ArrayList();*/
+        Prioridad = new Queue();
         HorasDiscapacitados = new ArrayList();
         HorasMayores = new ArrayList();
         HorasEmbarazadas = new ArrayList();
@@ -374,11 +370,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static Queue Embarazadas;
     public static Queue Corporativos;
     public static Queue Regulares;
-    /*public static ArrayList CorreoDiscapacitados;
-    public static ArrayList CorreoMayores;
-    public static ArrayList CorreoEmbarazadas;
-    public static ArrayList CorreoCorporativos;
-    public static ArrayList CorreoRegulares;*/
+    public static Queue Prioridad;
     public static ArrayList HorasDiscapacitados;
     public static ArrayList HorasMayores;
     public static ArrayList HorasEmbarazadas;

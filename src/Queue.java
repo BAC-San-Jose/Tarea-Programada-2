@@ -57,10 +57,13 @@ public class Queue{
         }
     }
     
-    public int getSize(){
+    public int getTotalSize(){
         return this.totalSize;
     }
 
+    public int getSize(){
+        return this.size;
+    }
     
     public static void main (String [] args){
         Persona hola = new Persona("melvin","mell9413@hotmail.com","D");
