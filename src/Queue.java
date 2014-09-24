@@ -1,6 +1,6 @@
 public class Queue{
 
-    public Persona [] arreglo;
+    public Clientes [] arreglo;
     public int first;
     public int last;
     public int size;
@@ -8,11 +8,11 @@ public class Queue{
     public int totalSize;
 
     public Queue (){
-        this.arreglo = new Persona [maxSize];
+        this.arreglo = new Clientes [maxSize];
         this.size = 0;
     }
-
-    public void queue (Persona cliente){
+    
+    public void queue (Clientes cliente){
         if (this.size < this.maxSize){
             if (isEmpty()){
                 this.arreglo [0] = cliente;
@@ -30,8 +30,8 @@ public class Queue{
         }
     }
 
-    public Persona deque (){
-            Persona resultado = null;
+    public Clientes deque (){
+            Clientes resultado = null;
             if (this.isEmpty()==true){
                 System.out.println("La cola no posee más personas");
             }
@@ -43,8 +43,8 @@ public class Queue{
             return resultado;
     }
     
-    public Persona getPersona(){
-        Persona persona = arreglo [first];
+    public Clientes getPersona(){
+        Clientes persona = arreglo [first];
         return persona;
     }
 
@@ -66,11 +66,11 @@ public class Queue{
     }
     
     public static void main (String [] args){
-        Persona hola = new Persona("melvin","mell9413@hotmail.com","D");
-        Persona hola1 = new Persona("kevin","teckevin_16@gmail.com","R");
-        Persona hola2 = new Persona("max","max11@hotmail.com","E");
-        Persona hola3 = new Persona("pepe","pepe1008@hotmail.com","C");
-        Persona hola4 = new Persona("jorge","andrespato1@gmail.com","M");
+        Clientes hola = new Clientes("melvin","mell9413@hotmail.com","D","27/09/2014","10:00");
+        Clientes hola1 = new Clientes("kevin","teckevin_16@gmail.com","R","27/09/2014","1:00");
+        Clientes hola2 = new Clientes("max","max11@hotmail.com","E","27/09/2014","4:00");
+        Clientes hola3 = new Clientes("pepe","pepe1008@hotmail.com","C","27/09/2014","8:00");
+        Clientes hola4 = new Clientes("jorge","andrespato1@gmail.com","M","27/09/2014","6:00");
         Queue cola = new Queue();
         cola.queue(hola);
         cola.queue(hola1);

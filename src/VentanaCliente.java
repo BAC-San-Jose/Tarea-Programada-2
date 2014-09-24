@@ -360,38 +360,28 @@ public class VentanaCliente extends javax.swing.JFrame {
         Hora = jLabel1.getText();
         Fecha = jLabel2.getText();
         if (CheckClienteD.isSelected()) {
-            Persona cliente = new Persona (Nombre,Correo,"D");
+            Clientes cliente = new Clientes (Nombre,Correo,"D",Fecha,Hora);
             VentanaPrincipal.Discapacitados.queue(cliente);
-            VentanaPrincipal.HorasDiscapacitados.add(Hora);
-            VentanaPrincipal.FechaDiscapacitados.add(Fecha);
             sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
         } 
         else if (CheckClienteM.isSelected()) {
-            Persona cliente = new Persona (Nombre,Correo,"M");
+            Clientes cliente = new Clientes (Nombre,Correo,"M",Fecha,Hora);
             VentanaPrincipal.Mayores.queue(cliente);
-            VentanaPrincipal.HorasMayores.add(Hora);
-            VentanaPrincipal.FechaMayores.add(Fecha);
             sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
         } 
         else if (CheckClienteE.isSelected()) {
-            Persona cliente = new Persona (Nombre,Correo,"E");
+            Clientes cliente = new Clientes (Nombre,Correo,"E",Fecha,Hora);
             VentanaPrincipal.Embarazadas.queue(cliente);
-            VentanaPrincipal.HorasEmbarazadas.add(Hora);
-            VentanaPrincipal.FechaEmbarazadas.add(Fecha);
             sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
         } 
         else if (CheckClienteC.isSelected()) {
-            Persona cliente = new Persona (Nombre,Correo,"C");
+            Clientes cliente = new Clientes (Nombre,Correo,"C",Fecha,Hora);
             VentanaPrincipal.Corporativos.queue(cliente);
-            VentanaPrincipal.HorasCorporativo.add(Hora);
-            VentanaPrincipal.FechaCorporativo.add(Fecha);
             sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
         } 
         else if (CheckClienteR.isSelected()) {
-            Persona cliente = new Persona (Nombre,Correo,"R");
+            Clientes cliente = new Clientes (Nombre,Correo,"R",Fecha,Hora);
             VentanaPrincipal.Regulares.queue(cliente);
-            VentanaPrincipal.HorasRegulares.add(Hora);
-            VentanaPrincipal.FechaRegulares.add(Fecha);
             sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
         }
         //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);

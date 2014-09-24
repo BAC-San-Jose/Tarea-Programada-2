@@ -136,8 +136,9 @@ public class ListaClientes extends javax.swing.JFrame {
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         String [] Columnas={"Nombre","Correo","Prioridad","Hora","Fecha"};
         DefaultTableModel Clientes = new DefaultTableModel(null, Columnas);
-        String [] Cliente={"Max","max.andres.rf@gmail.com","Cliente Regular","9:00","25/03/2014"};
-        String [] Cliente2={"ash","ash@jfu.com","Cliente Regular","10:00","23/03/2014"};
+        String [] Cliente={"max","max.andres.rf@gmail.com","D","9:00","20/10/2014"};
+        String [] Cliente2={"ash","ash@jfu.com","R","10:00","23/03/2014"};
+        System.out.println(VentanaPrincipal.Discapacitados.getPersona());
         Clientes.addRow(Cliente);
         Clientes.addRow(Cliente2);
         TablaClientes.setModel(Clientes);
