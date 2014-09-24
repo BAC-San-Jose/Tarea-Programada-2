@@ -21,4 +21,8 @@ public class Persona {
     public String getTipoPrioridad(){
         return tipoPrioridad;
     }
+    
+    public void setTipoPrioridad(String prioridad){
+        this.tipoPrioridad = prioridad;
+    }
 }
