@@ -31,7 +31,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         BtnGraficos = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtnTablaLista = new javax.swing.JButton();
         ventanaCliente = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -69,10 +69,10 @@ public class VentanaMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtnTablaLista.setText("Tabla Lista");
+        BtnTablaLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtnTablaListaActionPerformed(evt);
             }
         });
 
@@ -293,7 +293,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ventanaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnTablaLista, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(91, 91, 91)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,7 +355,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ventanaCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(BtnTablaLista)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonSalir)
@@ -429,9 +429,10 @@ public class VentanaMenu extends javax.swing.JFrame {
         //hide();
     }//GEN-LAST:event_ventanaClienteActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void BtnTablaListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTablaListaActionPerformed
+        ListaClientes tabla = new ListaClientes();
+        tabla.setVisible(true);
+    }//GEN-LAST:event_BtnTablaListaActionPerformed
 
     private void Caja2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja2ActionPerformed
         sendEmail();
@@ -530,6 +531,7 @@ public class VentanaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGraficos;
+    private javax.swing.JButton BtnTablaLista;
     public static javax.swing.JCheckBox Caja1;
     public static javax.swing.JCheckBox Caja10;
     public static javax.swing.JCheckBox Caja11;
@@ -548,7 +550,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel NombreVentana;
     private javax.swing.JButton botonSalir;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
