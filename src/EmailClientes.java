@@ -1,19 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-//package email;
-
-/**
- *
- * 
- */
 import java.util.Properties;
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
-
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.Session;
@@ -28,33 +15,21 @@ import javax.swing.JOptionPane;
 public class EmailClientes {
     String usuarioCorreo;
     String password;
-    
     String rutaArchivo;
     String nombreArchivo;
-    
-    String destinatario;
     String asunto;
-    String mensaje;
+    String destinatario;
     
-    public EmailClientes(String usuarioCorreo, String password, String rutaArchivo, String nombreArchivo, String destinatario, String asunto,String mensaje) {
+    public EmailClientes(String usuarioCorreo, String password, String rutaArchivo, String nombreArchivo, String asunto){
         this.usuarioCorreo = usuarioCorreo;
         this.password = password;
         this.rutaArchivo = rutaArchivo;
         this.nombreArchivo = nombreArchivo;
-        this.destinatario = destinatario;
         this.asunto = asunto;
-        this.mensaje = mensaje;
-    }
-    
-    public EmailClientes(String usuarioCorre,String password,String destinatario,String mensaje){
-        this(usuarioCorre,password,"","",destinatario,"",mensaje);
-    }
-    
-    public EmailClientes(String usuarioCorre,String password,String destinatario,String asunto,String mensaje){
-        this(usuarioCorre,password,"","",destinatario,asunto,mensaje);
-    }    
+    }   
 
-    public boolean sendMail(String caja){
+    public boolean sendMail(String caja, String cliente, String destinatario){
+        this.destinatario = destinatario;
         try
         {
             Properties props = new Properties();
@@ -66,7 +41,7 @@ public class EmailClientes {
 
             Session session = Session.getDefaultInstance(props, null);
             BodyPart texto = new MimeBodyPart();
-            texto.setText(mensaje + caja);
+            texto.setText( "Estimado cliente "+cliente+" por favor pase a la " + caja);
 
             BodyPart adjunto = new MimeBodyPart();
             if (!rutaArchivo.equals("")){
@@ -101,7 +76,7 @@ public class EmailClientes {
             return false;
         }        
     }
-    
+    /*
     public static void main(String[] args){
         String clave = "AAAaaa123"; 
         EmailClientes e = new EmailClientes("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL","mell9413@hotmail.com","PRUEBA","TROLL!!");
@@ -111,5 +86,5 @@ public class EmailClientes {
             JOptionPane.showMessageDialog(null,"El email no se mandó correctamente");
         }
     }
-
+    */
 }

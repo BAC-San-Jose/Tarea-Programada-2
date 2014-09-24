@@ -5,6 +5,7 @@ public class Queue{
     public int last;
     public int size;
     public int maxSize = 1000;
+    public int totalSize;
 
     public Queue (){
         this.arreglo = new Persona [maxSize];
@@ -22,22 +23,29 @@ public class Queue{
                 arreglo [last] = cliente;
             }
             size++;
+            totalSize++;
         }
         else{
             System.out.println("La cola esta llena");
         }
     }
 
-    public void deque (){
+    public Persona deque (){
+            Persona resultado = null;
             if (this.isEmpty()==true){
-                System.out.println("La cola no posee elementos");
+                System.out.println("La cola no posee más personas");
             }
             else{
                 size--;
-                Persona resultado = arreglo [first];
+                resultado = arreglo [first];
                 first = (first+1) % maxSize;
-                System.out.println(resultado.getNombre());
             }
+            return resultado;
+    }
+    
+    public Persona getPersona(){
+        Persona persona = arreglo [first];
+        return persona;
     }
 
     public boolean isEmpty(){
@@ -48,6 +56,11 @@ public class Queue{
             return false;
         }
     }
+    
+    public int getSize(){
+        return this.totalSize;
+    }
+
     
     public static void main (String [] args){
         Persona hola = new Persona("melvin","mell9413@hotmail.com","D");
@@ -61,7 +74,8 @@ public class Queue{
         cola.queue(hola2);
         cola.queue(hola3);
         cola.queue(hola4);
-        cola.deque();
+        System.out.println(cola.deque().getNombre());
+        System.out.println(cola.deque().getNombre());
         cola.deque();
         cola.deque();
     }

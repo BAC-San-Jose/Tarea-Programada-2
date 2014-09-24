@@ -18,14 +18,12 @@ public class VentanaMenu extends javax.swing.JFrame {
         setTexto();
         setCajas();
         setResizable(false);
-        
         Reloj hora = new Reloj(jLabel3);
         hora.start();
         Calendar Cal= Calendar.getInstance();
         String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
         jLabel2.setText(fec);
-        
-        email = new EmailClientes("tecbanco67@gmail.com","AAAaaa123","/home/mell/NetBeansProjects/Reproductor/NetBeansProjects/Reproductor/src/Imagenes/iconos/10613976_10202981559034008_418052797_n.jpg","imagen.jpg","mell9413@hotmail.com","Es su turno","Estimado cliente, por favor pase a la ");
+        email = new EmailClientes("tecbanco67@gmail.com","AAAaaa123",VentanaPrincipal.imagen,VentanaPrincipal.imagen,"Es su turno");
     }
 
     @SuppressWarnings("unchecked")
@@ -600,6 +598,7 @@ public class VentanaMenu extends javax.swing.JFrame {
         System.out.println("Se manda mail");
         return true;
     }
+    
     public void setCajas() {
         Caja1.setVisible(false);
         Caja2.setVisible(false);
@@ -664,12 +663,13 @@ public class VentanaMenu extends javax.swing.JFrame {
     }}}}}}}}}}}}}}
 
     public static void sendEmail(){
-        if (nextLista() == false){
+        /*if (nextLista() == false){
             
-        }
-        else if (Caja1.isSelected() == false && Caja1.isVisible()== true){
-            email.sendMail("Caja #1");
-        }
+        }*/
+        if (Caja1.isSelected() == false && Caja1.isVisible()== true){
+            email.sendMail("Caja #1",VentanaPrincipal.Discapacitados.getPersona().getNombre(),VentanaPrincipal.Discapacitados.getPersona().getCorreo());
+            VentanaPrincipal.Discapacitados.deque();
+        }/*
         else if (Caja2.isSelected() == false && Caja2.isVisible()== true){
             email.sendMail("Caja #2");
         }
@@ -711,6 +711,6 @@ public class VentanaMenu extends javax.swing.JFrame {
         }
         else if (Caja15.isSelected() == false && Caja15.isVisible()== true){
             email.sendMail("Caja #15");
-        }
+        }*/
     }
 }

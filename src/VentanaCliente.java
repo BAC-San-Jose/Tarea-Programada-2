@@ -360,12 +360,13 @@ public class VentanaCliente extends javax.swing.JFrame {
         Hora = jLabel1.getText();
         Fecha = jLabel2.getText();
         if (CheckClienteD.isSelected()) {
-            VentanaPrincipal.Discapacitados.add(Nombre);
-            VentanaPrincipal.CorreoDiscapacitados.add(Correo);
+            Persona cliente = new Persona (Nombre,Correo,"D");
+            VentanaPrincipal.Discapacitados.queue(cliente);
             VentanaPrincipal.HorasDiscapacitados.add(Hora);
             VentanaPrincipal.FechaDiscapacitados.add(Fecha);
             sizeDiscapacitados = VentanaPrincipal.Discapacitados.getSize();
-        } else if (CheckClienteM.isSelected()) {
+        } /*
+        else if (CheckClienteM.isSelected()) {
             VentanaPrincipal.Mayores.add(Nombre);
             VentanaPrincipal.CorreoMayores.add(Correo);
             VentanaPrincipal.HorasMayores.add(Hora);
@@ -389,7 +390,7 @@ public class VentanaCliente extends javax.swing.JFrame {
             VentanaPrincipal.HorasRegulares.add(Hora);
             VentanaPrincipal.FechaRegulares.add(Fecha);
             sizeRegulares = VentanaPrincipal.Regulares.getSize();
-        }
+        }*/
         //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
         
         
