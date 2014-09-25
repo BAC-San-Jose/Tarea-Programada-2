@@ -51,6 +51,7 @@ public class ListaClientes extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        TablaClientes.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TablaClientes);
 
         Crear.setText("Crear");
@@ -132,16 +133,16 @@ public class ListaClientes extends javax.swing.JFrame {
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         String [] Columnas={"Nombre","Correo","Prioridad","Hora","Fecha"};
         DefaultTableModel Clientes = new DefaultTableModel(null, Columnas);
-        String [] Cliente={VentanaPrincipal.Discapacitados.getPersona().getNombre(),
-            VentanaPrincipal.Discapacitados.getPersona().getCorreo(),
-            VentanaPrincipal.Discapacitados.getPersona().getTipoPrioridad(),
-            VentanaPrincipal.Discapacitados.getPersona().getHora(),
-            VentanaPrincipal.Discapacitados.getPersona().getFecha()};
+        String [] Cliente={VentanaPrincipal.Clientes.getPersona().getNombre(),
+            VentanaPrincipal.Clientes.getPersona().getCorreo(),
+            VentanaPrincipal.Clientes.getPersona().getTipoPrioridad(),
+            VentanaPrincipal.Clientes.getPersona().getHora(),
+            VentanaPrincipal.Clientes.getPersona().getFecha()};
         Clientes.addRow(Cliente);
         TablaClientes.setModel(Clientes);
         TablaClientes.setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed
-
+    
     private void OrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarActionPerformed
         if(CheckNombre.isSelected()){
             

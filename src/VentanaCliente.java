@@ -20,7 +20,7 @@ public class VentanaCliente extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     public VentanaCliente() {
-        //EnvioEmail = new Email();
+        EnvioEmail = new EmailClientes("tecbanco67@gmail.com","AAAaaa123",VentanaPrincipal.imagen,VentanaPrincipal.imagen,"Correo Confirmacion");
         
         initComponents();
         getContentPane().setBackground(new java.awt.Color(229,55,55));
@@ -274,7 +274,7 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckClienteDActionPerformed
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
-        //EnvioEmail = null;
+        EnvioEmail = null;
         String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
         try {
             if (CheckClienteD.isSelected()==true) {
@@ -354,41 +354,44 @@ public class VentanaCliente extends javax.swing.JFrame {
         catch(IOException | HeadlessException e){
             JOptionPane.showMessageDialog(null,"Error en los datos dados");
         }
-        String clave = "AAAaaa123";
+        Prioridad = null;
         Nombre = NombreCliente.getText();
         Correo = CorreoCliente.getText();
         Hora = jLabel1.getText();
         Fecha = jLabel2.getText();
         if (CheckClienteD.isSelected()) {
+            Prioridad = "D";
             Clientes cliente = new Clientes (Nombre,Correo,"D",Fecha,Hora);
             VentanaPrincipal.Discapacitados.queue(cliente);
             sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
         } 
         else if (CheckClienteM.isSelected()) {
+            Prioridad = "M";
             Clientes cliente = new Clientes (Nombre,Correo,"M",Fecha,Hora);
             VentanaPrincipal.Mayores.queue(cliente);
             sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
         } 
         else if (CheckClienteE.isSelected()) {
+            Prioridad = "E";
             Clientes cliente = new Clientes (Nombre,Correo,"E",Fecha,Hora);
             VentanaPrincipal.Embarazadas.queue(cliente);
             sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
         } 
         else if (CheckClienteC.isSelected()) {
+            Prioridad = "C";
             Clientes cliente = new Clientes (Nombre,Correo,"C",Fecha,Hora);
             VentanaPrincipal.Corporativos.queue(cliente);
             sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
         } 
         else if (CheckClienteR.isSelected()) {
+            Prioridad = "R";
             Clientes cliente = new Clientes (Nombre,Correo,"R",Fecha,Hora);
             VentanaPrincipal.Regulares.queue(cliente);
             sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
         }
-        //EnvioEmail.Email("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL",Correo,"PRUEBA",Nombre);
-        
-        
-        //VentanaMenu.sendEmail();
-        
+        Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
+        VentanaPrincipal.Clientes.queue(cliente);
+        EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
         
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
@@ -489,12 +492,13 @@ public class VentanaCliente extends javax.swing.JFrame {
     private String Correo;
     private String Hora;
     private String Fecha;
+    private String Prioridad;
     public static int contadorDiscapacitados = 0;
     public static int contadorMayores = 0;
     public static int contadorEmbarazadas = 0;
     public static int contadorCorporativos = 0;
     public static int contadorRegulares = 0;
-    //public EmailClientes EnvioEmail;
+    public EmailClientes EnvioEmail;
     public static int sizeDiscapacitados;
     public static int sizeMayores;
     public static int sizeEmbarazadas;

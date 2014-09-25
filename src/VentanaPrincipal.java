@@ -25,6 +25,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Regulares = new Queue();
         Mayores = new Queue();
         Prioridad = new Queue();
+        Clientes = new Queue();
         
         initComponents();
         this.setLocationRelativeTo(null);
@@ -361,4 +362,5 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static Queue Corporativos;
     public static Queue Regulares;
     public static Queue Prioridad;
+    public static Queue Clientes;
 }
