@@ -347,50 +347,51 @@ public class VentanaCliente extends javax.swing.JFrame {
                 
 
             }
+            Nombre = NombreCliente.getText();
+            Correo = CorreoCliente.getText();
+            Hora = jLabel1.getText();
+            Fecha = jLabel2.getText();
+            String Prioridad = null;
+            if (CheckClienteD.isSelected()) {
+                Prioridad = "Discapacitados";
+                Clientes cliente = new Clientes (Nombre,Correo,"Discapacitados",Fecha,Hora);
+                VentanaPrincipal.Discapacitados.queue(cliente);
+                sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
+            } 
+            else if (CheckClienteM.isSelected()) {
+                Prioridad = "Mayores";
+                Clientes cliente = new Clientes (Nombre,Correo,"Mayores",Fecha,Hora);
+                VentanaPrincipal.Mayores.queue(cliente);
+                sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
+            } 
+            else if (CheckClienteE.isSelected()) {
+                Prioridad = "Embarazadas";
+                Clientes cliente = new Clientes (Nombre,Correo,"Embarazadas",Fecha,Hora);
+                VentanaPrincipal.Embarazadas.queue(cliente);
+                sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
+            } 
+            else if (CheckClienteC.isSelected()) {
+                Prioridad = "Corporativos";
+                Clientes cliente = new Clientes (Nombre,Correo,"Corporativos",Fecha,Hora);
+                VentanaPrincipal.Corporativos.queue(cliente);
+                sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
+            } 
+            else if (CheckClienteR.isSelected()) {
+                Prioridad = "Regulares";
+                Clientes cliente = new Clientes (Nombre,Correo,"Regulares",Fecha,Hora);
+                VentanaPrincipal.Regulares.queue(cliente);
+                sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
+            }
+            Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
+            VentanaPrincipal.Clientes.queue(cliente);
+            //EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
+            System.out.println("se mando mail");
             JOptionPane.showMessageDialog(null,"Datos Guardados");
         }
         catch(IOException | HeadlessException e){
             JOptionPane.showMessageDialog(null,"Error en los datos dados");
         }
-        Prioridad = null;
-        Nombre = NombreCliente.getText();
-        Correo = CorreoCliente.getText();
-        Hora = jLabel1.getText();
-        Fecha = jLabel2.getText();
-        if (CheckClienteD.isSelected()) {
-            Prioridad = "D";
-            Clientes cliente = new Clientes (Nombre,Correo,"D",Fecha,Hora);
-            VentanaPrincipal.Discapacitados.queue(cliente);
-            sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
-        } 
-        else if (CheckClienteM.isSelected()) {
-            Prioridad = "M";
-            Clientes cliente = new Clientes (Nombre,Correo,"M",Fecha,Hora);
-            VentanaPrincipal.Mayores.queue(cliente);
-            sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
-        } 
-        else if (CheckClienteE.isSelected()) {
-            Prioridad = "E";
-            Clientes cliente = new Clientes (Nombre,Correo,"E",Fecha,Hora);
-            VentanaPrincipal.Embarazadas.queue(cliente);
-            sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
-        } 
-        else if (CheckClienteC.isSelected()) {
-            Prioridad = "C";
-            Clientes cliente = new Clientes (Nombre,Correo,"C",Fecha,Hora);
-            VentanaPrincipal.Corporativos.queue(cliente);
-            sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
-        } 
-        else if (CheckClienteR.isSelected()) {
-            Prioridad = "R";
-            Clientes cliente = new Clientes (Nombre,Correo,"R",Fecha,Hora);
-            VentanaPrincipal.Regulares.queue(cliente);
-            sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
-        }
-        Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
-        VentanaPrincipal.Clientes.queue(cliente);
-        //EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
-        System.out.println("se mando mail");
+        
         
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
@@ -491,7 +492,6 @@ public class VentanaCliente extends javax.swing.JFrame {
     private String Correo;
     private String Hora;
     private String Fecha;
-    private String Prioridad;
     public static int contadorDiscapacitados = 0;
     public static int contadorMayores = 0;
     public static int contadorEmbarazadas = 0;

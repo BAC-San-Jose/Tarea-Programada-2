@@ -146,22 +146,16 @@ public class Graficos extends javax.swing.JFrame {
             }
         });
 
-        capas.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        capaPastelTipo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         javax.swing.GroupLayout capaPastelTipoLayout = new javax.swing.GroupLayout(capaPastelTipo);
         capaPastelTipo.setLayout(capaPastelTipoLayout);
         capaPastelTipoLayout.setHorizontalGroup(
             capaPastelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 544, Short.MAX_VALUE)
+            .addGap(0, 552, Short.MAX_VALUE)
         );
         capaPastelTipoLayout.setVerticalGroup(
             capaPastelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-
-        capaBarrasTipo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout capaBarrasTipoLayout = new javax.swing.GroupLayout(capaBarrasTipo);
         capaBarrasTipo.setLayout(capaBarrasTipoLayout);
@@ -174,8 +168,6 @@ public class Graficos extends javax.swing.JFrame {
             .addGap(0, 363, Short.MAX_VALUE)
         );
 
-        capaPastelHora.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         javax.swing.GroupLayout capaPastelHoraLayout = new javax.swing.GroupLayout(capaPastelHora);
         capaPastelHora.setLayout(capaPastelHoraLayout);
         capaPastelHoraLayout.setHorizontalGroup(
@@ -186,8 +178,6 @@ public class Graficos extends javax.swing.JFrame {
             capaPastelHoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 363, Short.MAX_VALUE)
         );
-
-        capaBarrasHora.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout capaBarrasHoraLayout = new javax.swing.GroupLayout(capaBarrasHora);
         capaBarrasHora.setLayout(capaBarrasHoraLayout);
@@ -200,8 +190,6 @@ public class Graficos extends javax.swing.JFrame {
             .addGap(0, 363, Short.MAX_VALUE)
         );
 
-        capaPastelDia.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         javax.swing.GroupLayout capaPastelDiaLayout = new javax.swing.GroupLayout(capaPastelDia);
         capaPastelDia.setLayout(capaPastelDiaLayout);
         capaPastelDiaLayout.setHorizontalGroup(
@@ -212,8 +200,6 @@ public class Graficos extends javax.swing.JFrame {
             capaPastelDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 363, Short.MAX_VALUE)
         );
-
-        capaBarrasDia.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout capaBarrasDiaLayout = new javax.swing.GroupLayout(capaBarrasDia);
         capaBarrasDia.setLayout(capaBarrasDiaLayout);
@@ -471,31 +457,57 @@ public class Graficos extends javax.swing.JFrame {
         }
         
         //Grafico de HORA
-        if (radioBarrasHora.isSelected()){
-            DefaultCategoryDataset data = new DefaultCategoryDataset();
-            
-            String clientes = "Clientes";
-            
-            String discapacitado = "Discapacitados";
-            String adultoMayor = "Adulto Mayor";
-            String mujerEmbarazada = "Mujer Embarazada";
-            String clienteCorporativo = "Cliente Corporativo";
-            String clienteRegular = "Cliente Regular";
+        
+        int am9 = 0;
+            int am10 = 0;
+            int am11 = 0;
+            int pm1 = 0;
+            int pm2 = 0;
+            int pm3 = 0;
+            int pm4 = 0;
             
             for (int a= 0; a< VentanaPrincipal.Clientes.getSize(); a++){
                 String totalHora = VentanaPrincipal.Clientes.recorrerCola(a).getHora();
                 char array_caracteres [] = totalHora.toCharArray();
                 String hora = String.valueOf(array_caracteres[0])+String.valueOf(array_caracteres[1]);
-                System.out.println(hora);          
+                System.out.println(hora);
+                if ("09".equals(hora)){
+                    am9++;
+                }
+                if ("10".equals(hora)){
+                    am10++;
+                }
+                if ("11".equals(hora)){
+                    am11++;
+                }
+                if ("13".equals(hora)){
+                    pm1++;
+                }
+                if ("14".equals(hora)){
+                    pm2++;
+                }
+                if ("015".equals(hora)){
+                    pm3++;
+                }
+                if ("16".equals(hora)){
+                    pm4++;
+                }
             }
             
+        if (radioBarrasHora.isSelected()){
+            DefaultCategoryDataset data = new DefaultCategoryDataset();
+            
+            String clientes = "Clientes";
             
             
-            data.addValue(8, clientes, discapacitado);
-            data.addValue(1, clientes, adultoMayor);
-            data.addValue(666, clientes, mujerEmbarazada);
-            data.addValue(38, clientes, clienteCorporativo);
-            data.addValue(29, clientes, clienteRegular);
+
+            data.addValue(am9, "9 am","");
+            data.addValue(am10, "10 am","");
+            data.addValue(am11, "11 am","");
+            data.addValue(pm1, "1 pm","");
+            data.addValue(pm2, "2 pm","");
+            data.addValue(pm3, "3 pm","");
+            data.addValue(pm4, "4 pm","");
             
             chart = ChartFactory.createBarChart("Cantidad Clientes por Hora", "Tipo", "Cantidad", 
                     data, 
@@ -507,11 +519,13 @@ public class Graficos extends javax.swing.JFrame {
         }
         if (radioPastelHora.isSelected()){
             DefaultPieDataset data = new DefaultPieDataset();
-            data.setValue("Discapacitado", 8);
-            data.setValue("Adulto Mayor", 13);
-            data.setValue("Mujer Embarazada", 14);
-            data.setValue("Cliente Corporativo", 21);
-            data.setValue("Cliente Regular", 30);
+            data.setValue("9 am", am9);
+            data.setValue("10 am", am10);
+            data.setValue("11 am", am11);
+            data.setValue("1 pm", pm1);
+            data.setValue("2 pm", pm2);
+            data.setValue("3 pm", pm3);
+            data.setValue("4 pm", pm4);
 
             chart = ChartFactory.createPieChart3D("Clientes por Hora", data, true, true, true);
             
@@ -747,8 +761,4 @@ public class Graficos extends javax.swing.JFrame {
             this.setTitle("BAC San Jose");
         }
     }
-    
-    //public int conversor (String hora){
-        
-    //}
 }
