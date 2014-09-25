@@ -26,6 +26,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Mayores = new Queue();
         Prioridad = new Queue();
         Clientes = new Queue();
+        Cajas = new ArrayList();
+        DisponibilidadCajas = new ArrayList();
         
         initComponents();
         this.setLocationRelativeTo(null);
@@ -290,6 +292,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         else{
             //System.out.print(CantidadCajas.getValue());
             cantidadCajas = (int) CantidadCajas.getValue();
+            for(int i=1;i<=cantidadCajas;i++){
+                Cajas.add(""+i);
+                DisponibilidadCajas.add(""+0);
+            }
             VentanaMenu MenuTrabajar = new VentanaMenu ();
             MenuTrabajar.setVisible(true);
             hide(); 
@@ -355,6 +361,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static String imagen = System.getProperty("user.dir")+"/Imagenes/Logo BAC.gif";
     public static String texto = "Sistema de Atención a Clientes BAC";
     public static int cantidadCajas;
+    public static String Dato;
+    public static ArrayList Cajas;
+    public static ArrayList DisponibilidadCajas;
     
     public static Queue Discapacitados;
     public static Queue Mayores;

@@ -8,6 +8,7 @@ public class ListaClientes extends javax.swing.JFrame {
      */
     public ListaClientes() {
         initComponents();
+        getContentPane().setBackground(new java.awt.Color(229,55,55));
         TablaClientes.setVisible(false);
         this.setLocationRelativeTo(null);
     }

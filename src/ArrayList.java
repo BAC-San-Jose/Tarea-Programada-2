@@ -11,7 +11,7 @@ class ArrayList {
     public int size;
     public int maxSize;
     public String[] arreglo;
-    public final int MAX_SIZE = 777;
+    public final int MAX_SIZE = 1000;
 
     /**
      * Constructor de la clase
