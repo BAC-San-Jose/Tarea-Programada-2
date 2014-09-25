@@ -28,12 +28,11 @@ public class VentanaCliente extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setImagen();
         setTexto();
-        
         Reloj hora = new Reloj(jLabel1);
         hora.start();
         Calendar Cal= Calendar.getInstance();
-        String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
-        jLabel2.setText(fec);
+        String fech= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
+        jLabel2.setText(fech);
     }
 
     @SuppressWarnings("unchecked")
@@ -274,19 +273,18 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckClienteDActionPerformed
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
-        EnvioEmail = null;
         String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
         try {
             if (CheckClienteD.isSelected()==true) {
                 //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-                File archivo=new File("Clientes\\Discapacitados.txt");
+                File archivo=new File("Clientes/Discapacitados.txt");
 
 
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorDiscapacitados+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorDiscapacitados+"   "+NombreCliente.getText()+"   "+"Discapacitados"+"   "+Hora+"   "+Fecha+nl);
                     contadorDiscapacitados++;
                     
                     //Cerramos la conexion
@@ -294,14 +292,14 @@ public class VentanaCliente extends javax.swing.JFrame {
             }
             else if (CheckClienteM.isSelected()==true) {
                     //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-                File archivo=new File("Clientes\\Mayores.txt");
+                File archivo=new File("Clientes/Mayores.txt");
 
 
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorMayores+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorMayores+"   "+NombreCliente.getText()+"   "+"Mayores"+"   "+Hora+"   "+Fecha+nl);
                     contadorMayores++;
                     
                     //Cerramos la conexion
@@ -310,89 +308,92 @@ public class VentanaCliente extends javax.swing.JFrame {
             else if (CheckClienteE.isSelected()==true) {
                 
                      //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-                File archivo=new File("Clientes\\Embarazadas.txt");
+                File archivo=new File("Clientes/Embarazadas.txt");
 
 
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorEmbarazadas+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorEmbarazadas+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+"Embarazadas"+"   "+Hora+"   "+Fecha+nl);
                     contadorEmbarazadas++;
                     
                     //Cerramos la conexion
                 }
             }
             else if (CheckClienteC.isSelected()==true) {
-                File archivo=new File("Clientes\\Corporativos.txt");
+                File archivo=new File("Clientes/Corporativos.txt");
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorCorporativos+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorCorporativos+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+"Corporativos"+"   "+Hora+"   "+Fecha+nl);
                     contadorCorporativos++;
                     
                     //Cerramos la conexion
                 }
             } 
             else if (CheckClienteR.isSelected()==true) {
-                File archivo=new File("Clientes\\Regulares.txt");
+                File archivo=new File("Clientes/Regulares.txt");
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorRegulares+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorRegulares+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+"Regulares"+"   "+Hora+"   "+Fecha+nl);
                     contadorRegulares++;
+                    
+                    
                     
                     //Cerramos la conexion
                 }
                 
 
             }
+            Nombre = NombreCliente.getText();
+            Correo = CorreoCliente.getText();
+            Hora = jLabel1.getText();
+            Fecha = jLabel2.getText();
+            String Prioridad = null;
+            if (CheckClienteD.isSelected()) {
+                Prioridad = "Discapacitados";
+                Clientes cliente = new Clientes (Nombre,Correo,"Discapacitados",Fecha,Hora);
+                VentanaPrincipal.Discapacitados.queue(cliente);
+                sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
+            } 
+            else if (CheckClienteM.isSelected()) {
+                Prioridad = "Mayores";
+                Clientes cliente = new Clientes (Nombre,Correo,"Mayores",Fecha,Hora);
+                VentanaPrincipal.Mayores.queue(cliente);
+                sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
+            } 
+            else if (CheckClienteE.isSelected()) {
+                Prioridad = "Embarazadas";
+                Clientes cliente = new Clientes (Nombre,Correo,"Embarazadas",Fecha,Hora);
+                VentanaPrincipal.Embarazadas.queue(cliente);
+                sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
+            } 
+            else if (CheckClienteC.isSelected()) {
+                Prioridad = "Corporativos";
+                Clientes cliente = new Clientes (Nombre,Correo,"Corporativos",Fecha,Hora);
+                VentanaPrincipal.Corporativos.queue(cliente);
+                sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
+            } 
+            else if (CheckClienteR.isSelected()) {
+                Prioridad = "Regulares";
+                Clientes cliente = new Clientes (Nombre,Correo,"Regulares",Fecha,Hora);
+                VentanaPrincipal.Regulares.queue(cliente);
+                sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
+            }
+            Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
+            VentanaPrincipal.Clientes.queue(cliente);
+            //EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
+            System.out.println("se mando mail");
             JOptionPane.showMessageDialog(null,"Datos Guardados");
         }
         catch(IOException | HeadlessException e){
             JOptionPane.showMessageDialog(null,"Error en los datos dados");
         }
-        Prioridad = null;
-        Nombre = NombreCliente.getText();
-        Correo = CorreoCliente.getText();
-        Hora = jLabel1.getText();
-        Fecha = jLabel2.getText();
-        if (CheckClienteD.isSelected()) {
-            Prioridad = "D";
-            Clientes cliente = new Clientes (Nombre,Correo,"D",Fecha,Hora);
-            VentanaPrincipal.Discapacitados.queue(cliente);
-            sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
-        } 
-        else if (CheckClienteM.isSelected()) {
-            Prioridad = "M";
-            Clientes cliente = new Clientes (Nombre,Correo,"M",Fecha,Hora);
-            VentanaPrincipal.Mayores.queue(cliente);
-            sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
-        } 
-        else if (CheckClienteE.isSelected()) {
-            Prioridad = "E";
-            Clientes cliente = new Clientes (Nombre,Correo,"E",Fecha,Hora);
-            VentanaPrincipal.Embarazadas.queue(cliente);
-            sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
-        } 
-        else if (CheckClienteC.isSelected()) {
-            Prioridad = "C";
-            Clientes cliente = new Clientes (Nombre,Correo,"C",Fecha,Hora);
-            VentanaPrincipal.Corporativos.queue(cliente);
-            sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
-        } 
-        else if (CheckClienteR.isSelected()) {
-            Prioridad = "R";
-            Clientes cliente = new Clientes (Nombre,Correo,"R",Fecha,Hora);
-            VentanaPrincipal.Regulares.queue(cliente);
-            sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
-        }
-        Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
-        VentanaPrincipal.Clientes.queue(cliente);
-        EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
-        System.out.println("se mando mail");
+        
         
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
@@ -493,7 +494,6 @@ public class VentanaCliente extends javax.swing.JFrame {
     private String Correo;
     private String Hora;
     private String Fecha;
-    private String Prioridad;
     public static int contadorDiscapacitados = 0;
     public static int contadorMayores = 0;
     public static int contadorEmbarazadas = 0;

@@ -9,8 +9,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import javax.swing.JOptionPane;
-
 
 public class EmailClientes {
     String usuarioCorreo;
@@ -28,7 +26,7 @@ public class EmailClientes {
         this.asunto = asunto;
     }   
 
-    public boolean sendMail(String cliente, String destinatario, String Hora, String Fecha){
+    public boolean sendMail(String cliente, String destinatario, String Fecha, String Hora){
         this.destinatario = destinatario;
         try
         {
@@ -42,7 +40,7 @@ public class EmailClientes {
             Session session = Session.getDefaultInstance(props, null);
             BodyPart texto = new MimeBodyPart();
             texto.setText( "Estimado cliente "+cliente+" este es un correo de confirmacion de su llegada al banco el "
-            + Fecha + " a las " + Fecha);
+            + Fecha + " a las " + Hora);
 
             BodyPart adjunto = new MimeBodyPart();
             if (!rutaArchivo.equals("")){
@@ -126,15 +124,4 @@ public class EmailClientes {
             return false;
         }        
     }
-    /*
-    public static void main(String[] args){
-        String clave = "AAAaaa123"; 
-        EmailClientes e = new EmailClientes("tecbanco67@gmail.com",clave,"C:\\uno.jpg","TROLL","mell9413@hotmail.com","PRUEBA","TROLL!!");
-        if (e.sendMail("hola")){
-            JOptionPane.showMessageDialog(null,"El email se mandó correctamente");
-        }else{
-            JOptionPane.showMessageDialog(null,"El email no se mandó correctamente");
-        }
-    }
-    */
 }
