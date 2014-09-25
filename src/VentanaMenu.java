@@ -1,6 +1,8 @@
 
 import java.awt.Image;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -48,8 +50,10 @@ public class VentanaMenu extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         ListaCajas = new javax.swing.JComboBox();
-        BotonDisponible = new javax.swing.JRadioButton();
-        BotonOcupado = new javax.swing.JRadioButton();
+        CheckDisponible = new javax.swing.JRadioButton();
+        CheckOcupada = new javax.swing.JRadioButton();
+        BotonConfirmar = new javax.swing.JButton();
+        BotonComprobar = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -105,7 +109,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                 .addComponent(Logo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(NombreVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -145,9 +149,23 @@ public class VentanaMenu extends javax.swing.JFrame {
             }
         });
 
-        BotonDisponible.setText("Disponible");
+        CheckDisponible.setText("Disponible");
 
-        BotonOcupado.setText("Ocupada");
+        CheckOcupada.setText("Ocupada");
+
+        BotonConfirmar.setText("Confirmar");
+        BotonConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonConfirmarActionPerformed(evt);
+            }
+        });
+
+        BotonComprobar.setText("Comprobar");
+        BotonComprobar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonComprobarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,10 +199,15 @@ public class VentanaMenu extends javax.swing.JFrame {
                                 .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(90, 90, 90)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BotonOcupado)
-                                    .addComponent(BotonDisponible))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CheckOcupada)
+                                    .addComponent(CheckDisponible)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonComprobar)
+                            .addComponent(BotonConfirmar))))
+                .addContainerGap(74, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,10 +241,14 @@ public class VentanaMenu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BotonDisponible))))
+                                    .addComponent(CheckDisponible))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BotonOcupado)
-                        .addGap(97, 97, 97))))
+                        .addComponent(CheckOcupada)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonConfirmar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonComprobar)
+                        .addGap(27, 27, 27))))
         );
 
         pack();
@@ -253,8 +280,35 @@ public class VentanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTablaListaActionPerformed
 
     private void ListaCajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaCajasActionPerformed
-
+        
     }//GEN-LAST:event_ListaCajasActionPerformed
+
+    private void BotonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConfirmarActionPerformed
+        Indice=(int)ListaCajas.getSelectedItem();
+        if (CheckOcupada.isSelected()==true){
+            VentanaPrincipal.DisponibilidadCajas.Modificar("1", Indice);
+        }
+        else if(CheckDisponible.isSelected()==true){
+            VentanaPrincipal.DisponibilidadCajas.Modificar("0", Indice);
+        }
+        
+    }//GEN-LAST:event_BotonConfirmarActionPerformed
+
+    private void BotonComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComprobarActionPerformed
+        Indice=(int)ListaCajas.getSelectedItem();
+        try {
+            if (VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="0"){
+                CheckOcupada.setSelected(false);
+                CheckDisponible.setSelected(true);
+            }
+            else if(VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="1"){
+                CheckOcupada.setSelected(true);
+                CheckDisponible.setSelected(false);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_BotonComprobarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,10 +346,12 @@ public class VentanaMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton BotonDisponible;
-    private javax.swing.JRadioButton BotonOcupado;
+    private javax.swing.JButton BotonComprobar;
+    private javax.swing.JButton BotonConfirmar;
     private javax.swing.JButton BtnGraficos;
     private javax.swing.JButton BtnTablaLista;
+    private javax.swing.JRadioButton CheckDisponible;
+    private javax.swing.JRadioButton CheckOcupada;
     private javax.swing.JComboBox ListaCajas;
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel NombreVentana;
@@ -312,6 +368,8 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JButton ventanaCliente;
     // End of variables declaration//GEN-END:variables
     public static EmailClientes email;
+    public String Caja;
+    public int Indice;
     
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
@@ -381,8 +439,8 @@ public class VentanaMenu extends javax.swing.JFrame {
             String Nombre = VentanaPrincipal.Prioridad.getPersona().getNombre();
             String Correo = VentanaPrincipal.Prioridad.getPersona().getCorreo();
             System.out.println(Nombre + " "+ Correo);
-            ListaCajas.getCursor();
-            email.sendMail("Caja #1",Nombre,Correo);
+            Caja = (String)ListaCajas.getSelectedItem();
+            email.sendMail("Caja #"+1,Nombre,Correo);
             VentanaPrincipal.Prioridad.deque();
         }
     }

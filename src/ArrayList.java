@@ -27,6 +27,10 @@ class ArrayList {
      * Agregar elementos al arreglo con la condición sea menor al maximo la lista, sino que tire error
      * @param Dato
      */
+    public void Modificar(String Dato, int indice){
+        this.arreglo[indice]=Dato;
+    }
+    
     public void add (String Dato) {
 
 	if (this.size < this.maxSize) {
