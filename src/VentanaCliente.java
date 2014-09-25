@@ -274,7 +274,6 @@ public class VentanaCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckClienteDActionPerformed
 
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
-        EnvioEmail = null;
         String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
         try {
             if (CheckClienteD.isSelected()==true) {
