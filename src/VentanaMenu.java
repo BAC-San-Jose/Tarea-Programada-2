@@ -18,14 +18,12 @@ public class VentanaMenu extends javax.swing.JFrame {
         setTexto();
         setCajas();
         setResizable(false);
-        
         Reloj hora = new Reloj(jLabel3);
         hora.start();
         Calendar Cal= Calendar.getInstance();
         String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
         jLabel2.setText(fec);
-        
-        email = new EmailClientes("tecbanco67@gmail.com","AAAaaa123","/home/mell/NetBeansProjects/Reproductor/NetBeansProjects/Reproductor/src/Imagenes/iconos/10613976_10202981559034008_418052797_n.jpg","imagen.jpg","mell9413@hotmail.com","Es su turno","Estimado cliente, por favor pase a la ");
+        email = new EmailClientes("tecbanco67@gmail.com","AAAaaa123",VentanaPrincipal.imagen,VentanaPrincipal.imagen,"Es su turno");
     }
 
     @SuppressWarnings("unchecked")
@@ -33,7 +31,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         BtnGraficos = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtnTablaLista = new javax.swing.JButton();
         ventanaCliente = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -71,10 +69,10 @@ public class VentanaMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtnTablaLista.setText("Tabla Lista");
+        BtnTablaLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtnTablaListaActionPerformed(evt);
             }
         });
 
@@ -295,7 +293,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ventanaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnTablaLista, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(91, 91, 91)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,7 +355,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ventanaCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(BtnTablaLista)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonSalir)
@@ -431,9 +429,10 @@ public class VentanaMenu extends javax.swing.JFrame {
         //hide();
     }//GEN-LAST:event_ventanaClienteActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void BtnTablaListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTablaListaActionPerformed
+        ListaClientes tabla = new ListaClientes();
+        tabla.setVisible(true);
+    }//GEN-LAST:event_BtnTablaListaActionPerformed
 
     private void Caja2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Caja2ActionPerformed
         sendEmail();
@@ -532,6 +531,7 @@ public class VentanaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnGraficos;
+    private javax.swing.JButton BtnTablaLista;
     public static javax.swing.JCheckBox Caja1;
     public static javax.swing.JCheckBox Caja10;
     public static javax.swing.JCheckBox Caja11;
@@ -550,7 +550,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel NombreVentana;
     private javax.swing.JButton botonSalir;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
@@ -584,7 +583,7 @@ public class VentanaMenu extends javax.swing.JFrame {
         }
     }
     
-    public boolean nextLista(){
+    public static boolean nextLista(){
         if(VentanaPrincipal.Discapacitados.getSize()==0){
             if(VentanaPrincipal.Mayores.getSize()==0){
                 if(VentanaPrincipal.Embarazadas.getSize()==0){
@@ -593,13 +592,39 @@ public class VentanaMenu extends javax.swing.JFrame {
                             System.out.println("NO se manda mail");
                             return false;
                         }
+                        else{
+                            VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Regulares.getPersona());
+                            VentanaPrincipal.Regulares.deque();
+                            System.out.println("si esta vacia regulares");
+                        }
+                    }
+                    else{
+                        VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Corporativos.getPersona());
+                        VentanaPrincipal.Corporativos.deque();
+                        System.out.println("si esta vacia corporativos");
                     }
                 }
+                else{
+                    VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Embarazadas.getPersona());
+                    VentanaPrincipal.Embarazadas.deque();
+                    System.out.println("si esta vacia Embarazadas");
+                }
             }
+            else{
+                VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Mayores.getPersona());
+                VentanaPrincipal.Mayores.deque();
+                System.out.println("si esta vacia Mayores");
+            }
+        }
+        else{
+            VentanaPrincipal.Prioridad.queue(VentanaPrincipal.Discapacitados.getPersona());
+            VentanaPrincipal.Discapacitados.deque();
+            System.out.println("si esta vacia discapacitados");
         }
         System.out.println("Se manda mail");
         return true;
     }
+    
     public void setCajas() {
         Caja1.setVisible(false);
         Caja2.setVisible(false);
@@ -663,54 +688,57 @@ public class VentanaMenu extends javax.swing.JFrame {
         }
     }}}}}}}}}}}}}}
 
-    public void sendEmail(){
-        if (nextLista() == false){
-            
-        }
-        else if (Caja1.isSelected() == false && Caja1.isVisible()== true){
-            email.sendMail("Caja #1");
-        }
-        else if (Caja2.isSelected() == false && Caja2.isVisible()== true){
-            email.sendMail("Caja #2");
-        }
-        else if (Caja3.isSelected() == false && Caja3.isVisible()== true){
-            email.sendMail("Caja #3");
-        }
-        else if (Caja4.isSelected() == false && Caja4.isVisible()== true){
-            email.sendMail("Caja #4");
-        }
-        else if (Caja5.isSelected() == false && Caja5.isVisible()== true){
-            email.sendMail("Caja #5");
-        }
-        else if (Caja6.isSelected() == false && Caja6.isVisible()== true){
-            email.sendMail("Caja #6");
-        }
-        else if (Caja7.isSelected() == false && Caja7.isVisible()== true){
-            email.sendMail("Caja #7");
-        }
-        else if (Caja8.isSelected() == false && Caja8.isVisible()== true){
-            email.sendMail("Caja #8");
-        }
-        else if (Caja9.isSelected() == false && Caja9.isVisible()== true){
-            email.sendMail("Caja #9");
-        }
-        else if (Caja10.isSelected() == false && Caja10.isVisible()== true){
-            email.sendMail("Caja #10");
-        }
-        else if (Caja11.isSelected() == false && Caja11.isVisible()== true){
-            email.sendMail("Caja #11");
-        }
-        else if (Caja12.isSelected() == false && Caja12.isVisible()== true){
-            email.sendMail("Caja #12");
-        } 
-        else if (Caja13.isSelected() == false && Caja13.isVisible()== true){
-            email.sendMail("Caja #13");
-        }
-        else if (Caja14.isSelected() == false && Caja14.isVisible()== true){
-            email.sendMail("Caja #14");
-        }
-        else if (Caja15.isSelected() == false && Caja15.isVisible()== true){
-            email.sendMail("Caja #15");
+    public static void sendEmail(){
+        if (nextLista() == true){
+            String Nombre = VentanaPrincipal.Prioridad.getPersona().getNombre();
+            String Correo = VentanaPrincipal.Prioridad.getPersona().getCorreo();
+            System.out.println(Nombre + " "+ Correo);
+            if (Caja1.isSelected() == false && Caja1.isVisible()== true){
+                email.sendMail("Caja #1",Nombre,Correo);
+            }
+            else if (Caja2.isSelected() == false && Caja2.isVisible()== true){
+                email.sendMail("Caja #2",Nombre,Correo);
+            }
+            else if (Caja3.isSelected() == false && Caja3.isVisible()== true){
+                email.sendMail("Caja #3",Nombre,Correo);
+            }
+            else if (Caja4.isSelected() == false && Caja4.isVisible()== true){
+                email.sendMail("Caja #4",Nombre,Correo);
+            }
+            else if (Caja5.isSelected() == false && Caja5.isVisible()== true){
+                email.sendMail("Caja #5",Nombre,Correo);
+            }
+            else if (Caja6.isSelected() == false && Caja6.isVisible()== true){
+                email.sendMail("Caja #6",Nombre,Correo);
+            }
+            else if (Caja7.isSelected() == false && Caja7.isVisible()== true){
+                email.sendMail("Caja #7",Nombre,Correo);
+            }
+            else if (Caja8.isSelected() == false && Caja8.isVisible()== true){
+                email.sendMail("Caja #8",Nombre,Correo);
+            }
+            else if (Caja9.isSelected() == false && Caja9.isVisible()== true){
+                email.sendMail("Caja #9",Nombre,Correo);
+            }
+            else if (Caja10.isSelected() == false && Caja10.isVisible()== true){
+                email.sendMail("Caja #10",Nombre,Correo);
+            }
+            else if (Caja11.isSelected() == false && Caja11.isVisible()== true){
+                email.sendMail("Caja #11",Nombre,Correo);
+            }
+            else if (Caja12.isSelected() == false && Caja12.isVisible()== true){
+                email.sendMail("Caja #12",Nombre,Correo);
+            } 
+            else if (Caja13.isSelected() == false && Caja13.isVisible()== true){
+                email.sendMail("Caja #13",Nombre,Correo);
+            }
+            else if (Caja14.isSelected() == false && Caja14.isVisible()== true){
+                email.sendMail("Caja #14",Nombre,Correo);
+            }
+            else if (Caja15.isSelected() == false && Caja15.isVisible()== true){
+                email.sendMail("Caja #15",Nombre,Correo);
+            }
+            VentanaPrincipal.Prioridad.deque();
         }
     }
 }

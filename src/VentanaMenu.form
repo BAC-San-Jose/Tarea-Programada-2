@@ -31,7 +31,7 @@
                           <Component id="jButton4" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="jButton5" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="ventanaCliente" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="BtnTablaLista" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
                           <Component id="botonSalir" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
@@ -109,7 +109,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="ventanaCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="BtnTablaLista" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botonSalir" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -192,12 +192,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGraficosActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="BtnTablaLista">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="Tabla Lista"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnTablaListaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ventanaCliente">

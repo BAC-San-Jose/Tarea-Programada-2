@@ -19,26 +19,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         
-        Discapacitados = new ArrayList();
-        Embarazadas = new ArrayList();
-        Corporativos = new ArrayList();
-        Regulares = new ArrayList();
-        CorreoDiscapacitados = new ArrayList();
-        CorreoMayores = new ArrayList();
-        CorreoEmbarazadas = new ArrayList();
-        CorreoCorporativos = new ArrayList();
-        CorreoRegulares = new ArrayList();
-        Mayores = new ArrayList();
-        HorasDiscapacitados = new ArrayList();
-        HorasMayores = new ArrayList();
-        HorasEmbarazadas = new ArrayList();
-        HorasCorporativo = new ArrayList();
-        HorasRegulares = new ArrayList();
-        FechaDiscapacitados = new ArrayList();
-        FechaMayores = new ArrayList();
-        FechaEmbarazadas = new ArrayList();
-        FechaCorporativo = new ArrayList();
-        FechaRegulares = new ArrayList();
+        Discapacitados = new Queue();
+        Embarazadas = new Queue();
+        Corporativos = new Queue();
+        Regulares = new Queue();
+        Mayores = new Queue();
+        Prioridad = new Queue();
+        Clientes = new Queue();
         
         initComponents();
         this.setLocationRelativeTo(null);
@@ -249,7 +236,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         NombreVentana.setText("Sistema de Atención a Clientes BAC");
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("Imagenes/Logo BAC.gif")));
-        imagen = "Imagenes/Logo BAC.gif";
+        imagen = System.getProperty("user.dir")+"/Imagenes/Logo BAC.gif";
         this.setTitle("BAC San Jose");
         imagen = "/Imagenes/Logo BAC.gif";
         texto = "Sistema de Atención a Clientes BAC";
@@ -365,31 +352,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private static final FileNameExtensionFilter jpg = new FileNameExtensionFilter("Archivo JPG","jpg");
     private static final FileNameExtensionFilter png = new FileNameExtensionFilter("Archivo PNG","png");
     private static final FileNameExtensionFilter gif = new FileNameExtensionFilter("Archivo GIF","gif");
-    public static String imagen = "/Imagenes/Logo BAC.gif";
+    public static String imagen = System.getProperty("user.dir")+"/Imagenes/Logo BAC.gif";
     public static String texto = "Sistema de Atención a Clientes BAC";
     public static int cantidadCajas;
     
-    public static ArrayList Discapacitados;
-    public static ArrayList Mayores;
-    public static ArrayList Embarazadas;
-    public static ArrayList Corporativos;
-    public static ArrayList Regulares;
-    public static ArrayList CorreoDiscapacitados;
-    public static ArrayList CorreoMayores;
-    public static ArrayList CorreoEmbarazadas;
-    public static ArrayList CorreoCorporativos;
-    public static ArrayList CorreoRegulares;
-    public static ArrayList HorasDiscapacitados;
-    public static ArrayList HorasMayores;
-    public static ArrayList HorasEmbarazadas;
-    public static ArrayList HorasCorporativo;
-    public static ArrayList HorasRegulares;
-    public static ArrayList FechaDiscapacitados;
-    public static ArrayList FechaMayores;
-    public static ArrayList FechaEmbarazadas;
-    public static ArrayList FechaCorporativo;
-    public static ArrayList FechaRegulares;
-    private void setvisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public static Queue Discapacitados;
+    public static Queue Mayores;
+    public static Queue Embarazadas;
+    public static Queue Corporativos;
+    public static Queue Regulares;
+    public static Queue Prioridad;
+    public static Queue Clientes;
 }

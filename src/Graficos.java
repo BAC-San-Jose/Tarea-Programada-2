@@ -1,18 +1,8 @@
-
-import java.awt.Color;
 import java.awt.Image;
 import java.util.Calendar;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-
 import org.jfree.chart.*;
-
-import org.jfree.chart.renderer.xy.XYSplineRenderer;
-import org.jfree.chart.plot.XYPlot;
-import org.jfree.chart.axis.*;
-import org.jfree.data.xy.*;
-
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -492,6 +482,13 @@ public class Graficos extends javax.swing.JFrame {
             String clienteCorporativo = "Cliente Corporativo";
             String clienteRegular = "Cliente Regular";
             
+            for (int a= 0; a< VentanaPrincipal.Clientes.getSize(); a++){
+                String hora = VentanaPrincipal.Clientes.recorrerCola(a).getHora();
+                
+            
+            
+            
+            }
             data.addValue(8, clientes, discapacitado);
             data.addValue(1, clientes, adultoMayor);
             data.addValue(666, clientes, mujerEmbarazada);
@@ -748,5 +745,8 @@ public class Graficos extends javax.swing.JFrame {
             this.setTitle("BAC San Jose");
         }
     }
-
+    
+    //public int conversor (String hora){
+        
+    //}
 }
