@@ -392,6 +392,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
         VentanaPrincipal.Clientes.queue(cliente);
         EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
+        System.out.println("se mando mail");
         
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
