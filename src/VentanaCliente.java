@@ -28,12 +28,11 @@ public class VentanaCliente extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         setImagen();
         setTexto();
-        
         Reloj hora = new Reloj(jLabel1);
         hora.start();
         Calendar Cal= Calendar.getInstance();
-        String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
-        jLabel2.setText(fec);
+        String fech= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
+        jLabel2.setText(fech);
     }
 
     @SuppressWarnings("unchecked")
@@ -287,7 +286,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorDiscapacitados+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorDiscapacitados+"   "+NombreCliente.getText()+"   "+"Discapacitados"+"   "+Hora+"   "+Fecha+nl);
                     contadorDiscapacitados++;
                     
                     //Cerramos la conexion
@@ -304,7 +303,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorMayores+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorMayores+"   "+NombreCliente.getText()+"   "+"Mayores"+"   "+Hora+"   "+Fecha+nl);
                     contadorMayores++;
                     
                     //Cerramos la conexion
@@ -322,7 +321,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorEmbarazadas+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorEmbarazadas+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+"Embarazadas"+"   "+Hora+"   "+Fecha+nl);
                     contadorEmbarazadas++;
                     
                     //Cerramos la conexion
@@ -335,7 +334,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorCorporativos+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorCorporativos+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+"Corporativos"+"   "+Hora+"   "+Fecha+nl);
                     contadorCorporativos++;
                     
                     //Cerramos la conexion
@@ -347,7 +346,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorRegulares+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+Hora+nl);
+                    escribir.write(contadorRegulares+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+"Regulares"+"   "+Hora+"   "+Fecha+nl);
                     contadorRegulares++;
                     
                     //Cerramos la conexion
