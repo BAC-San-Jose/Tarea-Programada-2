@@ -342,6 +342,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                     escribir.write(contadorRegulares+"   "+NombreCliente.getText()+"   "+CorreoCliente.getText()+"   "+"Regulares"+"   "+Hora+"   "+Fecha+nl);
                     contadorRegulares++;
                     
+                    
+                    
                     //Cerramos la conexion
                 }
                 

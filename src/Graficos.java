@@ -1,5 +1,12 @@
 import java.awt.Image;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import org.jfree.chart.*;
@@ -457,6 +464,20 @@ public class Graficos extends javax.swing.JFrame {
         }
         
         //Grafico de HORA
+        File archivo=new File("Clientes/Discapacitados.txt");
+        try {
+            FileReader leerArchivo = new FileReader (archivo);
+            BufferedReader hora = new BufferedReader(leerArchivo);
+            System.out.println(hora.read());
+            for (int a =0; a <hora.read();a++){
+                String linea = hora.readLine();
+                System.out.println(linea);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         int am9 = 0;
             int am10 = 0;
