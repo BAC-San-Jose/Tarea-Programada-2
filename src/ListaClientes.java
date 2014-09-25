@@ -133,12 +133,14 @@ public class ListaClientes extends javax.swing.JFrame {
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         String [] Columnas={"Nombre","Correo","Prioridad","Hora","Fecha"};
         DefaultTableModel Clientes = new DefaultTableModel(null, Columnas);
-        String [] Cliente={VentanaPrincipal.Clientes.getPersona().getNombre(),
-            VentanaPrincipal.Clientes.getPersona().getCorreo(),
-            VentanaPrincipal.Clientes.getPersona().getTipoPrioridad(),
-            VentanaPrincipal.Clientes.getPersona().getHora(),
-            VentanaPrincipal.Clientes.getPersona().getFecha()};
-        Clientes.addRow(Cliente);
+        for (int a = 0; a< VentanaPrincipal.Clientes.getSize();a++){
+            String [] Cliente={VentanaPrincipal.Clientes.recorrerCola(a).getNombre(),
+                VentanaPrincipal.Clientes.recorrerCola(a).getCorreo(),
+                VentanaPrincipal.Clientes.recorrerCola(a).getTipoPrioridad(),
+                VentanaPrincipal.Clientes.recorrerCola(a).getHora(),
+                VentanaPrincipal.Clientes.recorrerCola(a).getFecha()};
+            Clientes.addRow(Cliente);
+        }
         TablaClientes.setModel(Clientes);
         TablaClientes.setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed

@@ -47,6 +47,11 @@ public class Queue{
         Clientes persona = arreglo [first];
         return persona;
     }
+    
+    public Clientes recorrerCola(int indice){
+        Clientes persona = arreglo [indice];
+        return persona;
+    }
 
     public boolean isEmpty(){
         if (this.size == 0){
