@@ -483,12 +483,14 @@ public class Graficos extends javax.swing.JFrame {
             String clienteRegular = "Cliente Regular";
             
             for (int a= 0; a< VentanaPrincipal.Clientes.getSize(); a++){
-                String hora = VentanaPrincipal.Clientes.recorrerCola(a).getHora();
-                
-            
-            
-            
+                String totalHora = VentanaPrincipal.Clientes.recorrerCola(a).getHora();
+                char array_caracteres [] = totalHora.toCharArray();
+                String hora = String.valueOf(array_caracteres[0])+String.valueOf(array_caracteres[1]);
+                System.out.println(hora);          
             }
+            
+            
+            
             data.addValue(8, clientes, discapacitado);
             data.addValue(1, clientes, adultoMayor);
             data.addValue(666, clientes, mujerEmbarazada);

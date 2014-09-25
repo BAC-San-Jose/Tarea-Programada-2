@@ -277,7 +277,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         try {
             if (CheckClienteD.isSelected()==true) {
                 //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-                File archivo=new File("Clientes\\Discapacitados.txt");
+                File archivo=new File("Clientes/Discapacitados.txt");
 
 
                 //Escribimos en el archivo con el metodo write
@@ -292,7 +292,7 @@ public class VentanaCliente extends javax.swing.JFrame {
             }
             else if (CheckClienteM.isSelected()==true) {
                     //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-                File archivo=new File("Clientes\\Mayores.txt");
+                File archivo=new File("Clientes/Mayores.txt");
 
 
                 //Escribimos en el archivo con el metodo write
@@ -308,7 +308,7 @@ public class VentanaCliente extends javax.swing.JFrame {
             else if (CheckClienteE.isSelected()==true) {
                 
                      //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
-                File archivo=new File("Clientes\\Embarazadas.txt");
+                File archivo=new File("Clientes/Embarazadas.txt");
 
 
                 //Escribimos en el archivo con el metodo write
@@ -322,7 +322,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 }
             }
             else if (CheckClienteC.isSelected()==true) {
-                File archivo=new File("Clientes\\Corporativos.txt");
+                File archivo=new File("Clientes/Corporativos.txt");
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
@@ -334,7 +334,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 }
             } 
             else if (CheckClienteR.isSelected()==true) {
-                File archivo=new File("Clientes\\Regulares.txt");
+                File archivo=new File("Clientes/Regulares.txt");
                 //Escribimos en el archivo con el metodo write
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
@@ -389,7 +389,7 @@ public class VentanaCliente extends javax.swing.JFrame {
         }
         Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
         VentanaPrincipal.Clientes.queue(cliente);
-        EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
+        //EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
         System.out.println("se mando mail");
         
     }//GEN-LAST:event_BotonRegistrarActionPerformed
