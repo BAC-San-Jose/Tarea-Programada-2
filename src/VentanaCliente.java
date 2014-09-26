@@ -1,17 +1,19 @@
 
 import java.awt.HeadlessException;
 import java.awt.Image;
-import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import java.sql.*;
-import static org.omg.CORBA.AnySeqHelper.insert;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.*;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import static org.omg.CORBA.AnySeqHelper.insert;
 
 
 public class VentanaCliente extends javax.swing.JFrame {
@@ -271,7 +273,13 @@ public class VentanaCliente extends javax.swing.JFrame {
         CheckClienteC.setSelected(false);
         CheckClienteR.setSelected(false);
     }//GEN-LAST:event_CheckClienteDActionPerformed
-
+    
+    public static boolean validateEmail(String email) {
+        Pattern pattern = Pattern.compile(PatronEmail);
+ 
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
         String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
         try {
@@ -350,51 +358,54 @@ public class VentanaCliente extends javax.swing.JFrame {
 
             }
             Nombre = NombreCliente.getText();
-            Correo = CorreoCliente.getText();
-            Hora = jLabel1.getText();
-            Fecha = jLabel2.getText();
-            String Prioridad = null;
-            if (CheckClienteD.isSelected()) {
-                Prioridad = "Discapacitados";
-                Clientes cliente = new Clientes (Nombre,Correo,"Discapacitados",Fecha,Hora);
-                VentanaPrincipal.Discapacitados.queue(cliente);
-                sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
-            } 
-            else if (CheckClienteM.isSelected()) {
-                Prioridad = "Mayores";
-                Clientes cliente = new Clientes (Nombre,Correo,"Mayores",Fecha,Hora);
-                VentanaPrincipal.Mayores.queue(cliente);
-                sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
-            } 
-            else if (CheckClienteE.isSelected()) {
-                Prioridad = "Embarazadas";
-                Clientes cliente = new Clientes (Nombre,Correo,"Embarazadas",Fecha,Hora);
-                VentanaPrincipal.Embarazadas.queue(cliente);
-                sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
-            } 
-            else if (CheckClienteC.isSelected()) {
-                Prioridad = "Corporativos";
-                Clientes cliente = new Clientes (Nombre,Correo,"Corporativos",Fecha,Hora);
-                VentanaPrincipal.Corporativos.queue(cliente);
-                sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
-            } 
-            else if (CheckClienteR.isSelected()) {
-                Prioridad = "Regulares";
-                Clientes cliente = new Clientes (Nombre,Correo,"Regulares",Fecha,Hora);
-                VentanaPrincipal.Regulares.queue(cliente);
-                sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
+            if(validateEmail(CorreoCliente.getText())==true){
+                Correo = CorreoCliente.getText();
+                Hora = jLabel1.getText();
+                Fecha = jLabel2.getText();
+                String Prioridad = null;
+                if (CheckClienteD.isSelected()) {
+                    Prioridad = "Discapacitados";
+                    Clientes cliente = new Clientes (Nombre,Correo,"Discapacitados",Fecha,Hora);
+                    VentanaPrincipal.Discapacitados.queue(cliente);
+                    sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
+                } 
+                else if (CheckClienteM.isSelected()) {
+                    Prioridad = "Mayores";
+                    Clientes cliente = new Clientes (Nombre,Correo,"Mayores",Fecha,Hora);
+                    VentanaPrincipal.Mayores.queue(cliente);
+                    sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
+                } 
+                else if (CheckClienteE.isSelected()) {
+                    Prioridad = "Embarazadas";
+                    Clientes cliente = new Clientes (Nombre,Correo,"Embarazadas",Fecha,Hora);
+                    VentanaPrincipal.Embarazadas.queue(cliente);
+                    sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
+                } 
+                else if (CheckClienteC.isSelected()) {
+                    Prioridad = "Corporativos";
+                    Clientes cliente = new Clientes (Nombre,Correo,"Corporativos",Fecha,Hora);
+                    VentanaPrincipal.Corporativos.queue(cliente);
+                    sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
+                } 
+                else if (CheckClienteR.isSelected()) {
+                    Prioridad = "Regulares";
+                    Clientes cliente = new Clientes (Nombre,Correo,"Regulares",Fecha,Hora);
+                    VentanaPrincipal.Regulares.queue(cliente);
+                    sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
+                }
+                Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
+                VentanaPrincipal.Clientes.queue(cliente);
+                //EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
+                System.out.println("se mando mail");
+                JOptionPane.showMessageDialog(null,"Datos Guardados");
             }
-            Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
-            VentanaPrincipal.Clientes.queue(cliente);
-            //EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
-            System.out.println("se mando mail");
-            JOptionPane.showMessageDialog(null,"Datos Guardados");
+            else{
+                JOptionPane.showMessageDialog(null,"Email NO valido");
+            }
         }
         catch(IOException | HeadlessException e){
             JOptionPane.showMessageDialog(null,"Error en los datos dados");
         }
-        
-        
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
     private void CheckClienteMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteMActionPerformed
@@ -505,6 +516,8 @@ public class VentanaCliente extends javax.swing.JFrame {
     public static int sizeEmbarazadas;
     public static int sizeCorporativos;
     public static int sizeRegulares;
+    public static final String PatronEmail="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+
+            "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
