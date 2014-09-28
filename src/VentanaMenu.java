@@ -37,8 +37,6 @@ public class VentanaMenu extends javax.swing.JFrame {
         BtnGraficos = new javax.swing.JButton();
         BtnTablaLista = new javax.swing.JButton();
         ventanaCliente = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         botonSalir = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
@@ -51,7 +49,8 @@ public class VentanaMenu extends javax.swing.JFrame {
         ListaCajas = new javax.swing.JComboBox();
         CheckDisponible = new javax.swing.JRadioButton();
         CheckOcupada = new javax.swing.JRadioButton();
-        BotonConfirmar = new javax.swing.JButton();
+        BotonComprobar = new javax.swing.JButton();
+        BotonActualizar = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -77,10 +76,6 @@ public class VentanaMenu extends javax.swing.JFrame {
                 ventanaClienteActionPerformed(evt);
             }
         });
-
-        jButton4.setText("jButton1");
-
-        jButton5.setText("jButton1");
 
         botonSalir.setText("Salir");
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -161,10 +156,17 @@ public class VentanaMenu extends javax.swing.JFrame {
             }
         });
 
-        BotonConfirmar.setText("Confirmar");
-        BotonConfirmar.addActionListener(new java.awt.event.ActionListener() {
+        BotonComprobar.setText("Comprobar");
+        BotonComprobar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonConfirmarActionPerformed(evt);
+                BotonComprobarActionPerformed(evt);
+            }
+        });
+
+        BotonActualizar.setText("Actualizar");
+        BotonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonActualizarActionPerformed(evt);
             }
         });
 
@@ -175,77 +177,76 @@ public class VentanaMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ventanaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(BtnGraficos, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3))
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnTablaLista, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BtnGraficos, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BtnTablaLista, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(96, 96, 96)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(90, 90, 90)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CheckOcupada)
-                                    .addComponent(CheckDisponible)))))
+                        .addComponent(ventanaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(BotonConfirmar)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BotonActualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BotonComprobar))
+                            .addComponent(CheckDisponible))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CheckOcupada)
+                .addGap(160, 160, 160))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnGraficos)
                     .addComponent(jLabel5)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ventanaCliente)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BtnTablaLista)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonSalir)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CheckDisponible))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CheckOcupada)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CheckOcupada)
+                            .addComponent(CheckDisponible))
                         .addGap(18, 18, 18)
-                        .addComponent(BotonConfirmar)
-                        .addGap(56, 56, 56))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonComprobar)
+                            .addComponent(BotonActualizar))
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(ventanaCliente)
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnTablaLista)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonSalir)
+                        .addContainerGap())))
         );
 
         pack();
@@ -277,7 +278,11 @@ public class VentanaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnTablaListaActionPerformed
 
     private void ListaCajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaCajasActionPerformed
-        Indice=(int)ListaCajas.getSelectedItem();
+        
+    }//GEN-LAST:event_ListaCajasActionPerformed
+
+    private void BotonComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComprobarActionPerformed
+        Indice=(int)ListaCajas.getSelectedIndex();
         try {
             if (VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="0"){
                 CheckOcupada.setSelected(false);
@@ -290,30 +295,22 @@ public class VentanaMenu extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_ListaCajasActionPerformed
-
-    private void BotonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonConfirmarActionPerformed
-        Indice=(int)ListaCajas.getSelectedItem();
-        if (CheckOcupada.isSelected()==true){
-            VentanaPrincipal.DisponibilidadCajas.Modificar("1", Indice);
-            nextLista();
-        }
-        else if(CheckDisponible.isSelected()==true){
-            VentanaPrincipal.DisponibilidadCajas.Modificar("0", Indice);
-        }
-        
-    }//GEN-LAST:event_BotonConfirmarActionPerformed
+    }//GEN-LAST:event_BotonComprobarActionPerformed
 
     private void BotonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonActualizarActionPerformed
+        Caja = 1;
         for(int i =0;i<=VentanaPrincipal.DisponibilidadCajas.getSize()-1;i++){
             try {
                 if (VentanaPrincipal.DisponibilidadCajas.getElemento(i)=="0"){
-                    //if(nextLista()==true){
-                        sendEmail();
+                    if(VentanaPrincipal.Discapacitados.getSize()==1 || VentanaPrincipal.Mayores.getSize()==1 || VentanaPrincipal.Embarazadas.getSize()==1 || VentanaPrincipal.Corporativos.getSize()==1 || VentanaPrincipal.Regulares.getSize()==1){
+                        sendEmail(i+1);
                         VentanaPrincipal.DisponibilidadCajas.Modificar("1",i);
+                        CheckDisponible.setSelected(false);
+                        CheckOcupada.setSelected(true);
                         break;
-                    //}
+                    }
                 }
+                Caja++;
             } catch (Exception ex) {
                 Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -322,12 +319,25 @@ public class VentanaMenu extends javax.swing.JFrame {
 
     private void CheckDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckDisponibleActionPerformed
         CheckOcupada.setSelected(false);
+        confirmar();
     }//GEN-LAST:event_CheckDisponibleActionPerformed
 
     private void CheckOcupadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckOcupadaActionPerformed
         CheckDisponible.setSelected(false);
+        confirmar();
     }//GEN-LAST:event_CheckOcupadaActionPerformed
 
+    public void confirmar (){
+        Indice=(int)ListaCajas.getSelectedIndex();
+        if (CheckOcupada.isSelected()==true){
+            System.out.println(Indice);
+            VentanaPrincipal.DisponibilidadCajas.Modificar("1", Indice);
+        }
+        else if(CheckDisponible.isSelected()==true){
+            VentanaPrincipal.DisponibilidadCajas.Modificar("0", Indice);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -364,7 +374,8 @@ public class VentanaMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonConfirmar;
+    private javax.swing.JButton BotonActualizar;
+    private javax.swing.JButton BotonComprobar;
     private javax.swing.JButton BtnGraficos;
     private javax.swing.JButton BtnTablaLista;
     private javax.swing.JRadioButton CheckDisponible;
@@ -373,8 +384,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     private javax.swing.JLabel NombreVentana;
     private javax.swing.JButton botonSalir;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -385,7 +394,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     private javax.swing.JButton ventanaCliente;
     // End of variables declaration//GEN-END:variables
     public static EmailClientes email;
-    public String Caja;
+    public int Caja=1;
     public int Indice;
     
     public void setImagen(){
@@ -451,13 +460,15 @@ public class VentanaMenu extends javax.swing.JFrame {
         return true;
     }
   
-    public void sendEmail(){
+    public boolean sendEmail(int caja){
         if (nextLista() == true){
             String Nombre = VentanaPrincipal.Prioridad.getPersona().getNombre();
             String Correo = VentanaPrincipal.Prioridad.getPersona().getCorreo();
             System.out.println(Nombre + " "+ Correo);
-            email.sendMail("Caja #",Nombre,Correo);
+            email.sendMail("Caja #"+caja,Nombre,Correo);
             VentanaPrincipal.Prioridad.deque();
+            return true;
         }
+        return false;
     }     
 }

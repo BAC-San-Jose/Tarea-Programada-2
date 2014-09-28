@@ -18,7 +18,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form Ventana
      */
     public VentanaPrincipal() {
-        System.out.println(imagen);
         Discapacitados = new Queue();
         Embarazadas = new Queue();
         Corporativos = new Queue();
@@ -262,9 +261,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         //Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("\\Imagenes\\wallpaper-1133041.jpg")));
         JFileChooser elemento = new JFileChooser();  //Crea un objeto de dialogo JFileChooser
-        elemento.setFileFilter(jpg);
         elemento.setFileFilter(png);
         elemento.setFileFilter(gif);
+        elemento.setFileFilter(jpg);
         int option = elemento.showOpenDialog(this);  // Abre la ventana en dialogo
         if (option == JFileChooser.APPROVE_OPTION){
             try {
