@@ -395,9 +395,10 @@ public class VentanaCliente extends javax.swing.JFrame {
                 }
                 Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
                 VentanaPrincipal.Clientes.queue(cliente);
-                //EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
                 System.out.println("se mando mail");
                 JOptionPane.showMessageDialog(null,"Datos Guardados");
+                EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
+                hide();
             }
             else{
                 JOptionPane.showMessageDialog(null,"Email NO valido");

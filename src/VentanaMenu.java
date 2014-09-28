@@ -1,4 +1,3 @@
-
 import java.awt.Image;
 import java.util.Calendar;
 import java.util.logging.Level;
@@ -6,7 +5,7 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-public class VentanaMenu extends javax.swing.JFrame {
+public class VentanaMenu extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form VentanaMenu
@@ -27,6 +26,10 @@ public class VentanaMenu extends javax.swing.JFrame {
         String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
         jLabel2.setText(fec);
         email = new EmailClientes("tecbanco67@gmail.com","AAAaaa123",VentanaPrincipal.imagen,VentanaPrincipal.imagen,"Es su turno");
+        CheckDisponible.setSelected(true);
+        confirmar();
+        actualizar = new Thread(this);
+        actualizar.start();
     }
 
     @SuppressWarnings("unchecked")
@@ -49,8 +52,6 @@ public class VentanaMenu extends javax.swing.JFrame {
         ListaCajas = new javax.swing.JComboBox();
         CheckDisponible = new javax.swing.JRadioButton();
         CheckOcupada = new javax.swing.JRadioButton();
-        BotonComprobar = new javax.swing.JButton();
-        BotonActualizar = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -156,62 +157,45 @@ public class VentanaMenu extends javax.swing.JFrame {
             }
         });
 
-        BotonComprobar.setText("Comprobar");
-        BotonComprobar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonComprobarActionPerformed(evt);
-            }
-        });
-
-        BotonActualizar.setText("Actualizar");
-        BotonActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonActualizarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtnGraficos, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BtnTablaLista, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(96, 96, 96)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ventanaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(BotonActualizar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BotonComprobar))
-                            .addComponent(CheckDisponible))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CheckOcupada)
-                .addGap(160, 160, 160))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(BtnGraficos, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel5)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(BtnTablaLista, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ListaCajas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(96, 96, 96)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ventanaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(82, 82, 82)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(82, 82, 82)
+                                .addComponent(CheckDisponible)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(CheckOcupada)
+                        .addGap(160, 160, 160))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,11 +218,7 @@ public class VentanaMenu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CheckOcupada)
                             .addComponent(CheckDisponible))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BotonComprobar)
-                            .addComponent(BotonActualizar))
-                        .addGap(56, 56, 56))
+                        .addGap(97, 97, 97))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(ventanaCliente)
@@ -280,42 +260,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     private void ListaCajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaCajasActionPerformed
         
     }//GEN-LAST:event_ListaCajasActionPerformed
-
-    private void BotonComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonComprobarActionPerformed
-        Indice=(int)ListaCajas.getSelectedIndex();
-        try {
-            if (VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="0"){
-                CheckOcupada.setSelected(false);
-                CheckDisponible.setSelected(true);
-            }
-            else if(VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="1"){
-                CheckOcupada.setSelected(true);
-                CheckDisponible.setSelected(false);
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_BotonComprobarActionPerformed
-
-    private void BotonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonActualizarActionPerformed
-        Caja = 1;
-        for(int i =0;i<=VentanaPrincipal.DisponibilidadCajas.getSize()-1;i++){
-            try {
-                if (VentanaPrincipal.DisponibilidadCajas.getElemento(i)=="0"){
-                    if(VentanaPrincipal.Discapacitados.getSize()==1 || VentanaPrincipal.Mayores.getSize()==1 || VentanaPrincipal.Embarazadas.getSize()==1 || VentanaPrincipal.Corporativos.getSize()==1 || VentanaPrincipal.Regulares.getSize()==1){
-                        sendEmail(i+1);
-                        VentanaPrincipal.DisponibilidadCajas.Modificar("1",i);
-                        CheckDisponible.setSelected(false);
-                        CheckOcupada.setSelected(true);
-                        break;
-                    }
-                }
-                Caja++;
-            } catch (Exception ex) {
-                Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }//GEN-LAST:event_BotonActualizarActionPerformed
 
     private void CheckDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckDisponibleActionPerformed
         CheckOcupada.setSelected(false);
@@ -374,8 +318,6 @@ public class VentanaMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotonActualizar;
-    private javax.swing.JButton BotonComprobar;
     private javax.swing.JButton BtnGraficos;
     private javax.swing.JButton BtnTablaLista;
     private javax.swing.JRadioButton CheckDisponible;
@@ -396,6 +338,7 @@ public class VentanaMenu extends javax.swing.JFrame {
     public static EmailClientes email;
     public int Caja=1;
     public int Indice;
+    public Thread actualizar;
     
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
@@ -470,5 +413,45 @@ public class VentanaMenu extends javax.swing.JFrame {
             return true;
         }
         return false;
-    }     
+    }
+    
+    public void run(){
+        while(true){
+            try {
+                Indice=(int)ListaCajas.getSelectedIndex();
+                try {
+                    if (VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="0"){
+                        CheckOcupada.setSelected(false);
+                        CheckDisponible.setSelected(true);
+                    }
+                    else if(VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="1"){
+                        CheckOcupada.setSelected(true);
+                        CheckDisponible.setSelected(false);
+                    }
+                } catch (Exception ex) {
+                    Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                Thread.sleep(1000);
+                Caja = 1;
+                for(int i =0;i<=VentanaPrincipal.DisponibilidadCajas.getSize()-1;i++){
+                    try {
+                        if (VentanaPrincipal.DisponibilidadCajas.getElemento(i)=="0"){
+                            if(VentanaPrincipal.Discapacitados.getSize()==1 || VentanaPrincipal.Mayores.getSize()==1 || VentanaPrincipal.Embarazadas.getSize()==1 || VentanaPrincipal.Corporativos.getSize()==1 || VentanaPrincipal.Regulares.getSize()==1){
+                                sendEmail(i+1);
+                                VentanaPrincipal.DisponibilidadCajas.Modificar("1",i);
+                                CheckDisponible.setSelected(false);
+                                CheckOcupada.setSelected(true);
+                                break;
+                            }
+                        }
+                        Caja++;
+                    } catch (Exception ex) {
+                        Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            } catch (InterruptedException ex) {
+                Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 }
