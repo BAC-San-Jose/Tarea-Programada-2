@@ -34,10 +34,8 @@ class ArrayList {
     public void add (String Dato) {
 
 	if (this.size < this.maxSize) {
-            System.out.println(this.size);
             this.arreglo [this.size] = Dato;
             this.size ++;
-            System.out.println(this.size);
 	}
 	else {
             System.out.println ("Error");
@@ -60,7 +58,6 @@ class ArrayList {
     public String getElemento (int indice) throws Exception {
                         
 	if ((indice >= 0 ) && (indice <= this.size)){
-            System.out.println(this.arreglo [indice]);
             return this.arreglo [indice];
         }
         if (indice == 0) {

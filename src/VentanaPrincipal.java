@@ -18,7 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form Ventana
      */
     public VentanaPrincipal() {
-        
+        System.out.println(imagen);
         Discapacitados = new Queue();
         Embarazadas = new Queue();
         Corporativos = new Queue();
