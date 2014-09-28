@@ -258,7 +258,19 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_BtnTablaListaActionPerformed
 
     private void ListaCajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaCajasActionPerformed
-        
+        Indice=(int)ListaCajas.getSelectedIndex();
+        try {
+            if (VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="0"){
+                CheckDisponible.setSelected(true);
+                CheckOcupada.setSelected(false);
+            }
+            else if(VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="1"){
+                CheckDisponible.setSelected(false);
+                CheckOcupada.setSelected(true);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_ListaCajasActionPerformed
 
     private void CheckDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckDisponibleActionPerformed
