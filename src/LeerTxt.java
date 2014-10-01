@@ -14,7 +14,7 @@ import java.io.FileReader;
  */
 public class LeerTxt {
     
-    public String Hora(String direccion) {
+    public String HoraEmbarazadas(String direccion) {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -60,12 +60,13 @@ public class LeerTxt {
       }
         return null;
     }
-    public String Fecha(String direccion) {
+    public String FechaEmbarazadas(String direccion) {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
       int contador;
       String variable = "";
+      String Fecha;
       int leer=5;
       int size = 0;
       
@@ -108,7 +109,7 @@ public class LeerTxt {
     }
     public static void main(String [] args){
     LeerTxt prueba = new LeerTxt();
-    prueba.Fecha("Embarazadas");
+    prueba.FechaEmbarazadas("Embarazadas");
     }
 }
 
