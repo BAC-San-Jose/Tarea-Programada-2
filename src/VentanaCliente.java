@@ -282,6 +282,7 @@ public class VentanaCliente extends javax.swing.JFrame {
     }
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
         String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
+        System.out.print(Hora);
         try {
             if (CheckClienteD.isSelected()==true) {
                 //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
@@ -292,7 +293,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorDiscapacitados+nl+NombreCliente.getText()+nl+"Discapacitados"+nl+Hora+nl+Fecha+nl);
+                    escribir.write(contadorDiscapacitados+nl+NombreCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     contadorDiscapacitados++;
                     
                     //Cerramos la conexion
@@ -307,7 +308,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorMayores+nl+NombreCliente.getText()+nl+"Mayores"+nl+Hora+nl+Fecha+nl);
+                    escribir.write(contadorMayores+nl+NombreCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     contadorMayores++;
                     
                     //Cerramos la conexion
@@ -323,7 +324,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorEmbarazadas+nl+NombreCliente.getText()+nl+"Embarazadas"+nl+Hora+nl+Fecha+nl);
+                    escribir.write(contadorEmbarazadas+nl+NombreCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     contadorEmbarazadas++;
                     
                     //Cerramos la conexion
@@ -335,7 +336,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorCorporativos+nl+NombreCliente.getText()+nl+"Coorporativos"+nl+Hora+nl+Fecha+nl);
+                    escribir.write(contadorCorporativos+nl+NombreCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     contadorCorporativos++;
                     
                     //Cerramos la conexion
@@ -347,7 +348,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorRegulares+nl+NombreCliente.getText()+nl+"Regulares"+nl+Hora+nl+Fecha+nl);
+                    escribir.write(contadorRegulares+nl+NombreCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     contadorRegulares++;
                     
                     

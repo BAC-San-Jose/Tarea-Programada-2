@@ -10,23 +10,30 @@ import java.io.FileReader;
  */
 /**
  *
- * @author Kevin Matamoros
+ * 
  */
 public class LeerTxt {
-    
-    public String HoraEmbarazadas() {
+      int contador;
+      String detener = null;
+      String comparar;
+      int leer=3;
+      int nueve=0;
+      int diez=0;
+      int once=0;
+      int una=0;
+      int dos=0;
+      int tres=0;
+      int cuatro=0;
+    public String Horas(String categoria) {
+      String nl = System.getProperty("line.separator");
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
-      int contador;
-      String variable = "";
-      int leer=4;
-      int size = 0;
       
       try {
          // Apertura del fichero y creacion de BufferedReader para poder
          // hacer una lectura comoda (disponer del metodo readLine()).
-         archivo = new File ("Clientes/Embarazadas.txt");
+         archivo = new File ("Clientes/"+categoria+".txt");
          fr = new FileReader (archivo);
          br = new BufferedReader(fr);
  
@@ -35,14 +42,48 @@ public class LeerTxt {
          contador =0;
          while((linea=br.readLine())!=null)
              if (leer == contador){
-                 linea = linea.substring(0, 2);
-                 System.out.print(linea);
+                 
+                 comparar = linea.substring(0, 2);
+                 //System.out.print(linea);
+                 if ("09".equals(comparar)){
+                     nueve += 1;
+                     System.out.print("nueve  "+ nueve+nl);
+                 }
+                 if ("10".equals(comparar)){
+                     diez += 1;
+                     System.out.print(diez);
+                }
+                 if ("11".equals(comparar)){
+                     once += 1;
+                     System.out.print(once);
+                }
+                 if ("01".equals(comparar)){
+                     una += 1;
+                     System.out.print(una);
+                }
+                 if ("02".equals(comparar)){
+                     dos += 1;
+                     System.out.print(dos);
+                }
+                 if ("03".equals(comparar)){
+                     tres += 1;
+                     System.out.print("tres  "+tres);
+                }
+                 if ("04".equals(comparar)){
+                     cuatro += 1;
+                     System.out.print(cuatro);
+                }
                  contador +=1;
-                 leer = leer + 6;
+                 leer = leer + 5;
+                 //linea = "";
              }
              else{
                  contador += 1;
              }
+        
+        //LeerTxt llamando = new LeerTxt();
+        //llamando.Horas("Regulares");
+        
       }
       catch(Exception e){
          e.printStackTrace();
@@ -60,7 +101,7 @@ public class LeerTxt {
       }
         return null;
     }
-    public String FechaEmbarazadas() {
+    public String Fecha() {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -102,107 +143,15 @@ public class LeerTxt {
                fr.close();     
             }                  
          }catch (Exception e2){ 
-            e2.printStackTrace();
-         }
-      }
-        return null;
-    }
-    public String HoraMayores() {
-      File archivo = null;
-      FileReader fr = null;
-      BufferedReader br = null;
-      int contador;
-      String variable = "";
-      int leer=4;
-      int size = 0;
-      
-      try {
-         // Apertura del fichero y creacion de BufferedReader para poder
-         // hacer una lectura comoda (disponer del metodo readLine()).
-         archivo = new File ("Clientes/Mayores.txt");
-         fr = new FileReader (archivo);
-         br = new BufferedReader(fr);
- 
-         // Lectura del fichero
-         String linea;
-         contador =0;
-         while((linea=br.readLine())!=null)
-             if (leer == contador){
-                 linea = linea.substring(0, 2);
-                 System.out.print(linea);
-                 contador +=1;
-                 leer = leer + 6;
-             }
-             else{
-                 contador += 1;
-             }
-      }
-      catch(Exception e){
-         e.printStackTrace();
-      }finally{
-         // En el finally cerramos el fichero, para asegurarnos
-         // que se cierra tanto si todo va bien como si salta 
-         // una excepcion.
-         try{                    
-            if( null != fr ){   
-               fr.close();     
-            }                  
-         }catch (Exception e2){ 
-            e2.printStackTrace();
-         }
-      }
-        return null;
-    }
-    public String FechaMayores() {
-      File archivo = null;
-      FileReader fr = null;
-      BufferedReader br = null;
-      int contador;
-      String variable = "";
-      String Fecha;
-      int leer=5;
-      int size = 0;
-      
-      try {
-         // Apertura del fichero y creacion de BufferedReader para poder
-         // hacer una lectura comoda (disponer del metodo readLine()).
-         archivo = new File ("Clientes/Mayores.txt");
-         fr = new FileReader (archivo);
-         br = new BufferedReader(fr);
- 
-         // Lectura del fichero
-         String linea;
-         contador =0;
-         while((linea=br.readLine())!=null)
-             if (leer == contador){
-                 linea = linea.substring(0, 2);
-                 System.out.print(linea);
-                 contador +=1;
-                 leer = leer + 6;
-             }
-             else{
-                 contador += 1;
-             }
-      }
-      catch(Exception e){
-         e.printStackTrace();
-      }finally{
-         // En el finally cerramos el fichero, para asegurarnos
-         // que se cierra tanto si todo va bien como si salta 
-         // una excepcion.
-         try{                    
-            if( null != fr ){   
-               fr.close();     
-            }                  
-         }catch (Exception e2){ 
-            e2.printStackTrace();
+           e2.printStackTrace();
          }
       }
         return null;
     }
     public static void main(String [] args){
     LeerTxt prueba = new LeerTxt();
-    prueba.FechaEmbarazadas();
+    prueba.Horas("Embarazadas");
+    prueba.Horas("Regulares");
     }
 }
 
