@@ -37,6 +37,7 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JSeparator();
         BtnGraficos = new javax.swing.JButton();
         BtnTablaLista = new javax.swing.JButton();
         ventanaCliente = new javax.swing.JButton();
@@ -345,6 +346,7 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton ventanaCliente;
     // End of variables declaration//GEN-END:variables
     public static EmailClientes email;

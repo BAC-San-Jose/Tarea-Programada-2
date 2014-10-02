@@ -76,6 +76,7 @@ public class Graficos extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,7 +158,7 @@ public class Graficos extends javax.swing.JFrame {
         capaPastelTipo.setLayout(capaPastelTipoLayout);
         capaPastelTipoLayout.setHorizontalGroup(
             capaPastelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addGap(0, 967, Short.MAX_VALUE)
         );
         capaPastelTipoLayout.setVerticalGroup(
             capaPastelTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,48 +316,54 @@ public class Graficos extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(254, 254, 254));
         jLabel7.setText("fecha");
 
+        jLabel8.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(254, 254, 254));
+        jLabel8.setText("GRAFICOS");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(radioPastelTipo)
-                        .addGap(33, 33, 33)
-                        .addComponent(radioBarrasTipo))
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(radioPastelHora)
-                        .addGap(33, 33, 33)
-                        .addComponent(radioBarrasHora))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(radioPastelDia)
-                                    .addComponent(botonGraficar))
+                                .addGap(13, 13, 13)
+                                .addComponent(radioPastelTipo)
+                                .addGap(33, 33, 33)
+                                .addComponent(radioBarrasTipo))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(radioPastelHora)
+                                .addGap(33, 33, 33)
+                                .addComponent(radioBarrasHora))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botonGraficar)
                                         .addGap(35, 35, 35)
                                         .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(radioBarrasDia))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4))
-                                .addGap(22, 22, 22)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel4))
+                                        .addGap(22, 22, 22)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel7)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radioPastelDia)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(radioBarrasDia))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel8)))
                 .addGap(39, 39, 39)
                 .addComponent(capas)
                 .addContainerGap())
@@ -370,6 +377,9 @@ public class Graficos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(capas)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 91, Short.MAX_VALUE)
+                        .addComponent(jLabel8)
+                        .addGap(62, 62, 62)
                         .addComponent(jLabel1)
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -383,11 +393,11 @@ public class Graficos extends javax.swing.JFrame {
                             .addComponent(radioBarrasHora))
                         .addGap(30, 30, 30)
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(radioPastelDia)
                             .addComponent(radioBarrasDia))
-                        .addGap(29, 29, 29)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(botonGraficar)
                             .addComponent(botonSalir))
@@ -398,8 +408,7 @@ public class Graficos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(0, 1, Short.MAX_VALUE)))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
 
@@ -464,7 +473,7 @@ public class Graficos extends javax.swing.JFrame {
         }
         
         //Grafico de HORA
-        File archivo=new File("Clientes/Discapacitados.txt");
+        /*File archivo=new File("Clientes/Discapacitados.txt");
         try {
             FileReader leerArchivo = new FileReader (archivo);
             BufferedReader hora = new BufferedReader(leerArchivo);
@@ -514,21 +523,20 @@ public class Graficos extends javax.swing.JFrame {
                     pm4++;
                 }
             }
-            
+            */
+        LeerTxt datos = new LeerTxt();
+            datos.Horas();
         if (radioBarrasHora.isSelected()){
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             
             String clientes = "Clientes";
-            
-            
-
-            data.addValue(am9, "9 am","");
-            data.addValue(am10, "10 am","");
-            data.addValue(am11, "11 am","");
-            data.addValue(pm1, "1 pm","");
-            data.addValue(pm2, "2 pm","");
-            data.addValue(pm3, "3 pm","");
-            data.addValue(pm4, "4 pm","");
+            data.addValue(datos.nueve, "9 am","");
+            data.addValue(datos.diez, "10 am","");
+            data.addValue(datos.once, "11 am","");
+            data.addValue(datos.una, "1 pm","");
+            data.addValue(datos.dos, "2 pm","");
+            data.addValue(datos.tres, "3 pm","");
+            data.addValue(datos.cuatro, "4 pm","");
             
             chart = ChartFactory.createBarChart("Cantidad Clientes por Hora", "Tipo", "Cantidad", 
                     data, 
@@ -540,17 +548,18 @@ public class Graficos extends javax.swing.JFrame {
         }
         if (radioPastelHora.isSelected()){
             DefaultPieDataset data = new DefaultPieDataset();
-            data.setValue("9 am", am9);
-            data.setValue("10 am", am10);
-            data.setValue("11 am", am11);
-            data.setValue("1 pm", pm1);
-            data.setValue("2 pm", pm2);
-            data.setValue("3 pm", pm3);
-            data.setValue("4 pm", pm4);
+            data.setValue("9 am", datos.nueve);
+            data.setValue("10 am", datos.diez);
+            data.setValue("11 am", datos.once);
+            data.setValue("1 pm", datos.una);
+            data.setValue("2 pm", datos.dos);
+            data.setValue("3 pm", datos.tres);
+            data.setValue("4 pm", datos.cuatro);
 
             chart = ChartFactory.createPieChart3D("Clientes por Hora", data, true, true, true);
             
         }
+        //Cantidad por dias!!!
         if (radioBarrasDia.isSelected()){
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             
@@ -562,11 +571,37 @@ public class Graficos extends javax.swing.JFrame {
             String clienteCorporativo = "Cliente Corporativo";
             String clienteRegular = "Cliente Regular";
             
-            data.addValue(555, clientes, discapacitado);
-            data.addValue(321, clientes, adultoMayor);
-            data.addValue(108, clientes, mujerEmbarazada);
-            data.addValue(889, clientes, clienteCorporativo);
-            data.addValue(333, clientes, clienteRegular);
+            data.addValue(34, clientes, "1");
+            data.addValue(33, clientes, "2");
+            data.addValue(22, clientes, "3");
+            data.addValue(222, clientes, "4");
+            data.addValue(443, clientes, "5");
+            data.addValue(435, clientes, "6");
+            data.addValue(8, clientes, "7");
+            data.addValue(87, clientes, "8");
+            data.addValue(575, clientes, "9");
+            data.addValue(757, clientes, "10");
+            data.addValue(35, clientes, "11");
+            data.addValue(43, clientes, "12");
+            data.addValue(3, clientes, "13");
+            data.addValue(88, clientes, "14");
+            data.addValue(77, clientes, "15");
+            data.addValue(55, clientes, "16");
+            data.addValue(66, clientes, "17");
+            data.addValue(4, clientes, "18");
+            data.addValue(545, clientes, "19");
+            data.addValue(53, clientes, "20");
+            data.addValue(64, clientes, "21");
+            data.addValue(22, clientes, "22");
+            data.addValue(66, clientes, "23");
+            data.addValue(87, clientes, "24");
+            data.addValue(9, clientes, "25");
+            data.addValue(8, clientes, "26");
+            data.addValue(2, clientes, "27");
+            data.addValue(44, clientes, "28");
+            data.addValue(55, clientes, "29");
+            data.addValue(35, clientes, "30");
+            data.addValue(3, clientes, "31");
             
             chart = ChartFactory.createBarChart("Cantidad Clientes por Dia", "Tipo", "Cantidad", 
                     data, 
@@ -589,7 +624,7 @@ public class Graficos extends javax.swing.JFrame {
         }
         
     panel = new ChartPanel (chart);
-    panel.setBounds(0, 0, 540, 349);
+    panel.setBounds(0, 0, 980, 600);
     
     if (radioBarrasTipo.isSelected()){
         capaBarrasTipo.add(panel);
@@ -753,6 +788,7 @@ public class Graficos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton radioBarrasDia;
     private javax.swing.JRadioButton radioBarrasHora;
