@@ -430,19 +430,6 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     public void run(){
         while(true){
             try {
-                Indice=(int)ListaCajas.getSelectedIndex();
-                try {
-                    if (VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="0"){
-                        CheckOcupada.setSelected(false);
-                        CheckDisponible.setSelected(true);
-                    }
-                    else if(VentanaPrincipal.DisponibilidadCajas.getElemento(Indice)=="1"){
-                        CheckOcupada.setSelected(true);
-                        CheckDisponible.setSelected(false);
-                    }
-                } catch (Exception ex) {
-                    Logger.getLogger(VentanaMenu.class.getName()).log(Level.SEVERE, null, ex);
-                }
                 Thread.sleep(1000);
                 Caja = 1;
                 for(int i =0;i<=VentanaPrincipal.DisponibilidadCajas.getSize()-1;i++){
