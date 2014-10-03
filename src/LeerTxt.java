@@ -97,7 +97,8 @@ public class LeerTxt {
             br = new BufferedReader(fr);
             while((linea=br.readLine())!=null)
                 if (leerHora == contador){
-                    comparar = linea.substring(0, 2);
+                    comparar = linea.substring(0,2);
+                    
                     if ("09".equals(comparar)){
                         nueve++;
                         System.out.println(nueve);
@@ -108,20 +109,21 @@ public class LeerTxt {
                     if ("11".equals(comparar)){
                         once++;
                    }
-                    if ("01".equals(comparar)){
+                    if ("13".equals(comparar)){
                         una++;
                    }
-                    if ("02".equals(comparar)){
+                    if ("14".equals(comparar)){
                         dos++;
                    }
-                    if ("03".equals(comparar)){
+                    if ("15".equals(comparar)){
                         tres++;
                    }
-                    if ("04".equals(comparar)){
+                    if ("16".equals(comparar)){
                         cuatro++;
                    }
+                    
                     contador +=1;
-                    leerHora = leerHora + 6;
+                    leerHora = leerHora + 5;
                 }
 
                 else{
@@ -182,14 +184,15 @@ public class LeerTxt {
             while((linea=br.readLine())!=null){
                 if (leerFecha == contador){
                     errorFecha = linea.substring(1,2);
+                   System.out.println(errorFecha);
                     if (errorFecha.equals("/")){
                         comparar = linea.substring(0, 1);
-                        
                         if ("1".equals(comparar)){
                             d1++;
                         }
                         if ("2".equals(comparar)){
                             d2++;
+                            System.out.println("Dos: "+d2);
                         }
                         if ("3".equals(comparar)){
                             d3++;
@@ -295,7 +298,7 @@ public class LeerTxt {
             }
             
          }
-         
+         System.out.println(d2);
       }
       catch(Exception e){
          e.printStackTrace();

@@ -526,6 +526,17 @@ public class Graficos extends javax.swing.JFrame {
             */
         LeerTxt datos = new LeerTxt();
             datos.Horas();
+        LeerTxt datos1 = new LeerTxt();
+        try {
+            datos1.Fecha();
+        } catch (IOException ex) {
+            Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            datos.Fecha();
+        } catch (IOException ex) {
+            Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if (radioBarrasHora.isSelected()){
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             
@@ -565,37 +576,37 @@ public class Graficos extends javax.swing.JFrame {
             
             String clientes = "Clientes";
             
-            data.addValue(datos.d1, clientes, "Dia 1");
-            data.addValue(datos.d2, clientes, "Dia 2");
-            data.addValue(datos.d3, clientes, "Dia 3");
-            data.addValue(datos.d4, clientes, "Dia 4");
-            data.addValue(datos.d5, clientes, "Dia 5");
-            data.addValue(datos.d6, clientes, "Dia 6");
-            data.addValue(datos.d7, clientes, "Dia 7");
-            data.addValue(datos.d8, clientes, "Dia 8");
-            data.addValue(datos.d9, clientes, "Dia 9");
-            data.addValue(datos.d10, clientes, "Dia 10");
-            data.addValue(datos.d11, clientes, "Dia 11");
-            data.addValue(datos.d12, clientes, "Dia 12");
-            data.addValue(datos.d13, clientes, "Dia 13");
-            data.addValue(datos.d14, clientes, "Dia 14");
-            data.addValue(datos.d15, clientes, "Dia 15");
-            data.addValue(datos.d16, clientes, "Dia 16");
-            data.addValue(datos.d17, clientes, "Dia 17");
-            data.addValue(datos.d18, clientes, "Dia 18");
-            data.addValue(datos.d19, clientes, "Dia 19");
-            data.addValue(datos.d20, clientes, "Dia 20");
-            data.addValue(datos.d21, clientes, "Dia 21");
-            data.addValue(datos.d22, clientes, "Dia 22");
-            data.addValue(datos.d23, clientes, "Dia 23");
-            data.addValue(datos.d24, clientes, "Dia 24");
-            data.addValue(datos.d25, clientes, "Dia 25");
-            data.addValue(datos.d26, clientes, "Dia 26");
-            data.addValue(datos.d27, clientes, "Dia 27");
-            data.addValue(datos.d28, clientes, "Dia 28");
-            data.addValue(datos.d29, clientes, "Dia 29");
-            data.addValue(datos.d30, clientes, "Dia 30");
-            data.addValue(datos.d31, clientes, "Dia 31");
+            data.addValue(datos1.d1, clientes, "Dia 1");
+            data.addValue(datos1.d2, clientes, "Dia 2");
+            data.addValue(datos1.d3, clientes, "Dia 3");
+            data.addValue(datos1.d4, clientes, "Dia 4");
+            data.addValue(datos1.d5, clientes, "Dia 5");
+            data.addValue(datos1.d6, clientes, "Dia 6");
+            data.addValue(datos1.d7, clientes, "Dia 7");
+            data.addValue(datos1.d8, clientes, "Dia 8");
+            data.addValue(datos1.d9, clientes, "Dia 9");
+            data.addValue(datos1.d10, clientes, "Dia 10");
+            data.addValue(datos1.d11, clientes, "Dia 11");
+            data.addValue(datos1.d12, clientes, "Dia 12");
+            data.addValue(datos1.d13, clientes, "Dia 13");
+            data.addValue(datos1.d14, clientes, "Dia 14");
+            data.addValue(datos1.d15, clientes, "Dia 15");
+            data.addValue(datos1.d16, clientes, "Dia 16");
+            data.addValue(datos1.d17, clientes, "Dia 17");
+            data.addValue(datos1.d18, clientes, "Dia 18");
+            data.addValue(datos1.d19, clientes, "Dia 19");
+            data.addValue(datos1.d20, clientes, "Dia 20");
+            data.addValue(datos1.d21, clientes, "Dia 21");
+            data.addValue(datos1.d22, clientes, "Dia 22");
+            data.addValue(datos1.d23, clientes, "Dia 23");
+            data.addValue(datos1.d24, clientes, "Dia 24");
+            data.addValue(datos1.d25, clientes, "Dia 25");
+            data.addValue(datos1.d26, clientes, "Dia 26");
+            data.addValue(datos1.d27, clientes, "Dia 27");
+            data.addValue(datos1.d28, clientes, "Dia 28");
+            data.addValue(datos1.d29, clientes, "Dia 29");
+            data.addValue(datos1.d30, clientes, "Dia 30");
+            data.addValue(datos1.d31, clientes, "Dia 31");
             
             chart = ChartFactory.createBarChart("Cantidad Clientes por Dia", "Tipo", "Cantidad", 
                     data, 
