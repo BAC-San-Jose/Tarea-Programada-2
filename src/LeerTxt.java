@@ -133,14 +133,10 @@ public class LeerTxt {
                     contador +=1;
                     leerHora += 6;
                 }
-
                 else{
                     contador += 1;
                 }
          }
-        //LeerTxt llamando = new LeerTxt();
-        //llamando.Horas("Regulares");
-        
       }
       catch(Exception e){
          e.printStackTrace();

@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import static javax.swing.text.html.HTML.Tag.HEAD;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
@@ -540,7 +541,6 @@ public class Graficos extends javax.swing.JFrame {
         if (radioBarrasHora.isSelected()){
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             
-            String clientes = "Clientes";
             data.addValue(datos.nueve, "9 am","");
             data.addValue(datos.diez, "10 am","");
             data.addValue(datos.once, "11 am","");
