@@ -20,6 +20,7 @@ public class LeerTxt {
       String comparar1;
       int leerHora=4;
       int leerFecha=5;
+      int leerTipo=0;
       int nueve=0;
       int diez=0;
       int once=0;
@@ -28,6 +29,7 @@ public class LeerTxt {
       int tres=0;
       int cuatro=0;
       int a;
+      int b;
       int Fecha=0;
       int d1=0;
       int d2=0;
@@ -60,8 +62,15 @@ public class LeerTxt {
       int d29=0;
       int d30=0;
       int d31=0;
+      int Embarazadas=0;
+      int Coperativos=0;
+      int Regulares=0;
+      int Discapacitados=0;
+      int Mayores=0;
       String errorFecha;
+      String errorTipo;
       String categoria;
+      String CompararTipo;
       
     public void Horas() {
       File archivo = null;
@@ -101,7 +110,6 @@ public class LeerTxt {
                     
                     if ("09".equals(comparar)){
                         nueve++;
-                        System.out.println(nueve);
                     }
                     if ("10".equals(comparar)){
                         diez++;
@@ -123,7 +131,7 @@ public class LeerTxt {
                    }
                     
                     contador +=1;
-                    leerHora = leerHora + 5;
+                    leerHora += 6;
                 }
 
                 else{
@@ -162,20 +170,20 @@ public class LeerTxt {
          // Lectura del fichero
          String linea;
          
-         for (a=0;a<5;a++){
-             if (a==0){
+         for (b=0;b<5;b++){
+             if (b==0){
                  categoria="Embarazadas";
              }
-             if (a==1){
+             if (b==1){
                  categoria="Regulares";
              }
-             if (a==2){
+             if (b==2){
                  categoria="Discapacitados";
              }
-             if (a==3){
+             if (b==3){
                  categoria="Mayores";
              }
-             if (a==4){
+             if (b==4){
                  categoria="Corporativos";
              }
             archivo = new File ("Clientes/"+categoria+".txt");
@@ -184,7 +192,6 @@ public class LeerTxt {
             while((linea=br.readLine())!=null){
                 if (leerFecha == contador){
                     errorFecha = linea.substring(1,2);
-                   System.out.println(errorFecha);
                     if (errorFecha.equals("/")){
                         comparar = linea.substring(0, 1);
                         if ("1".equals(comparar)){
@@ -192,10 +199,10 @@ public class LeerTxt {
                         }
                         if ("2".equals(comparar)){
                             d2++;
-                            System.out.println("Dos: "+d2);
                         }
                         if ("3".equals(comparar)){
                             d3++;
+                            System.out.println("Tres: "+d3);
                         }
                         if ("4".equals(comparar)){
                             d4++;
@@ -295,10 +302,8 @@ public class LeerTxt {
                     
                     
                 }
-            }
-            
+            }  
          }
-         System.out.println(d2);
       }
       catch(Exception e){
          e.printStackTrace();
@@ -315,10 +320,98 @@ public class LeerTxt {
          }
       }
     }
-   
+    public void Tipo() {
+      File archivo = null;
+      FileReader fr = null;
+      BufferedReader br = null;
+      
+      try {
+         // Apertura del fichero y creacion de BufferedReader para poder
+         // hacer una lectura comoda (disponer del metodo readLine()).
+         
+ 
+         // Lectura del fichero
+         String linea;
+         
+         for (a=0;a<5;a++){
+             if (a==0){
+                 categoria="Embarazadas";
+             }
+             if (a==1){
+                 categoria="Regulares";
+             }
+             if (a==2){
+                 categoria="Discapacitados";
+             }
+             if (a==3){
+                 categoria="Mayores";
+             }
+             if (a==4){
+                 categoria="Corporativos";
+             }
+            archivo = new File ("Clientes/"+categoria+".txt");
+            fr = new FileReader (archivo);
+            br = new BufferedReader(fr);
+            while((linea=br.readLine())!=null)
+                if (leerTipo == contador){
+                    //errorTipo=linea.substring(0,1);
+                    //if (errorTipo.equals("")){
+                    //System.out.println("prueba 1");
+                    //}
+                    comparar = linea.substring(0,1);
+                    CompararTipo=linea.substring(0,1);
+                    
+                    if (a==0 && Embarazadas < Integer.parseInt(comparar)){
+                        Embarazadas=Integer.parseInt(comparar);
+                        System.out.println(Embarazadas);
+                    }
+                    if (a==1 && Regulares < Integer.parseInt(comparar)){
+                        Regulares=Integer.parseInt(comparar);
+                        System.out.println(Regulares);
+                    }
+                    if (a==2 && Discapacitados < Integer.parseInt(comparar)){
+                        Discapacitados=Integer.parseInt(comparar);
+                        System.out.println(Discapacitados);
+                    }
+                    if (a==3 && Mayores < Integer.parseInt(comparar)){
+                        Mayores=Integer.parseInt(comparar);
+                        System.out.println(Mayores);
+                    }
+                    if (a==4 && Coperativos < Integer.parseInt(comparar)){
+                        Coperativos=Integer.parseInt(comparar);
+                        System.out.println(Coperativos);
+                    }
+                    
+                    contador +=1;
+                    leerTipo += 6;
+                }
+
+                else{
+                    contador += 1;
+                }
+         }
+        //LeerTxt llamando = new LeerTxt();
+        //llamando.Horas("Regulares");
+        
+      }
+      catch(Exception e){
+         e.printStackTrace();
+      }finally{
+         // En el finally cerramos el fichero, para asegurarnos
+         // que se cierra tanto si todo va bien como si salta 
+         // una excepcion.
+         try{                    
+            if( null != fr ){   
+               fr.close();     
+            }                  
+         }catch (Exception e2){ 
+            e2.printStackTrace();
+         }
+      }
+    }
     public static void main(String [] args) throws IOException{
     LeerTxt prueba = new LeerTxt();
-    prueba.Fecha();
+    prueba.Tipo();
     }
 }
 

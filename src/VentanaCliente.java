@@ -293,7 +293,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorDiscapacitados+nl+NombreCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                    escribir.write(contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     contadorDiscapacitados++;
                     
                     //Cerramos la conexion
@@ -507,11 +507,11 @@ public class VentanaCliente extends javax.swing.JFrame {
     private String Correo;
     private String Hora;
     private String Fecha;
-    public static int contadorDiscapacitados = 0;
-    public static int contadorMayores = 0;
-    public static int contadorEmbarazadas = 0;
-    public static int contadorCorporativos = 0;
-    public static int contadorRegulares = 0;
+    public static int contadorDiscapacitados = 1;
+    public static int contadorMayores = 1;
+    public static int contadorEmbarazadas = 1;
+    public static int contadorCorporativos = 1;
+    public static int contadorRegulares = 1;
     public EmailClientes EnvioEmail;
     public static int sizeDiscapacitados;
     public static int sizeMayores;

@@ -618,11 +618,38 @@ public class Graficos extends javax.swing.JFrame {
         }
         if (radioPastelDia.isSelected()){
             DefaultPieDataset data = new DefaultPieDataset();
-            data.setValue("Discapacitado", 250);
-            data.setValue("Adulto Mayor", 88);
-            data.setValue("Mujer Embarazada", 22);
-            data.setValue("Cliente Corporativo", 16);
-            data.setValue("Cliente Regular", 24);
+            data.setValue("Dia 1", datos1.d1);
+            data.setValue("Dia 2", datos1.d2);
+            data.setValue("Dia 3", datos1.d3);
+            data.setValue("Dia 4", datos1.d4);
+            data.setValue("Dia 5", datos1.d5);
+            data.setValue("Dia 6", datos1.d6);
+            data.setValue("Dia 7", datos1.d7);
+            data.setValue("Dia 8", datos1.d8);
+            data.setValue("Dia 9", datos1.d9);
+            data.setValue("Dia 10", datos1.d10);
+            data.setValue("Dia 11", datos1.d11);
+            data.setValue("Dia 12", datos1.d12);
+            data.setValue("Dia 13", datos1.d13);
+            data.setValue("Dia 14", datos1.d14);
+            data.setValue("Dia 15", datos1.d15);
+            data.setValue("Dia 16", datos1.d16);
+            data.setValue("Dia 17", datos1.d17);
+            data.setValue("Dia 18", datos1.d18);
+            data.setValue("Dia 19", datos1.d19);
+            data.setValue("Dia 20", datos1.d20);
+            data.setValue("Dia 21", datos1.d21);
+            data.setValue("Dia 22", datos1.d22);
+            data.setValue("Dia 23", datos1.d23);
+            data.setValue("Dia 24", datos1.d24);
+            data.setValue("Dia 25", datos1.d25);
+            data.setValue("Dia 26", datos1.d26);
+            data.setValue("Dia 27", datos1.d27);
+            data.setValue("Dia 28", datos1.d28);
+            data.setValue("Dia 29", datos1.d29);
+            data.setValue("Dia 30", datos1.d30);
+            data.setValue("Dia 31", datos1.d31);
+            
 
             chart = ChartFactory.createPieChart3D("Cantidad Clientes por Dia", data, true, true, true);
             
