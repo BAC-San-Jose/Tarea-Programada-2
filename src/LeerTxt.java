@@ -121,7 +121,7 @@ public class LeerTxt {
                         cuatro++;
                    }
                     contador +=1;
-                    leerHora = leerHora + 5;
+                    leerHora = leerHora + 6;
                 }
 
                 else{
@@ -181,7 +181,7 @@ public class LeerTxt {
             br = new BufferedReader(fr);
             while((linea=br.readLine())!=null){
                 if (leerFecha == contador){
-                    errorFecha = linea.substring(1, 2);
+                    errorFecha = linea.substring(1,2);
                     if (errorFecha.equals("/")){
                         comparar = linea.substring(0, 1);
                         
@@ -283,7 +283,7 @@ public class LeerTxt {
                          }
                          
                     }
-                    leerFecha+=5;
+                    leerFecha+=6;
                     contador += 1;
                 }
                 
