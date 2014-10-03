@@ -62,7 +62,8 @@ public class LeerTxt {
       int d31=0;
       String errorFecha;
       String categoria;
-    public String Horas() {
+      
+    public void Horas() {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -99,6 +100,7 @@ public class LeerTxt {
                     comparar = linea.substring(0, 2);
                     if ("09".equals(comparar)){
                         nueve++;
+                        System.out.println(nueve);
                     }
                     if ("10".equals(comparar)){
                         diez++;
@@ -144,11 +146,10 @@ public class LeerTxt {
             e2.printStackTrace();
          }
       }
-        return null;
     }
     
     
-   public String Fecha() throws FileNotFoundException, IOException {
+   public void Fecha() throws FileNotFoundException, IOException {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -180,11 +181,8 @@ public class LeerTxt {
             br = new BufferedReader(fr);
             while((linea=br.readLine())!=null){
                 if (leerFecha == contador){
-                    
                     errorFecha = linea.substring(1, 2);
-                    System.out.println(errorFecha);
-                    //System.out.println(errorFecha);
-                    if (errorFecha=="/"){
+                    if (errorFecha.equals("/")){
                         comparar = linea.substring(0, 1);
                         
                         if ("1".equals(comparar)){
@@ -192,7 +190,6 @@ public class LeerTxt {
                         }
                         if ("2".equals(comparar)){
                             d2++;
-                            
                         }
                         if ("3".equals(comparar)){
                             d3++;
@@ -284,14 +281,19 @@ public class LeerTxt {
                          if ("31".equals(comparar1)){
                             d31++;
                          }
+                         
                     }
+                    leerFecha+=5;
+                    contador += 1;
                 }
+                
                 else{
                     contador += 1;
-                    leerFecha+=5;
+                    
                     
                 }
-            }     
+            }
+            
          }
          
       }
@@ -309,7 +311,6 @@ public class LeerTxt {
             e2.printStackTrace();
          }
       }
-        return null;
     }
    
     public static void main(String [] args) throws IOException{
