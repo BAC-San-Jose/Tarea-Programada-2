@@ -101,7 +101,6 @@ public class LeerTxt {
                     
                     if ("09".equals(comparar)){
                         nueve++;
-                        System.out.println(nueve);
                     }
                     if ("10".equals(comparar)){
                         diez++;
@@ -121,18 +120,13 @@ public class LeerTxt {
                     if ("16".equals(comparar)){
                         cuatro++;
                    }
-                    
-                    contador +=1;
-                    leerHora = leerHora + 5;
+                    contador += 1;
+                    leerHora += 6;
                 }
-
                 else{
                     contador += 1;
                 }
          }
-        //LeerTxt llamando = new LeerTxt();
-        //llamando.Horas("Regulares");
-        
       }
       catch(Exception e){
          e.printStackTrace();
@@ -184,7 +178,6 @@ public class LeerTxt {
             while((linea=br.readLine())!=null){
                 if (leerFecha == contador){
                     errorFecha = linea.substring(1,2);
-                   System.out.println(errorFecha);
                     if (errorFecha.equals("/")){
                         comparar = linea.substring(0, 1);
                         if ("1".equals(comparar)){
@@ -192,7 +185,6 @@ public class LeerTxt {
                         }
                         if ("2".equals(comparar)){
                             d2++;
-                            System.out.println("Dos: "+d2);
                         }
                         if ("3".equals(comparar)){
                             d3++;
@@ -298,7 +290,6 @@ public class LeerTxt {
             }
             
          }
-         System.out.println(d2);
       }
       catch(Exception e){
          e.printStackTrace();
