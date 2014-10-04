@@ -62,11 +62,7 @@ public class LeerTxt {
       int d29=0;
       int d30=0;
       int d31=0;
-      int Embarazadas=0;
-      int Coperativos=0;
-      int Regulares=0;
-      int Discapacitados=0;
-      int Mayores=0;
+      int resultado = 0;
       String errorFecha;
       String errorTipo;
       String categoria;
@@ -316,76 +312,30 @@ public class LeerTxt {
          }
       }
     }
-    public void Tipo() {
+    public int Tipo(String tipo) {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
       
       try {
-         // Apertura del fichero y creacion de BufferedReader para poder
-         // hacer una lectura comoda (disponer del metodo readLine()).
+        String linea;
+        archivo = new File ("Clientes/"+tipo+".txt");
+        System.out.println(tipo);
+        fr = new FileReader (archivo);
+        br = new BufferedReader(fr);
+        while((linea=br.readLine())!=null){
+            if (leerTipo == contador){
+                comparar = linea.substring(0,1);
+                resultado=Integer.parseInt(comparar);
+                System.out.println(resultado);
+                contador +=1;
+                leerTipo += 6;
+            }
+            else{
+                contador += 1;
+            }
+        }
          
- 
-         // Lectura del fichero
-         String linea;
-         
-         for (a=0;a<5;a++){
-             if (a==0){
-                 categoria="Embarazadas";
-             }
-             if (a==1){
-                 categoria="Regulares";
-             }
-             if (a==2){
-                 categoria="Discapacitados";
-             }
-             if (a==3){
-                 categoria="Mayores";
-             }
-             if (a==4){
-                 categoria="Corporativos";
-             }
-            archivo = new File ("Clientes/"+categoria+".txt");
-            fr = new FileReader (archivo);
-            br = new BufferedReader(fr);
-            while((linea=br.readLine())!=null)
-                if (leerTipo == contador){
-                    //errorTipo=linea.substring(0,1);
-                    //if (errorTipo.equals("")){
-                    //System.out.println("prueba 1");
-                    //}
-                    comparar = linea.substring(0,1);
-                    CompararTipo=linea.substring(0,1);
-                    
-                    if (a==0 && Embarazadas < Integer.parseInt(comparar)){
-                        Embarazadas=Integer.parseInt(comparar);
-                        System.out.println(Embarazadas);
-                    }
-                    if (a==1 && Regulares < Integer.parseInt(comparar)){
-                        Regulares=Integer.parseInt(comparar);
-                        System.out.println(Regulares);
-                    }
-                    if (a==2 && Discapacitados < Integer.parseInt(comparar)){
-                        Discapacitados=Integer.parseInt(comparar);
-                        System.out.println(Discapacitados);
-                    }
-                    if (a==3 && Mayores < Integer.parseInt(comparar)){
-                        Mayores=Integer.parseInt(comparar);
-                        System.out.println(Mayores);
-                    }
-                    if (a==4 && Coperativos < Integer.parseInt(comparar)){
-                        Coperativos=Integer.parseInt(comparar);
-                        System.out.println(Coperativos);
-                    }
-                    
-                    contador +=1;
-                    leerTipo += 6;
-                }
-
-                else{
-                    contador += 1;
-                }
-         }
         //LeerTxt llamando = new LeerTxt();
         //llamando.Horas("Regulares");
         
@@ -404,10 +354,12 @@ public class LeerTxt {
             e2.printStackTrace();
          }
       }
+      return resultado;
     }
+    
     public static void main(String [] args) throws IOException{
     LeerTxt prueba = new LeerTxt();
-    prueba.Tipo();
+    prueba.Tipo("Discapacitados");
     }
 }
 

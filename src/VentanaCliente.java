@@ -293,8 +293,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    contadorDiscapacitados++;
+                    escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                    
                     
                     //Cerramos la conexion
                 }
@@ -308,8 +308,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    contadorMayores++;
+                    escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+
                     
                     //Cerramos la conexion
                 }
@@ -324,8 +324,8 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    contadorEmbarazadas++;
+                    escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+
                     
                     //Cerramos la conexion
                 }
@@ -336,8 +336,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    contadorCorporativos++;
+                    escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     
                     //Cerramos la conexion
                 }
@@ -348,11 +347,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                 try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
                         FileWriter escribir = new FileWriter(archivo,true)) {
                     //Escribimos en el archivo con el metodo write
-                    escribir.write(contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    contadorRegulares++;
-                    
-                    
-                    
+                    escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                     //Cerramos la conexion
                 }
                 
@@ -368,31 +363,26 @@ public class VentanaCliente extends javax.swing.JFrame {
                     Prioridad = "Discapacitados";
                     Clientes cliente = new Clientes (Nombre,Correo,"Discapacitados",Fecha,Hora);
                     VentanaPrincipal.Discapacitados.queue(cliente);
-                    sizeDiscapacitados = VentanaPrincipal.Discapacitados.getTotalSize();
                 } 
                 else if (CheckClienteM.isSelected()) {
                     Prioridad = "Mayores";
                     Clientes cliente = new Clientes (Nombre,Correo,"Mayores",Fecha,Hora);
                     VentanaPrincipal.Mayores.queue(cliente);
-                    sizeMayores = VentanaPrincipal.Mayores.getTotalSize();
                 } 
                 else if (CheckClienteE.isSelected()) {
                     Prioridad = "Embarazadas";
                     Clientes cliente = new Clientes (Nombre,Correo,"Embarazadas",Fecha,Hora);
                     VentanaPrincipal.Embarazadas.queue(cliente);
-                    sizeEmbarazadas = VentanaPrincipal.Embarazadas.getTotalSize();
                 } 
                 else if (CheckClienteC.isSelected()) {
                     Prioridad = "Corporativos";
                     Clientes cliente = new Clientes (Nombre,Correo,"Corporativos",Fecha,Hora);
                     VentanaPrincipal.Corporativos.queue(cliente);
-                    sizeCorporativos = VentanaPrincipal.Corporativos.getTotalSize();
                 } 
                 else if (CheckClienteR.isSelected()) {
                     Prioridad = "Regulares";
                     Clientes cliente = new Clientes (Nombre,Correo,"Regulares",Fecha,Hora);
                     VentanaPrincipal.Regulares.queue(cliente);
-                    sizeRegulares = VentanaPrincipal.Regulares.getTotalSize();
                 }
                 Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
                 VentanaPrincipal.Clientes.queue(cliente);
@@ -507,17 +497,7 @@ public class VentanaCliente extends javax.swing.JFrame {
     private String Correo;
     private String Hora;
     private String Fecha;
-    public static int contadorDiscapacitados = 1;
-    public static int contadorMayores = 1;
-    public static int contadorEmbarazadas = 1;
-    public static int contadorCorporativos = 1;
-    public static int contadorRegulares = 1;
     public EmailClientes EnvioEmail;
-    public static int sizeDiscapacitados;
-    public static int sizeMayores;
-    public static int sizeEmbarazadas;
-    public static int sizeCorporativos;
-    public static int sizeRegulares;
     public static final String PatronEmail="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+
             "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     

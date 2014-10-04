@@ -447,11 +447,11 @@ public class Graficos extends javax.swing.JFrame {
             String clienteCorporativo = "Cliente Corporativo";
             String clienteRegular = "Cliente Regular";
             
-            data.addValue(VentanaCliente.sizeDiscapacitados, clientes, discapacitado);
-            data.addValue(VentanaCliente.sizeMayores, clientes, adultoMayor);
-            data.addValue(VentanaCliente.sizeEmbarazadas, clientes, mujerEmbarazada);
-            data.addValue(VentanaCliente.sizeCorporativos, clientes, clienteCorporativo);
-            data.addValue(VentanaCliente.sizeRegulares, clientes, clienteRegular);
+            data.addValue(VentanaPrincipal.contadorDiscapacitados, clientes, discapacitado);
+            data.addValue(VentanaPrincipal.contadorMayores, clientes, adultoMayor);
+            data.addValue(VentanaPrincipal.contadorEmbarazadas, clientes, mujerEmbarazada);
+            data.addValue(VentanaPrincipal.contadorCorporativos, clientes, clienteCorporativo);
+            data.addValue(VentanaPrincipal.contadorRegulares, clientes, clienteRegular);
             
             chart = ChartFactory.createBarChart("Cantidad Clientes por Tipo", "Tipo", "Cantidad", 
                     data, 
@@ -463,11 +463,11 @@ public class Graficos extends javax.swing.JFrame {
         }
         if (radioPastelTipo.isSelected()){
             DefaultPieDataset data = new DefaultPieDataset();
-            data.setValue("Discapacitado", VentanaCliente.sizeDiscapacitados);
-            data.setValue("Adulto Mayor", VentanaCliente.sizeMayores);
-            data.setValue("Mujer Embarazada", VentanaCliente.sizeEmbarazadas);
-            data.setValue("Cliente Corporativo", VentanaCliente.sizeCorporativos);
-            data.setValue("Cliente Regular", VentanaCliente.sizeRegulares);
+            data.setValue("Discapacitado", VentanaPrincipal.contadorDiscapacitados);
+            data.setValue("Adulto Mayor", VentanaPrincipal.contadorMayores);
+            data.setValue("Mujer Embarazada", VentanaPrincipal.contadorEmbarazadas);
+            data.setValue("Cliente Corporativo", VentanaPrincipal.contadorCorporativos);
+            data.setValue("Cliente Regular", VentanaPrincipal.contadorRegulares);
 
             chart = ChartFactory.createPieChart3D("Cantidad Clientes por Tipo", data, true, true, true);
             

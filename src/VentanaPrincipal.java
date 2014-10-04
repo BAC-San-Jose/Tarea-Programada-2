@@ -40,6 +40,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Calendar Cal= Calendar.getInstance();
         String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
         jLabel2.setText(fec);
+        archivo = new LeerTxt();
+        contadorDiscapacitados = archivo.Tipo("Discapacitados");
+        contadorMayores = archivo.Tipo("Mayores");
+        contadorEmbarazadas = archivo.Tipo("Embarazadas");
+        contadorCorporativos = archivo.Tipo("Corporativos");
+        contadorRegulares = archivo.Tipo("Regulares");
     }
 
     /**
@@ -371,4 +377,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static Queue Regulares;
     public static Queue Prioridad;
     public static Queue Clientes;
+    public static int contadorDiscapacitados;
+    public static int contadorMayores;
+    public static int contadorEmbarazadas;
+    public static int contadorCorporativos;
+    public static int contadorRegulares;
+    LeerTxt archivo;
 }
