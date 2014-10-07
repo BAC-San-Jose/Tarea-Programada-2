@@ -63,6 +63,12 @@ public class LeerTxt {
       int d30=0;
       int d31=0;
       int resultado = 0;
+      int resultadoembarazadas = 0;
+      int resultadoregulares = 0;
+      int resultadodiscapacitados = 0;
+      int resultadomayores = 0;
+      int resultadocorporativos = 0;
+      String tipo;
       String errorFecha;
       String errorTipo;
       String categoria;
@@ -194,7 +200,6 @@ public class LeerTxt {
                         }
                         if ("3".equals(comparar)){
                             d3++;
-                            System.out.println("Tres: "+d3);
                         }
                         if ("4".equals(comparar)){
                             d4++;
@@ -312,33 +317,65 @@ public class LeerTxt {
          }
       }
     }
-    public int Tipo(String tipo) {
+public int Tipo() {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
       
       try {
         String linea;
-        archivo = new File ("Clientes/"+tipo+".txt");
-        System.out.println(tipo);
-        fr = new FileReader (archivo);
-        br = new BufferedReader(fr);
-        while((linea=br.readLine())!=null){
-            if (leerTipo == contador){
-                comparar = linea.substring(0,1);
-                resultado=Integer.parseInt(comparar);
-                System.out.println(resultado);
-                contador +=1;
-                leerTipo += 6;
+        for (a=0;a<5;a++){
+             if (a==0){
+                 tipo="Embarazadas";
+             }
+             if (a==1){
+                 tipo="Regulares";
+             }
+             if (a==2){
+                 tipo="Discapacitados";
+             }
+             if (a==3){
+                 tipo="Mayores";
+             }
+             if (a==4){
+                 tipo="Corporativos";
+             }
+                 
+            archivo = new File ("Clientes/"+tipo+".txt");
+            System.out.println(tipo);
+            fr = new FileReader (archivo);
+            br = new BufferedReader(fr);
+            while((linea=br.readLine())!=null){
+                System.out.println("Empezo");
+                if (leerTipo == contador){
+                    errorTipo =String.valueOf(String.valueOf(leerTipo).length());
+                    System.out.println(errorTipo);
+                    if (a==0){
+                        resultadoembarazadas+=1;
+                    }
+                    if (a==1){
+                        resultadoregulares+=1;
+                    }
+                    if (a==2){
+                        resultadodiscapacitados+=1;
+                    }
+                    if (a==3){
+                        resultadomayores+=1;
+                    }
+                    if (a==4){
+                        resultadocorporativos+=1;
+                    }
+                    contador +=1;
+                    leerTipo +=6;
+
+                }
+                else{
+                    contador += 1;
+                }
             }
-            else{
-                contador += 1;
-            }
+            System.out.println("Fin");
         }
-         
-        //LeerTxt llamando = new LeerTxt();
-        //llamando.Horas("Regulares");
-        
+
       }
       catch(Exception e){
          e.printStackTrace();
@@ -354,12 +391,12 @@ public class LeerTxt {
             e2.printStackTrace();
          }
       }
-      return resultado;
+      //return resultado;
+          return 0;
     }
     
     public static void main(String [] args) throws IOException{
     LeerTxt prueba = new LeerTxt();
-    prueba.Tipo("Discapacitados");
+    prueba.Tipo();
     }
 }
-

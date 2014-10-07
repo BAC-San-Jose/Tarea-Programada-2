@@ -436,6 +436,9 @@ public class Graficos extends javax.swing.JFrame {
         JFreeChart chart = null;        
         
         //Grafico de Cantidad de clientes por TIPO
+        LeerTxt datos2 = new LeerTxt();
+            datos2.Tipo();
+        
         if (radioBarrasTipo.isSelected()){
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             
@@ -447,11 +450,11 @@ public class Graficos extends javax.swing.JFrame {
             String clienteCorporativo = "Cliente Corporativo";
             String clienteRegular = "Cliente Regular";
             
-            data.addValue(VentanaPrincipal.contadorDiscapacitados, clientes, discapacitado);
-            data.addValue(VentanaPrincipal.contadorMayores, clientes, adultoMayor);
-            data.addValue(VentanaPrincipal.contadorEmbarazadas, clientes, mujerEmbarazada);
-            data.addValue(VentanaPrincipal.contadorCorporativos, clientes, clienteCorporativo);
-            data.addValue(VentanaPrincipal.contadorRegulares, clientes, clienteRegular);
+            data.addValue(datos2.resultadodiscapacitados, clientes, discapacitado);
+            data.addValue(datos2.resultadomayores, clientes, adultoMayor);
+            data.addValue(datos2.resultadoembarazadas, clientes, mujerEmbarazada);
+            data.addValue(datos2.resultadocorporativos, clientes, clienteCorporativo);
+            data.addValue(datos2.resultadoregulares, clientes, clienteRegular);
             
             chart = ChartFactory.createBarChart("Cantidad Clientes por Tipo", "Tipo", "Cantidad", 
                     data, 
