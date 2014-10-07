@@ -466,11 +466,11 @@ public class Graficos extends javax.swing.JFrame {
         }
         if (radioPastelTipo.isSelected()){
             DefaultPieDataset data = new DefaultPieDataset();
-            data.setValue("Discapacitado", VentanaPrincipal.contadorDiscapacitados);
-            data.setValue("Adulto Mayor", VentanaPrincipal.contadorMayores);
-            data.setValue("Mujer Embarazada", VentanaPrincipal.contadorEmbarazadas);
-            data.setValue("Cliente Corporativo", VentanaPrincipal.contadorCorporativos);
-            data.setValue("Cliente Regular", VentanaPrincipal.contadorRegulares);
+            data.setValue("Discapacitado", datos2.resultadodiscapacitados);
+            data.setValue("Adulto Mayor", datos2.resultadomayores);
+            data.setValue("Mujer Embarazada", datos2.resultadoembarazadas);
+            data.setValue("Cliente Corporativo", datos2.resultadocorporativos);
+            data.setValue("Cliente Regular", datos2.resultadoregulares);
 
             chart = ChartFactory.createPieChart3D("Cantidad Clientes por Tipo", data, true, true, true);
             

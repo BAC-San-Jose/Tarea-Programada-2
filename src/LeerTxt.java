@@ -342,14 +342,11 @@ public int Tipo() {
              }
                  
             archivo = new File ("Clientes/"+tipo+".txt");
-            System.out.println(tipo);
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
             while((linea=br.readLine())!=null){
-                System.out.println("Empezo");
                 if (leerTipo == contador){
                     errorTipo =String.valueOf(String.valueOf(leerTipo).length());
-                    System.out.println(errorTipo);
                     if (a==0){
                         resultadoembarazadas+=1;
                     }
@@ -373,7 +370,6 @@ public int Tipo() {
                     contador += 1;
                 }
             }
-            System.out.println("Fin");
         }
 
       }
