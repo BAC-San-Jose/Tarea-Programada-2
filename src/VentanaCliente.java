@@ -281,80 +281,40 @@ public class VentanaCliente extends javax.swing.JFrame {
         return matcher.matches();
     }
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
-        String nl = System.getProperty("line.separator");//variable utilizada para saltos de linea
-        System.out.print(Hora);
+        String nl = System.getProperty("line.separator");
         try {
             if (CheckClienteD.isSelected()==true) {
-                //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
                 File archivo=new File("Clientes/Discapacitados.txt");
-
-
-                //Escribimos en el archivo con el metodo write
-                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
-                        FileWriter escribir = new FileWriter(archivo,true)) {
-                    //Escribimos en el archivo con el metodo write
+                try (FileWriter escribir = new FileWriter(archivo,true)) {
                     escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    
-                    
-                    //Cerramos la conexion
                 }
             }
             else if (CheckClienteM.isSelected()==true) {
-                    //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
                 File archivo=new File("Clientes/Mayores.txt");
-
-
-                //Escribimos en el archivo con el metodo write
-                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
-                        FileWriter escribir = new FileWriter(archivo,true)) {
-                    //Escribimos en el archivo con el metodo write
+                try (FileWriter escribir = new FileWriter(archivo,true)) {
                     escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-
-                    
-                    //Cerramos la conexion
                 }
             }
             else if (CheckClienteE.isSelected()==true) {
-                
-                     //Crear un objeto File se encarga de crear o abrir acceso a un archivo que se especifica en su constructor
                 File archivo=new File("Clientes/Embarazadas.txt");
-
-
-                //Escribimos en el archivo con el metodo write
-                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
-                        FileWriter escribir = new FileWriter(archivo,true)) {
-                    //Escribimos en el archivo con el metodo write
+                try (FileWriter escribir = new FileWriter(archivo,true)) {
                     escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-
-                    
-                    //Cerramos la conexion
                 }
             }
             else if (CheckClienteC.isSelected()==true) {
                 File archivo=new File("Clientes/Corporativos.txt");
-                //Escribimos en el archivo con el metodo write
-                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
-                        FileWriter escribir = new FileWriter(archivo,true)) {
-                    //Escribimos en el archivo con el metodo write
+                try (FileWriter escribir = new FileWriter(archivo,true)) {
                     escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    
-                    //Cerramos la conexion
                 }
             } 
             else if (CheckClienteR.isSelected()==true) {
                 File archivo=new File("Clientes/Regulares.txt");
-                //Escribimos en el archivo con el metodo write
-                try ( //Crear objeto FileWriter que sera el que nos ayude a escribir sobre archivo
-                        FileWriter escribir = new FileWriter(archivo,true)) {
-                    //Escribimos en el archivo con el metodo write
+                try (FileWriter escribir = new FileWriter(archivo,true)) {
                     escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                    //Cerramos la conexion
                 }
-                
-
             }
-            Nombre = NombreCliente.getText();
             if(validateEmail(CorreoCliente.getText())==true){
+                Nombre = NombreCliente.getText();
                 Correo = CorreoCliente.getText();
                 Hora = jLabel1.getText();
                 Fecha = jLabel2.getText();
@@ -388,6 +348,10 @@ public class VentanaCliente extends javax.swing.JFrame {
                 VentanaPrincipal.Clientes.queue(cliente);
                 System.out.println("se mando mail");
                 JOptionPane.showMessageDialog(null,"Datos Guardados");
+                System.out.println("hora: "+Hora);
+                System.out.println("nombre: "+Nombre);
+                System.out.println("Correo: "+Correo);
+                System.out.println("Fecha: "+Fecha);
                 EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
                 hide();
             }
