@@ -14,6 +14,7 @@ public class Ordernar {
     private static Scanner leer = new Scanner(System.in); 
     static void tamaño(String [] nombres ){ 
         int numero = nombres.length; 
+        alfabeticamente(nombres); 
     } 
     static void leer( String [] n){ 
         int tamaño = n.length; 
