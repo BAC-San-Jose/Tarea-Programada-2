@@ -53,6 +53,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         contadorEmbarazadas = archivo.resultadoembarazadas;
         contadorCorporativos = archivo.resultadocorporativos;
         contadorRegulares = archivo.resultadocorporativos;
+        System.out.println (imagen);
     }
 
     /**
