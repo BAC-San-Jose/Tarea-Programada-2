@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.awt.Image;
+import java.io.*;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,41 +19,68 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form Ventana
      */
     public VentanaPrincipal() {
-        Discapacitados = new Queue();
-        Embarazadas = new Queue();
-        Corporativos = new Queue();
-        Regulares = new Queue();
-        Mayores = new Queue();
-        Prioridad = new Queue();
-        Clientes = new Queue();
-        Cajas = new ArrayList();
-        DisponibilidadCajas = new ArrayList();
-        
-        initComponents();
-        this.setLocationRelativeTo(null);
-        getContentPane().setBackground(new java.awt.Color(229,55,55));
-        NombreVentana.setBackground(Color.white);
-        NombreVentana.setOpaque(true);
-        setResizable(false);
-        
-        Reloj hora = new Reloj(jLabel1);
-        hora.start();
-        Calendar Cal= Calendar.getInstance();
-        String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
-        jLabel2.setText(fec);
-        archivo = new LeerTxt();
-        /**
-        contadorDiscapacitados = archivo.Tipo("Discapacitados");
-        contadorMayores = archivo.Tipo("Mayores");
-        contadorEmbarazadas = archivo.Tipo("Embarazadas");
-        contadorCorporativos = archivo.Tipo("Corporativos");
-        contadorRegulares = archivo.Tipo("Regulares");
-        **/
-        contadorDiscapacitados = archivo.resultadodiscapacitados;
-        contadorMayores = archivo.resultadomayores;
-        contadorEmbarazadas = archivo.resultadoembarazadas;
-        contadorCorporativos = archivo.resultadocorporativos;
-        contadorRegulares = archivo.resultadocorporativos;
+        FileWriter escribirEmbarazadas = null;
+        try {
+            FileWriter escribir = null;
+            Discapacitados = new Queue();
+            Embarazadas = new Queue();
+            Corporativos = new Queue();
+            Regulares = new Queue();
+            Mayores = new Queue();
+            Prioridad = new Queue();
+            Clientes = new Queue();
+            Cajas = new ArrayList();
+            DisponibilidadCajas = new ArrayList();
+            initComponents();
+            this.setLocationRelativeTo(null);
+            getContentPane().setBackground(new java.awt.Color(229,55,55));
+            NombreVentana.setBackground(Color.white);
+            NombreVentana.setOpaque(true);
+            setResizable(false);
+            Reloj hora = new Reloj(jLabel1);
+            hora.start();
+            Calendar Cal= Calendar.getInstance();
+            String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
+            jLabel2.setText(fec);
+            archivo = new LeerTxt();
+            /**
+             * contadorDiscapacitados = archivo.Tipo("Discapacitados");
+             * contadorMayores = archivo.Tipo("Mayores");
+             * contadorEmbarazadas = archivo.Tipo("Embarazadas");
+             * contadorCorporativos = archivo.Tipo("Corporativos");
+             * contadorRegulares = archivo.Tipo("Regulares");
+             **/
+            contadorDiscapacitados = archivo.resultadodiscapacitados;
+            contadorMayores = archivo.resultadomayores;
+            contadorEmbarazadas = archivo.resultadoembarazadas;
+            contadorCorporativos = archivo.resultadocorporativos;
+            contadorRegulares = archivo.resultadocorporativos;
+            File folder = new File(System.getProperty("user.dir")+"/Clientes");
+            folder.mkdir();
+            txtEmbarazadas = new File(System.getProperty("user.dir")+"/Clientes/Embarazadas.txt");
+            escribirEmbarazadas = new FileWriter(txtEmbarazadas,true);
+            escribirEmbarazadas.close();
+            txtDiscapacitados = new File(System.getProperty("user.dir")+"/Clientes/Discapacitados.txt");
+            FileWriter escribirDiscapacitados = new FileWriter(txtDiscapacitados,true);
+            escribirDiscapacitados.close();
+            txtMayores = new File(System.getProperty("user.dir")+"/Clientes/Mayores.txt");
+            FileWriter escribirMayores = new FileWriter(txtMayores,true);
+            escribirMayores.close();
+            txtCorporativos = new File(System.getProperty("user.dir")+"/Clientes/Corporativos.txt");
+            FileWriter escribirCorporativos = new FileWriter(txtCorporativos,true);
+            escribirCorporativos.close();
+            txtRegulares = new File(System.getProperty("user.dir")+"/Clientes/Regulares.txt");
+            FileWriter escribirRegulares = new FileWriter(txtRegulares,true);
+            escribirRegulares.close();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                escribirEmbarazadas.close();
+            } catch (IOException ex) {
+                Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     /**
@@ -391,4 +419,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static int contadorCorporativos;
     public static int contadorRegulares;
     LeerTxt archivo;
+    File txtEmbarazadas;
+    File txtDiscapacitados;
+    File txtRegulares;
+    File txtCorporativos;
+    File txtMayores;    
 }

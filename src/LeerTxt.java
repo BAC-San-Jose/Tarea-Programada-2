@@ -340,7 +340,6 @@ public int Tipo() {
              if (a==4){
                  tipo="Corporativos";
              }
-                 
             archivo = new File (System.getProperty("user.dir")+"/Clientes/"+tipo+".txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
