@@ -32,6 +32,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             Cajas = new ArrayList();
             DisponibilidadCajas = new ArrayList();
             initComponents();
+            File folder = new File(System.getProperty("user.dir")+"/Clientes");
+            folder.mkdir();
+            txtEmbarazadas = new File(System.getProperty("user.dir")+"/Clientes/Embarazadas.txt");
+            escribirEmbarazadas = new FileWriter(txtEmbarazadas,true);
+            escribirEmbarazadas.close();
+            txtDiscapacitados = new File(System.getProperty("user.dir")+"/Clientes/Discapacitados.txt");
+            FileWriter escribirDiscapacitados = new FileWriter(txtDiscapacitados,true);
+            escribirDiscapacitados.close();
+            txtMayores = new File(System.getProperty("user.dir")+"/Clientes/Mayores.txt");
+            FileWriter escribirMayores = new FileWriter(txtMayores,true);
+            escribirMayores.close();
+            txtCorporativos = new File(System.getProperty("user.dir")+"/Clientes/Corporativos.txt");
+            FileWriter escribirCorporativos = new FileWriter(txtCorporativos,true);
+            escribirCorporativos.close();
+            txtRegulares = new File(System.getProperty("user.dir")+"/Clientes/Regulares.txt");
+            FileWriter escribirRegulares = new FileWriter(txtRegulares,true);
+            escribirRegulares.close();
             this.setLocationRelativeTo(null);
             getContentPane().setBackground(new java.awt.Color(229,55,55));
             NombreVentana.setBackground(Color.white);
@@ -55,23 +72,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             contadorEmbarazadas = archivo.resultadoembarazadas;
             contadorCorporativos = archivo.resultadocorporativos;
             contadorRegulares = archivo.resultadocorporativos;
-            File folder = new File(System.getProperty("user.dir")+"/Clientes");
-            folder.mkdir();
-            txtEmbarazadas = new File(System.getProperty("user.dir")+"/Clientes/Embarazadas.txt");
-            escribirEmbarazadas = new FileWriter(txtEmbarazadas,true);
-            escribirEmbarazadas.close();
-            txtDiscapacitados = new File(System.getProperty("user.dir")+"/Clientes/Discapacitados.txt");
-            FileWriter escribirDiscapacitados = new FileWriter(txtDiscapacitados,true);
-            escribirDiscapacitados.close();
-            txtMayores = new File(System.getProperty("user.dir")+"/Clientes/Mayores.txt");
-            FileWriter escribirMayores = new FileWriter(txtMayores,true);
-            escribirMayores.close();
-            txtCorporativos = new File(System.getProperty("user.dir")+"/Clientes/Corporativos.txt");
-            FileWriter escribirCorporativos = new FileWriter(txtCorporativos,true);
-            escribirCorporativos.close();
-            txtRegulares = new File(System.getProperty("user.dir")+"/Clientes/Regulares.txt");
-            FileWriter escribirRegulares = new FileWriter(txtRegulares,true);
-            escribirRegulares.close();
         } catch (IOException ex) {
             Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
