@@ -282,30 +282,30 @@ public class VentanaCliente extends javax.swing.JFrame {
         String nl = System.getProperty("line.separator");
         try {
             if (CheckClienteD.isSelected()==true) {
-                File archivo=new File("src/Clientes/Discapacitados.txt");
+                File archivo=new File("Discapacitados.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
             }
             else if (CheckClienteM.isSelected()==true) {
-                File archivo=new File("src/Clientes/Mayores.txt");
+                File archivo=new File("Mayores.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                 
             }
             else if (CheckClienteE.isSelected()==true) {
-                File archivo=new File("src/Clientes/Embarazadas.txt");
+                File archivo=new File("Embarazadas.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                
             }
             else if (CheckClienteC.isSelected()==true) {
-                File archivo=new File("src/Clientes/Corporativos.txt");
+                File archivo=new File("Corporativos.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                 
             } 
             else if (CheckClienteR.isSelected()==true) {
-                File archivo=new File("src/Clientes/Regulares.txt");
+                File archivo=new File("Clientes/Regulares.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                 

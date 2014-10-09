@@ -103,7 +103,7 @@ public class LeerTxt {
              if (a==4){
                  categoria="Corporativos";
              }
-            archivo = new File ("src/Clientes/"+categoria+".txt");
+            archivo = new File (categoria+".txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
             while((linea=br.readLine())!=null)
@@ -184,7 +184,7 @@ public class LeerTxt {
              if (b==4){
                  categoria="Corporativos";
              }
-            archivo = new File ("src/Clientes/"+categoria+".txt");
+            archivo = new File (categoria+".txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
             while((linea=br.readLine())!=null){
@@ -341,7 +341,7 @@ public int Tipo() {
                  tipo="Corporativos";
              }
                  
-            archivo = new File ("src/Clientes/"+tipo+".txt");
+            archivo = new File (tipo+".txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
             while((linea=br.readLine())!=null){
