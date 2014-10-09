@@ -53,7 +53,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         contadorEmbarazadas = archivo.resultadoembarazadas;
         contadorCorporativos = archivo.resultadocorporativos;
         contadorRegulares = archivo.resultadocorporativos;
-        System.out.println (imagen);
     }
 
     /**
@@ -88,8 +87,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(567, 380));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo BAC.gif"))); // NOI18N
 
         NombreVentana.setBackground(new java.awt.Color(255, 255, 255));
         NombreVentana.setFont(new java.awt.Font("Candara", 1, 28)); // NOI18N
@@ -283,7 +280,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             try {
                 String file = elemento.getSelectedFile().getPath();  //Obtener ruta y nombre al hacer click
                 ImageIcon fot = new ImageIcon(file); 
-                Icon icono = new ImageIcon(fot.getImage().getScaledInstance(Logo.getWidth(), Logo.getHeight(), Image.SCALE_DEFAULT)); 
+                Icon icono = new ImageIcon(fot.getImage().getScaledInstance(241, 33, Image.SCALE_DEFAULT)); 
+                //System.out.println(Logo.getWidth()+" "+ Logo.getHeight());
                 Logo.setIcon(icono); 
                 this.repaint();
                 imagen = file;
@@ -301,7 +299,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (CantidadCajas.getValue().equals(0)){
             JOptionPane.showMessageDialog(null,"No ha seleccionado la cantidad de cajas");   
         }
-        
+        else if (imagen == null){
+            JOptionPane.showMessageDialog(null,"No ha seleccionado la imagen");   
+        }
         else{
             //System.out.print(CantidadCajas.getValue());
             cantidadCajas = (int) CantidadCajas.getValue();
@@ -371,7 +371,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private static final FileNameExtensionFilter jpg = new FileNameExtensionFilter("Archivo JPG","jpg");
     private static final FileNameExtensionFilter png = new FileNameExtensionFilter("Archivo PNG","png");
     private static final FileNameExtensionFilter gif = new FileNameExtensionFilter("Archivo GIF","gif");
-    public static String imagen = System.getProperty("user.dir")+"/Imagenes/Logo BAC.gif";
+    public static String imagen = null;// System.getProperty("user.dir")+"/Imagenes/Logo BAC.gif";
     public static String texto = "Sistema de Atención a Clientes BAC";
     public static int cantidadCajas;
     public static String Dato;
