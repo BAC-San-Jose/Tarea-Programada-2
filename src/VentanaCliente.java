@@ -1,9 +1,7 @@
 
 import java.awt.HeadlessException;
 import java.awt.Image;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.sql.*;
 import java.util.Calendar;
 import java.util.logging.Level;
@@ -287,7 +285,6 @@ public class VentanaCliente extends javax.swing.JFrame {
                 File archivo=new File("Clientes/Discapacitados.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                System.out.println("si");
             }
             else if (CheckClienteM.isSelected()==true) {
                 File archivo=new File("Clientes/Mayores.txt");
