@@ -285,33 +285,33 @@ public class VentanaCliente extends javax.swing.JFrame {
         try {
             if (CheckClienteD.isSelected()==true) {
                 File archivo=new File("Clientes/Discapacitados.txt");
-                try (FileWriter escribir = new FileWriter(archivo,true)) {
-                    escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                }
+                FileWriter escribir = new FileWriter(archivo,true);
+                escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                System.out.println("si");
             }
             else if (CheckClienteM.isSelected()==true) {
                 File archivo=new File("Clientes/Mayores.txt");
-                try (FileWriter escribir = new FileWriter(archivo,true)) {
-                    escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                }
+                FileWriter escribir = new FileWriter(archivo,true);
+                escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                
             }
             else if (CheckClienteE.isSelected()==true) {
                 File archivo=new File("Clientes/Embarazadas.txt");
-                try (FileWriter escribir = new FileWriter(archivo,true)) {
-                    escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                }
+                FileWriter escribir = new FileWriter(archivo,true);
+                escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+               
             }
             else if (CheckClienteC.isSelected()==true) {
                 File archivo=new File("Clientes/Corporativos.txt");
-                try (FileWriter escribir = new FileWriter(archivo,true)) {
-                    escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                }
+                FileWriter escribir = new FileWriter(archivo,true);
+                escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                
             } 
             else if (CheckClienteR.isSelected()==true) {
                 File archivo=new File("Clientes/Regulares.txt");
-                try (FileWriter escribir = new FileWriter(archivo,true)) {
-                    escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                }
+                FileWriter escribir = new FileWriter(archivo,true);
+                escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                
             }
             if(validateEmail(CorreoCliente.getText())==true){
                 Nombre = NombreCliente.getText();
@@ -348,10 +348,6 @@ public class VentanaCliente extends javax.swing.JFrame {
                 VentanaPrincipal.Clientes.queue(cliente);
                 System.out.println("se mando mail");
                 JOptionPane.showMessageDialog(null,"Datos Guardados");
-                System.out.println("hora: "+Hora);
-                System.out.println("nombre: "+Nombre);
-                System.out.println("Correo: "+Correo);
-                System.out.println("Fecha: "+Fecha);
                 EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
                 hide();
             }
