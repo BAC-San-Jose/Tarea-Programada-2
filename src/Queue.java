@@ -1,17 +1,28 @@
+/**
+ * Clase encargada de manejar las colas
+ */
 public class Queue{
-
+    
+    /**
+     * Declaracion de variables
+     */
     public Clientes [] arreglo;
     public int first;
     public int last;
     public int size;
     public int maxSize = 1000;
     public int totalSize;
-
+    /**
+     * Metodo constructor de la clase
+     */
     public Queue (){
         this.arreglo = new Clientes [maxSize];
         this.size = 0;
     }
-    
+    /**
+     * agrega elementos a la cola
+     * @param cliente 
+     */
     public void queue (Clientes cliente){
         if (this.size < this.maxSize){
             if (isEmpty()){
@@ -29,7 +40,11 @@ public class Queue{
             System.out.println("La cola esta llena");
         }
     }
-
+    
+    /**
+     * Saca el primer resultado de la cola
+     * @return el elemento sacado de la cola
+     */
     public Clientes deque (){
             Clientes resultado = null;
             if (this.isEmpty()==true){
@@ -43,16 +58,29 @@ public class Queue{
             return resultado;
     }
     
+    /**
+     * Obtiene el dato del nombre del cliente
+     * @return nombre cliente
+     */
     public Clientes getPersona(){
         Clientes persona = arreglo [first];
         return persona;
     }
     
+    /**
+     * Funcion que busca un indice en la cola y regresa lo que se encuentre en esa posicion
+     * @param indice
+     * @return elemento en el indice inroducido
+     */
     public Clientes recorrerCola(int indice){
         Clientes persona = arreglo [indice];
         return persona;
     }
-
+    
+    /**
+     * Retorna true si la cola esta vacia o false si no lo esta
+     * @return si la cola esta vacia o no
+     */
     public boolean isEmpty(){
         if (this.size == 0){
             return true;
@@ -62,14 +90,26 @@ public class Queue{
         }
     }
     
+    /**
+     * Funcion que retorna el tamaño total de la cola
+     * @return Tamaño total de la cola
+     */
     public int getTotalSize(){
         return this.totalSize;
     }
-
+    
+    /**
+     * Funcion que retorna el tamaño de la cola
+     * @return tamaño de la cola
+     */
     public int getSize(){
         return this.size;
     }
     
+    /**
+     * 
+     * @param args 
+     */
     public static void main (String [] args){
         Clientes hola = new Clientes("melvin","mell9413@hotmail.com","D","27/09/2014","10:00");
         Clientes hola1 = new Clientes("kevin","teckevin_16@gmail.com","R","27/09/2014","1:00");

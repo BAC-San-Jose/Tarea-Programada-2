@@ -10,6 +10,9 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+/**
+ * Clase usada para mandar los emails
+ */
 public class EmailClientes {
     String usuarioCorreo;
     String password;
@@ -18,6 +21,14 @@ public class EmailClientes {
     String asunto;
     String destinatario;
     
+    /**
+     * Metodo constructor de la clase
+     * @param usuarioCorreo
+     * @param password
+     * @param rutaArchivo
+     * @param nombreArchivo
+     * @param asunto 
+     */
     public EmailClientes(String usuarioCorreo, String password, String rutaArchivo, String nombreArchivo, String asunto){
         this.usuarioCorreo = usuarioCorreo;
         this.password = password;
@@ -25,7 +36,15 @@ public class EmailClientes {
         this.nombreArchivo = nombreArchivo;
         this.asunto = asunto;
     }   
-
+    
+    /**
+     * Metodo que envia un email al cliente que confirma su llegada al banco y sus datos
+     * @param cliente
+     * @param destinatario
+     * @param Fecha
+     * @param Hora
+     * @return 
+     */
     public boolean sendMail(String cliente, String destinatario, String Fecha, String Hora){
         this.destinatario = destinatario;
         try
@@ -76,6 +95,13 @@ public class EmailClientes {
         }        
     }
     
+    /**
+     * Metodo que envia al cliente un email cuando es su turno de pasar a la caja
+     * @param caja
+     * @param cliente
+     * @param destinatario
+     * @return 
+     */
     public boolean sendMail(String caja, String cliente, String destinatario){
         this.destinatario = destinatario;
         try

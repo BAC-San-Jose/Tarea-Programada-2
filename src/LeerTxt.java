@@ -5,16 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
- * 
+ * Clase creada para leer los txt que contienen los datos de los clientes
  */
 public class LeerTxt {
+    /**
+     * Declaracion y asignacion de variables
+     */
       int contador=0;
       String comparar;
       String comparar1;
@@ -73,7 +70,9 @@ public class LeerTxt {
       String errorTipo;
       String categoria;
       String CompararTipo;
-      
+    /**
+     * Metodo usado para leer las horas en que fueron atendidos los clientes en el txt
+     */  
     public void Horas() {
       File archivo = null;
       FileReader fr = null;
@@ -156,8 +155,12 @@ public class LeerTxt {
       }
     }
     
-    
-   public void Fecha() throws FileNotFoundException, IOException {
+    /**
+     * Metodo usado para leer las fechas en que fueron atendidos los clientes en el txt
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+    public void Fecha() throws FileNotFoundException, IOException {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -317,7 +320,11 @@ public class LeerTxt {
          }
       }
     }
-public int Tipo() {
+    /**
+     * Metodo usado para leer el tipo de prioridad que tiene cada cliente en el txt
+     * @return 
+     */
+    public int Tipo() {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -389,7 +396,11 @@ public int Tipo() {
       //return resultado;
           return 0;
     }
-    
+    /**
+     * 
+     * @param args
+     * @throws IOException 
+     */
     public static void main(String [] args) throws IOException{
     LeerTxt prueba = new LeerTxt();
     prueba.Tipo();

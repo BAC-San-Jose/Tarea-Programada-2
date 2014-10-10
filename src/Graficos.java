@@ -17,8 +17,14 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
+/**
+ * Clase que crea los graficos y los enseña en la ventana
+ */
 public class Graficos extends javax.swing.JFrame {
-
+    
+    /**
+     * Constructor de la clase
+     */
     public Graficos() {
         initComponents();
         
@@ -415,7 +421,11 @@ public class Graficos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Metodo que crea un grafico tipo pastel con los datos de las prioridades de los clientes 
+     * @param evt 
+     */
     private void radioPastelTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPastelTipoActionPerformed
        capaPastelTipo.setVisible(true);
        capaBarrasTipo.setVisible(false);
@@ -430,7 +440,9 @@ public class Graficos extends javax.swing.JFrame {
        radioPastelDia.setSelected(false);
        radioBarrasDia.setSelected(false);
     }//GEN-LAST:event_radioPastelTipoActionPerformed
-
+    /**Metodo del boton "graficar", que crea los graficos 
+     * @param evt 
+     */
     private void botonGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGraficarActionPerformed
         ChartPanel panel;
         JFreeChart chart = null;        
@@ -687,7 +699,10 @@ public class Graficos extends javax.swing.JFrame {
     }
     
     }//GEN-LAST:event_botonGraficarActionPerformed
-
+    /**
+     * Metodo que crea un grafico de barras con los datos de las prioridades de los clientes
+     * @param evt 
+     */
     private void radioBarrasTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBarrasTipoActionPerformed
        capaPastelTipo.setVisible(false);
        capaBarrasTipo.setVisible(true);
@@ -702,7 +717,11 @@ public class Graficos extends javax.swing.JFrame {
        radioPastelDia.setSelected(false);
        radioBarrasDia.setSelected(false);
     }//GEN-LAST:event_radioBarrasTipoActionPerformed
-
+    /**
+     * Metodo que crea un grafico tipo pastel con los datos de 
+     * las horas que fueron atendidos los clientes 
+     * @param evt 
+     */
     private void radioPastelHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPastelHoraActionPerformed
        capaPastelTipo.setVisible(false);
        capaBarrasTipo.setVisible(false);
@@ -717,7 +736,11 @@ public class Graficos extends javax.swing.JFrame {
        radioPastelDia.setSelected(false);
        radioBarrasDia.setSelected(false);
     }//GEN-LAST:event_radioPastelHoraActionPerformed
-
+    /**
+     * Metodo que crea un grafico de barras con los datos 
+     * de las horas en que fueron atendidos los clientes 
+     * @param evt 
+     */
     private void radioBarrasHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBarrasHoraActionPerformed
        capaPastelTipo.setVisible(false);
        capaBarrasTipo.setVisible(false);
@@ -732,7 +755,11 @@ public class Graficos extends javax.swing.JFrame {
        radioPastelDia.setSelected(false);
        radioBarrasDia.setSelected(false);
     }//GEN-LAST:event_radioBarrasHoraActionPerformed
-
+    /**
+     * Metodo que crea un grafico tipo pastel con los datos 
+     * de los dias en que fueron atendidos los clientes 
+     * @param evt 
+     */
     private void radioPastelDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPastelDiaActionPerformed
        capaPastelTipo.setVisible(false);
        capaBarrasTipo.setVisible(false);
@@ -747,7 +774,11 @@ public class Graficos extends javax.swing.JFrame {
        radioPastelTipo.setSelected(false);
        radioBarrasDia.setSelected(false);
     }//GEN-LAST:event_radioPastelDiaActionPerformed
-
+    /**
+     * Metodo que crea un grafico de barras con los datos 
+     * de los dias en que fueron atendidos los clientes 
+     * @param evt 
+     */
     private void radioBarrasDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBarrasDiaActionPerformed
        capaPastelTipo.setVisible(false);
        capaBarrasTipo.setVisible(false);
@@ -762,7 +793,10 @@ public class Graficos extends javax.swing.JFrame {
        radioPastelDia.setSelected(false);
        radioPastelTipo.setSelected(false);
     }//GEN-LAST:event_radioBarrasDiaActionPerformed
-
+    /**
+     * Metodo para cerrar la ventana
+     * @param evt 
+     */
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         //VentanaMenu ventanaMenu = new VentanaMenu ();
         //ventanaMenu.setVisible(true);
@@ -833,6 +867,9 @@ public class Graficos extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioPastelTipo;
     // End of variables declaration//GEN-END:variables
     
+    /**
+     * Metodo que le pone la imagen del Banco a la ventana
+     */
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
             String file = VentanaPrincipal.imagen;
@@ -843,6 +880,9 @@ public class Graficos extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Metodo que le pone el nombre del banco a la ventana
+     */
     public void setTexto (){
         String texto = VentanaPrincipal.texto;
         if (!"Sistema de Atención a Clientes BAC".equals(texto)){

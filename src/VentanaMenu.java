@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 public class VentanaMenu extends javax.swing.JFrame implements Runnable {
 
     /**
-     * Creates new form VentanaMenu
+     * 
      */
     public VentanaMenu() {
         initComponents();
@@ -354,6 +354,9 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     public int Indice;
     public Thread actualizar;
     
+    /**
+     * Metodo que le pone la imagen del Banco a la ventana
+     */
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
             String file = VentanaPrincipal.imagen;
@@ -364,6 +367,9 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         }
     }
     
+    /**
+     * Metodo que le pone el nombre del banco a la ventana
+     */
     public void setTexto (){
         String texto = VentanaPrincipal.texto;
         if (!"Sistema de Atención a Clientes BAC".equals(texto)){
