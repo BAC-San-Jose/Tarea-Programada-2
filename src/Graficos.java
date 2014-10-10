@@ -1,4 +1,5 @@
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,7 +15,6 @@ import org.jfree.chart.*;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
-
 import org.jfree.data.general.DefaultPieDataset;
 
 public class Graficos extends javax.swing.JFrame {
@@ -23,7 +23,7 @@ public class Graficos extends javax.swing.JFrame {
         initComponents();
         
         this.setLocationRelativeTo(null);
-        
+        this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.capaPastelTipo.setVisible(false);
         this.capaBarrasTipo.setVisible(false);
         
