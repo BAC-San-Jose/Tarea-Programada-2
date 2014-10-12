@@ -5,13 +5,11 @@ import java.io.*;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.application.Application;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-//import java.awt.BuferredImage;
 
 public class VentanaPrincipal extends javax.swing.JFrame {
 
@@ -60,13 +58,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
             jLabel2.setText(fec);
             archivo = new LeerTxt();
-            /**
-             * contadorDiscapacitados = archivo.Tipo("Discapacitados");
-             * contadorMayores = archivo.Tipo("Mayores");
-             * contadorEmbarazadas = archivo.Tipo("Embarazadas");
-             * contadorCorporativos = archivo.Tipo("Corporativos");
-             * contadorRegulares = archivo.Tipo("Regulares");
-             **/
             contadorDiscapacitados = archivo.resultadodiscapacitados;
             contadorMayores = archivo.resultadomayores;
             contadorEmbarazadas = archivo.resultadoembarazadas;
@@ -309,19 +300,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * @param evt 
      */
     private void BtncambiarLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtncambiarLogoActionPerformed
-        // TODO add your handling code here:
-        //Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("\\Imagenes\\wallpaper-1133041.jpg")));
-        JFileChooser elemento = new JFileChooser();  //Crea un objeto de dialogo JFileChooser
+        JFileChooser elemento = new JFileChooser();
         elemento.setFileFilter(png);
         elemento.setFileFilter(gif);
         elemento.setFileFilter(jpg);
-        int option = elemento.showOpenDialog(this);  // Abre la ventana en dialogo
+        int option = elemento.showOpenDialog(this);
         if (option == JFileChooser.APPROVE_OPTION){
             try {
-                String file = elemento.getSelectedFile().getPath();  //Obtener ruta y nombre al hacer click
+                String file = elemento.getSelectedFile().getPath();
                 ImageIcon fot = new ImageIcon(file); 
                 Icon icono = new ImageIcon(fot.getImage().getScaledInstance(241, 33, Image.SCALE_DEFAULT)); 
-                //System.out.println(Logo.getWidth()+" "+ Logo.getHeight());
                 Logo.setIcon(icono); 
                 this.repaint();
                 imagen = file;
@@ -347,7 +335,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"No ha seleccionado la imagen");   
         }
         else{
-            //System.out.print(CantidadCajas.getValue());
             cantidadCajas = (int) CantidadCajas.getValue();
             for(int i=1;i<=cantidadCajas;i++){
                 Cajas.add(""+i);

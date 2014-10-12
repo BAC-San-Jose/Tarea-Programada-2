@@ -79,11 +79,6 @@ public class LeerTxt {
       BufferedReader br = null;
       
       try {
-         // Apertura del fichero y creacion de BufferedReader para poder
-         // hacer una lectura comoda (disponer del metodo readLine()).
-         
- 
-         // Lectura del fichero
          String linea;
          
          for (a=0;a<5;a++){
@@ -142,9 +137,6 @@ public class LeerTxt {
       catch(Exception e){
          e.printStackTrace();
       }finally{
-         // En el finally cerramos el fichero, para asegurarnos
-         // que se cierra tanto si todo va bien como si salta 
-         // una excepcion.
          try{                    
             if( null != fr ){   
                fr.close();     
@@ -166,9 +158,6 @@ public class LeerTxt {
       BufferedReader br = null;
       
       try {
-         // Apertura del fichero y creacion de BufferedReader para poder
-         // hacer una lectura comoda (disponer del metodo readLine()).
-         // Lectura del fichero
          String linea;
          
          for (b=0;b<5;b++){
@@ -308,9 +297,6 @@ public class LeerTxt {
       catch(Exception e){
          e.printStackTrace();
       }finally{
-         // En el finally cerramos el fichero, para asegurarnos
-         // que se cierra tanto si todo va bien como si salta 
-         // una excepcion.
          try{                    
             if( null != fr ){   
                fr.close();     
@@ -382,9 +368,6 @@ public class LeerTxt {
       catch(Exception e){
          e.printStackTrace();
       }finally{
-         // En el finally cerramos el fichero, para asegurarnos
-         // que se cierra tanto si todo va bien como si salta 
-         // una excepcion.
          try{                    
             if( null != fr ){   
                fr.close();     
@@ -393,7 +376,6 @@ public class LeerTxt {
             e2.printStackTrace();
          }
       }
-      //return resultado;
           return 0;
     }
     /**

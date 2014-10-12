@@ -1,16 +1,11 @@
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import static javax.swing.text.html.HTML.Tag.HEAD;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
@@ -26,15 +21,13 @@ public class Graficos extends javax.swing.JFrame {
      * Constructor de la clase
      */
     public Graficos() {
+        this.setExtendedState(this.MAXIMIZED_BOTH);
         initComponents();
-        
         this.setLocationRelativeTo(null);
         this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.capaPastelTipo.setVisible(false);
         this.capaBarrasTipo.setVisible(false);
-        
         this.setVisible(true);
-        
         setTitle("Gráficos");
         getContentPane().setBackground(new java.awt.Color(229,55,55));
         capaPastelTipo.setBackground(new java.awt.Color(229,55,55));
@@ -46,7 +39,6 @@ public class Graficos extends javax.swing.JFrame {
         setResizable(false);
         setImagen();
         setTexto();
-        
         Reloj hora = new Reloj(jLabel6);
         hora.start();
         Calendar Cal= Calendar.getInstance();
@@ -445,9 +437,7 @@ public class Graficos extends javax.swing.JFrame {
      */
     private void botonGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGraficarActionPerformed
         ChartPanel panel;
-        JFreeChart chart = null;        
-        
-        //Grafico de Cantidad de clientes por TIPO
+        JFreeChart chart = null;
         LeerTxt datos2 = new LeerTxt();
             datos2.Tipo();
         
@@ -488,58 +478,6 @@ public class Graficos extends javax.swing.JFrame {
             
         }
         
-        //Grafico de HORA
-        /*File archivo=new File("Clientes/Discapacitados.txt");
-        try {
-            FileReader leerArchivo = new FileReader (archivo);
-            BufferedReader hora = new BufferedReader(leerArchivo);
-            System.out.println(hora.read());
-            for (int a =0; a <hora.read();a++){
-                String linea = hora.readLine();
-                System.out.println(linea);
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        int am9 = 0;
-            int am10 = 0;
-            int am11 = 0;
-            int pm1 = 0;
-            int pm2 = 0;
-            int pm3 = 0;
-            int pm4 = 0;
-            
-            for (int a= 0; a< VentanaPrincipal.Clientes.getSize(); a++){
-                String totalHora = VentanaPrincipal.Clientes.recorrerCola(a).getHora();
-                char array_caracteres [] = totalHora.toCharArray();
-                String hora = String.valueOf(array_caracteres[0])+String.valueOf(array_caracteres[1]);
-                System.out.println(hora);
-                if ("09".equals(hora)){
-                    am9++;
-                }
-                if ("10".equals(hora)){
-                    am10++;
-                }
-                if ("11".equals(hora)){
-                    am11++;
-                }
-                if ("13".equals(hora)){
-                    pm1++;
-                }
-                if ("14".equals(hora)){
-                    pm2++;
-                }
-                if ("015".equals(hora)){
-                    pm3++;
-                }
-                if ("16".equals(hora)){
-                    pm4++;
-                }
-            }
-            */
         LeerTxt datos = new LeerTxt();
             datos.Horas();
         LeerTxt datos1 = new LeerTxt();
@@ -585,7 +523,7 @@ public class Graficos extends javax.swing.JFrame {
             chart = ChartFactory.createPieChart3D("Clientes por Hora", data, true, true, true);
             
         }
-        //Cantidad por dias!!!
+
         if (radioBarrasDia.isSelected()){
             DefaultCategoryDataset data = new DefaultCategoryDataset();
             
@@ -665,9 +603,7 @@ public class Graficos extends javax.swing.JFrame {
             data.setValue("Dia 30", datos1.d30);
             data.setValue("Dia 31", datos1.d31);
             
-
             chart = ChartFactory.createPieChart3D("Cantidad Clientes por Dia", data, true, true, true);
-            
         }
         
     panel = new ChartPanel (chart);
@@ -798,8 +734,6 @@ public class Graficos extends javax.swing.JFrame {
      * @param evt 
      */
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
-        //VentanaMenu ventanaMenu = new VentanaMenu ();
-        //ventanaMenu.setVisible(true);
         hide();
     }//GEN-LAST:event_botonSalirActionPerformed
 

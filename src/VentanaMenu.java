@@ -6,9 +6,9 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class VentanaMenu extends javax.swing.JFrame implements Runnable {
-
+    
     /**
-     * 
+     * Metodo constructor de clase VentanaMenu
      */
     public VentanaMenu() {
         initComponents();
@@ -236,7 +236,6 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     private void BtnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGraficosActionPerformed
         Graficos graficos = new Graficos ();
         graficos.setVisible(true);
-        //hide();
     }//GEN-LAST:event_BtnGraficosActionPerformed
 
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
@@ -250,7 +249,6 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     private void ventanaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventanaClienteActionPerformed
         VentanaCliente cliente = new VentanaCliente ();
         cliente.setVisible(true);
-        //hide();
     }//GEN-LAST:event_ventanaClienteActionPerformed
 
     private void BtnTablaListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTablaListaActionPerformed

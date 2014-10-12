@@ -30,7 +30,10 @@ class ArrayList {
     public void Modificar(String Dato, int indice){
         this.arreglo[indice]=Dato;
     }
-    
+    /**
+     * Metodo para ingresar un String a la ArrayList
+     * @param Dato 
+     */
     public void add (String Dato) {
 
 	if (this.size < this.maxSize) {
@@ -41,7 +44,9 @@ class ArrayList {
             System.out.println ("Error");
 	}
     }
-    
+    /**
+     * @return el tamaño de la lista
+     */
     public int getSize (){
         return this.size;
     }
