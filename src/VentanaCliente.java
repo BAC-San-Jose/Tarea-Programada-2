@@ -280,80 +280,85 @@ public class VentanaCliente extends javax.swing.JFrame {
     }
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
         String nl = System.getProperty("line.separator");
-        try {
-            if (CheckClienteD.isSelected()==true) {
-                File archivo=new File("src/Clientes/Discapacitados.txt");
-                FileWriter escribir = new FileWriter(archivo,true);
-                escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-            }
-            else if (CheckClienteM.isSelected()==true) {
-                File archivo=new File("src/Clientes/Mayores.txt");
-                FileWriter escribir = new FileWriter(archivo,true);
-                escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                
-            }
-            else if (CheckClienteE.isSelected()==true) {
-                File archivo=new File("src/Clientes/Embarazadas.txt");
-                FileWriter escribir = new FileWriter(archivo,true);
-                escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-               
-            }
-            else if (CheckClienteC.isSelected()==true) {
-                File archivo=new File("src/Clientes/Corporativos.txt");
-                FileWriter escribir = new FileWriter(archivo,true);
-                escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                
-            } 
-            else if (CheckClienteR.isSelected()==true) {
-                File archivo=new File("src/Clientes/Regulares.txt");
-                FileWriter escribir = new FileWriter(archivo,true);
-                escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                
-            }
-            if(validateEmail(CorreoCliente.getText())==true){
-                Nombre = NombreCliente.getText();
-                Correo = CorreoCliente.getText();
-                Hora = jLabel1.getText();
-                Fecha = jLabel2.getText();
-                String Prioridad = null;
-                if (CheckClienteD.isSelected()) {
-                    Prioridad = "Discapacitados";
-                    Clientes cliente = new Clientes (Nombre,Correo,"Discapacitados",Fecha,Hora);
-                    VentanaPrincipal.Discapacitados.queue(cliente);
-                } 
-                else if (CheckClienteM.isSelected()) {
-                    Prioridad = "Mayores";
-                    Clientes cliente = new Clientes (Nombre,Correo,"Mayores",Fecha,Hora);
-                    VentanaPrincipal.Mayores.queue(cliente);
-                } 
-                else if (CheckClienteE.isSelected()) {
-                    Prioridad = "Embarazadas";
-                    Clientes cliente = new Clientes (Nombre,Correo,"Embarazadas",Fecha,Hora);
-                    VentanaPrincipal.Embarazadas.queue(cliente);
-                } 
-                else if (CheckClienteC.isSelected()) {
-                    Prioridad = "Corporativos";
-                    Clientes cliente = new Clientes (Nombre,Correo,"Corporativos",Fecha,Hora);
-                    VentanaPrincipal.Corporativos.queue(cliente);
-                } 
-                else if (CheckClienteR.isSelected()) {
-                    Prioridad = "Regulares";
-                    Clientes cliente = new Clientes (Nombre,Correo,"Regulares",Fecha,Hora);
-                    VentanaPrincipal.Regulares.queue(cliente);
-                }
-                Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
-                VentanaPrincipal.Clientes.queue(cliente);
-                System.out.println("se mando mail");
-                JOptionPane.showMessageDialog(null,"Datos Guardados");
-                EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
-                hide();
-            }
-            else{
-                JOptionPane.showMessageDialog(null,"Email NO valido");
-            }
+        if (CheckClienteD.isSelected()==false && CheckClienteM.isSelected()==false && CheckClienteE.isSelected()==false && CheckClienteC.isSelected()==false && CheckClienteR.isSelected()==false){
+            JOptionPane.showMessageDialog(null,"Seleccione alguna categoria");
         }
-        catch(IOException | HeadlessException e){
-            JOptionPane.showMessageDialog(null,"Error en los datos dados");
+        else{
+            try {
+                if (CheckClienteD.isSelected()==true) {
+                    File archivo=new File("src/Clientes/Discapacitados.txt");
+                    FileWriter escribir = new FileWriter(archivo,true);
+                    escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                }
+                else if (CheckClienteM.isSelected()==true) {
+                    File archivo=new File("src/Clientes/Mayores.txt");
+                    FileWriter escribir = new FileWriter(archivo,true);
+                    escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+
+                }
+                else if (CheckClienteE.isSelected()==true) {
+                    File archivo=new File("src/Clientes/Embarazadas.txt");
+                    FileWriter escribir = new FileWriter(archivo,true);
+                    escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+
+                }
+                else if (CheckClienteC.isSelected()==true) {
+                    File archivo=new File("src/Clientes/Corporativos.txt");
+                    FileWriter escribir = new FileWriter(archivo,true);
+                    escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+
+                } 
+                else if (CheckClienteR.isSelected()==true) {
+                    File archivo=new File("src/Clientes/Regulares.txt");
+                    FileWriter escribir = new FileWriter(archivo,true);
+                    escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+
+                }
+                if(validateEmail(CorreoCliente.getText())==true){
+                    Nombre = NombreCliente.getText();
+                    Correo = CorreoCliente.getText();
+                    Hora = jLabel1.getText();
+                    Fecha = jLabel2.getText();
+                    String Prioridad = null;
+                    if (CheckClienteD.isSelected()) {
+                        Prioridad = "Discapacitados";
+                        Clientes cliente = new Clientes (Nombre,Correo,"Discapacitados",Fecha,Hora);
+                        VentanaPrincipal.Discapacitados.queue(cliente);
+                    } 
+                    else if (CheckClienteM.isSelected()) {
+                        Prioridad = "Mayores";
+                        Clientes cliente = new Clientes (Nombre,Correo,"Mayores",Fecha,Hora);
+                        VentanaPrincipal.Mayores.queue(cliente);
+                    } 
+                    else if (CheckClienteE.isSelected()) {
+                        Prioridad = "Embarazadas";
+                        Clientes cliente = new Clientes (Nombre,Correo,"Embarazadas",Fecha,Hora);
+                        VentanaPrincipal.Embarazadas.queue(cliente);
+                    } 
+                    else if (CheckClienteC.isSelected()) {
+                        Prioridad = "Corporativos";
+                        Clientes cliente = new Clientes (Nombre,Correo,"Corporativos",Fecha,Hora);
+                        VentanaPrincipal.Corporativos.queue(cliente);
+                    } 
+                    else if (CheckClienteR.isSelected()) {
+                        Prioridad = "Regulares";
+                        Clientes cliente = new Clientes (Nombre,Correo,"Regulares",Fecha,Hora);
+                        VentanaPrincipal.Regulares.queue(cliente);
+                    }
+                    Clientes cliente = new Clientes (Nombre,Correo,Prioridad,Fecha,Hora);
+                    VentanaPrincipal.Clientes.queue(cliente);
+                    System.out.println("se mando mail");
+                    JOptionPane.showMessageDialog(null,"Datos Guardados");
+                    EnvioEmail.sendMail(Nombre, Correo, Fecha, Hora);
+                    hide();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Email NO valido");
+                }
+            }
+            catch(IOException | HeadlessException e){
+                JOptionPane.showMessageDialog(null,"Error en los datos dados");
+            }
         }
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
