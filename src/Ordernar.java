@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Kevin Matamoros
- */
 import java.util.Scanner; 
+
 
 public class Ordernar {   
     
     private static Scanner leer = new Scanner(System.in); 
-    static void tamaño(String [] nombres ){ 
-        int numero = nombres.length; 
-        alfabeticamente(nombres); 
-    } 
+    
+    
     static void leer( String [] n){ 
         int tamaño = n.length; 
         for (int i = 0 ; i < tamaño ; i++ ){ 
@@ -43,7 +33,7 @@ public class Ordernar {
        
     }   
     public String Numeros(String [] Recibe){
-        tamaño(Recibe);
+        alfabeticamente(Recibe);
         return null;
     }
 }
