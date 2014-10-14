@@ -91,8 +91,6 @@ public class ClientesLeidos {
       }
         return null;
     }
-
-
     private String String(int contador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

@@ -14,6 +14,7 @@ public class ListaClientes extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(229,55,55));
         TablaClientes.setVisible(false);
         this.setLocationRelativeTo(null);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -66,8 +67,18 @@ public class ListaClientes extends javax.swing.JFrame {
         });
 
         CheckNombre.setText("Nombre");
+        CheckNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckNombreActionPerformed(evt);
+            }
+        });
 
         CheckCorreo.setText("Correo");
+        CheckCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckCorreoActionPerformed(evt);
+            }
+        });
 
         CheckPrioridad.setText("Prioridad");
 
@@ -158,7 +169,17 @@ public class ListaClientes extends javax.swing.JFrame {
      * @param evt 
      */
     private void OrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarActionPerformed
-        if(CheckNombre.isSelected()){
+        ClientesLeidos nombres=new ClientesLeidos();
+        if(CheckNombre.isSelected()==true){ 
+
+        }
+        if(CheckCorreo.isSelected()==true){ 
+            
+        }
+        if(CheckPrioridad.isSelected()==true){ 
+            
+        }
+        if(CheckHoraFecha.isSelected()==true){ 
             
         }
     }//GEN-LAST:event_OrdenarActionPerformed
@@ -170,6 +191,14 @@ public class ListaClientes extends javax.swing.JFrame {
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
         hide();
     }//GEN-LAST:event_botonCancelarActionPerformed
+
+    private void CheckNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckNombreActionPerformed
+
+    private void CheckCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckCorreoActionPerformed
 
     /**
      * @param args the command line arguments
