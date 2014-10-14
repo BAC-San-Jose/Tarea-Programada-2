@@ -53,7 +53,7 @@ class ArrayList {
      * menor o igual a size
      * 
      * 
-     * @param indice seleccion en la Playlist
+     * @param indice seleccion de cliente
      * @return elemento que se encuentra en el indice
      * @throws Exception 
      */

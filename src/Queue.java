@@ -1,17 +1,30 @@
+/**
+ * Clase encargada de manejar las colas
+ */
 public class Queue{
-
+    
+    /**
+     * Declaracion de variables
+     */
     public Clientes [] arreglo;
     public int first;
     public int last;
     public int size;
     public int maxSize = 1000;
     public int totalSize;
-
+    
+    /**
+     * Metodo constructor de la clase
+     */
     public Queue (){
         this.arreglo = new Clientes [maxSize];
         this.size = 0;
     }
     
+    /**
+     * agrega elementos a la cola
+     * @param cliente 
+     */
     public void queue (Clientes cliente){
         if (this.size < this.maxSize){
             if (isEmpty()){
@@ -29,7 +42,11 @@ public class Queue{
             System.out.println("La cola esta llena");
         }
     }
-
+    
+    /**
+     * Saca el primer resultado de la cola
+     * @return el elemento sacado de la cola
+     */
     public Clientes deque (){
             Clientes resultado = null;
             if (this.isEmpty()==true){
@@ -43,16 +60,29 @@ public class Queue{
             return resultado;
     }
     
+    /**
+     * Obtiene el objeto persona del cliente
+     * @return nombre cliente
+     */
     public Clientes getPersona(){
         Clientes persona = arreglo [first];
         return persona;
     }
     
+    /**
+     * Funcion que busca un indice en la cola y regresa lo que se encuentre en esa posicion
+     * @param indice
+     * @return elemento en el indice inroducido
+     */
     public Clientes recorrerCola(int indice){
         Clientes persona = arreglo [indice];
         return persona;
     }
 
+    /**
+     * Retorna true si la cola esta vacia o false si no lo esta
+     * @return si la cola esta vacia o no
+     */
     public boolean isEmpty(){
         if (this.size == 0){
             return true;
@@ -62,10 +92,18 @@ public class Queue{
         }
     }
     
+    /**
+     * Funcion que retorna el tamaÃ±o total de la cola
+     * @return TamaÃ±o total de la cola
+     */
     public int getTotalSize(){
         return this.totalSize;
     }
 
+    /**
+     * Funcion que retorna el tamaÃ±o de la cola
+     * @return tamaÃ±o de la cola
+     */
     public int getSize(){
         return this.size;
     }
