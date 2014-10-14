@@ -20,6 +20,7 @@ import org.jfree.data.general.DefaultPieDataset;
 public class Graficos extends javax.swing.JFrame {
 
     public Graficos() {
+        this.setExtendedState(this.MAXIMIZED_BOTH);
         initComponents();
         
         this.setLocationRelativeTo(null);

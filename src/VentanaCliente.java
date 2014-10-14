@@ -285,30 +285,31 @@ public class VentanaCliente extends javax.swing.JFrame {
                 File archivo=new File(System.getProperty("user.dir")+"/Clientes/Discapacitados.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorDiscapacitados+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Discapacitados"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+                escribir.close();
             }
             else if (CheckClienteM.isSelected()==true) {
                 File archivo=new File(System.getProperty("user.dir")+"/Clientes/Mayores.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorMayores+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Mayores"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                
+                escribir.close();
             }
             else if (CheckClienteE.isSelected()==true) {
-                File archivo=new File(System.getProperty("user.dir")+"/Clientes/Embarazadas.txt");
-                FileWriter escribir = new FileWriter(archivo,true);
-                escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-               
+               File archivo=new File(System.getProperty("user.dir")+"/Clientes/Embarazadas.txt");
+               FileWriter escribir = new FileWriter(archivo,true);
+               escribir.write(++VentanaPrincipal.contadorEmbarazadas+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Embarazadas"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
+               escribir.close();
             }
             else if (CheckClienteC.isSelected()==true) {
                 File archivo=new File(System.getProperty("user.dir")+"/Clientes/Corporativos.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorCorporativos+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Coorporativos"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                
+               escribir.close(); 
             } 
             else if (CheckClienteR.isSelected()==true) {
                 File archivo=new File(System.getProperty("user.dir")+"/Clientes/Clientes/Regulares.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
-                
+               escribir.close(); 
             }
             if(validateEmail(CorreoCliente.getText())==true){
                 Nombre = NombreCliente.getText();

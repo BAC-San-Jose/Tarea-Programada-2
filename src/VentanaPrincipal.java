@@ -60,13 +60,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             String fec= Cal.get(Cal.DATE)+"/"+(Cal.get(Cal.MONTH)+1)+"/"+Cal.get(Cal.YEAR);
             jLabel2.setText(fec);
             archivo = new LeerTxt();
-            /**
-             * contadorDiscapacitados = archivo.Tipo("Discapacitados");
-             * contadorMayores = archivo.Tipo("Mayores");
-             * contadorEmbarazadas = archivo.Tipo("Embarazadas");
-             * contadorCorporativos = archivo.Tipo("Corporativos");
-             * contadorRegulares = archivo.Tipo("Regulares");
-             **/
             contadorDiscapacitados = archivo.resultadodiscapacitados;
             contadorMayores = archivo.resultadomayores;
             contadorEmbarazadas = archivo.resultadoembarazadas;
