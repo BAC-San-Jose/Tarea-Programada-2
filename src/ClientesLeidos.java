@@ -6,14 +6,13 @@ import java.io.IOException;
 
 public class ClientesLeidos {
     int a;
-    int contador;
-    int completo=2;
+    int salto=1;
     String tipo;
-    ArrayList listaEmbarazadas = null;
-    ArrayList listaRegulares = null;
-    ArrayList listaMayores = null;
-    ArrayList listaDiscapacitados = null;
-    ArrayList listaCorporativos = null;
+    public static ArrayList listaEmbarazadas = null;
+    public static ArrayList listaRegulares = null;
+    public static ArrayList listaMayores = null;
+    public static ArrayList listaDiscapacitados = null;
+    public static ArrayList listaCorporativos = null;
     
     public ClientesLeidos(){
         listaEmbarazadas = new ArrayList();
@@ -51,8 +50,13 @@ public class ClientesLeidos {
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
             linea =br.readLine();
-            for(int j=0;linea!=null;j++){
-                if (completo == contador ){
+            salto = 1;
+            while((linea=br.readLine())!=null){
+                if (salto == 6){
+                    salto = 1;
+                    System.out.println("si "+linea);
+                }
+                else{
                     if ("Embarazadas".equals(tipo)){
                         listaEmbarazadas.add(linea);
                     }
@@ -68,11 +72,7 @@ public class ClientesLeidos {
                     if ("Mayores".equals(tipo)){
                         listaMayores.add(linea);
                     }
-                    contador +=1;
-                }
-                else{
-                    contador += 1;
-                    completo +=6;
+                    salto++;
                 }
             }
             //return Lsecundario;
@@ -100,6 +100,6 @@ public class ClientesLeidos {
     public static void main(String [] args) throws IOException{
         ClientesLeidos prueba = new ClientesLeidos();
         prueba.Tipo();
-        
+        listaEmbarazadas.imprimir();
     }
 }

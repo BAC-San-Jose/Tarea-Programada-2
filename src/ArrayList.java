@@ -1,3 +1,5 @@
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
@@ -66,17 +68,23 @@ class ArrayList {
         return null;
     }
         
-    /**
-     * Borra un elemento de el arreglo, recibe un indice y en esa posicion lo 
-     * compara un for y el indice que ingreso.
-     * @param seleccion 
-     */
-    public void delete (int seleccion) {
-	for (int i=0; i <= this.size; i++) {
-		if (arreglo[i] == arreglo[seleccion]) {
-                        arreglo[seleccion] = arreglo[++i];
-                        --this.size;
-			}
-		}
-	}
+    public void imprimir (){
+        for (int a =0; a<size; a++){
+            System.out.println(arreglo[a]);
+        }
+    }
+    /*
+    public static void main (String [] args){
+        try {
+            ArrayList hola = new ArrayList ();
+            hola.add("hola");
+            hola.add ("max gay");
+            System.out.println(hola.getElemento(0));
+            hola.imprimir();
+        } catch (Exception ex) {
+            Logger.getLogger(ArrayList.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    */
 }
