@@ -67,7 +67,15 @@ class ArrayList {
         }
         return null;
     }
-        
+    
+    public void setElemento (int indice, String elemento){
+        for (int a = 0; a < size; a++){
+            if (a == indice){
+                arreglo [indice] = elemento;
+            }
+        }
+    }
+    
     public void imprimir (){
         for (int a =0; a<size; a++){
             System.out.println(arreglo[a]);
