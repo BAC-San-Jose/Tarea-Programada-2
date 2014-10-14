@@ -1,8 +1,10 @@
 import java.util.Scanner; 
 
+
 public class Ordernar {   
     
     private static Scanner leer = new Scanner(System.in); 
+    
     
     static void leer( String [] n){ 
         int tamaño = n.length; 

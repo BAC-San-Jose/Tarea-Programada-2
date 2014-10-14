@@ -57,11 +57,18 @@ public class Clientes {
         this.tipoPrioridad = prioridad;
     }
     
-    
+    /**
+     * Metodo utilizado para obtener la fecha en que atendio el cliente
+     * @return fecha en que se atendio al cliente
+     */
     public String getFecha(){
         return fecha;
     }
     
+    /**
+     * Metodo utilizado para obtener la hora en que atendio el cliente
+     * @return hora en que se atendio al cliente
+     */
     public String getHora(){
         return hora;
     }

@@ -1,10 +1,13 @@
 
 import javax.swing.table.DefaultTableModel;
 
+/**
+ * Clase encargada de mostrar los datos de los clientes en uan tabla
+ */
 public class ListaClientes extends javax.swing.JFrame {
 
     /**
-     * Creates new form ListaClientes
+     * Metodo constructor de ListaClientes
      */
     public ListaClientes() {
         initComponents();
@@ -130,7 +133,11 @@ public class ListaClientes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Metodo del boton "Crear" que crea la lista con los datos de los clientes
+     * @param evt 
+     */
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
         String [] Columnas={"Nombre","Correo","Prioridad","Hora","Fecha"};
         DefaultTableModel Clientes = new DefaultTableModel(null, Columnas);
@@ -146,12 +153,20 @@ public class ListaClientes extends javax.swing.JFrame {
         TablaClientes.setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed
     
+    /**
+     * Metodo del boton "Ordenar", que ordena la lista segun lo solicitado por el usuario
+     * @param evt 
+     */
     private void OrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdenarActionPerformed
         if(CheckNombre.isSelected()){
             
         }
     }//GEN-LAST:event_OrdenarActionPerformed
 
+    /**
+     * oculta la ventana
+     * @param evt 
+     */
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
         hide();
     }//GEN-LAST:event_botonCancelarActionPerformed
