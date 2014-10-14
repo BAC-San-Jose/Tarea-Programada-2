@@ -51,7 +51,7 @@ public class Clientes {
     
     /**
      * Utilizado para definir la prioridad de un cliente
-     * @param prioridad 
+     * @param prioridad del cliente 
      */
     public void setTipoPrioridad(String prioridad){
         this.tipoPrioridad = prioridad;

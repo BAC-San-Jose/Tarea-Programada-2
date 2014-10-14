@@ -461,7 +461,7 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
   
     /**
      * Envia mail al cliente
-     * @param caja
+     * @param caja la caja a la que debe pasar el cliente
      * @return Boolean sobre si se mando el mail o no
      */
     public boolean sendEmail(int caja){

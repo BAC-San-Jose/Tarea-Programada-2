@@ -23,11 +23,11 @@ public class EmailClientes {
     
     /**
      * Metodo constructor de la clase
-     * @param usuarioCorreo
-     * @param password
-     * @param rutaArchivo
-     * @param nombreArchivo
-     * @param asunto 
+     * @param usuarioCorreo usuario del correo con el que se mandan los correos
+     * @param password contraseña del correo electronico del banco
+     * @param rutaArchivo ruta de la imagen del banco
+     * @param nombreArchivo nombre del archivo de la imagen del banco
+     * @param asunto asunto del correo
      */
     public EmailClientes(String usuarioCorreo, String password, String rutaArchivo, String nombreArchivo, String asunto){
         this.usuarioCorreo = usuarioCorreo;
@@ -39,11 +39,11 @@ public class EmailClientes {
     
     /**
      * Metodo que envia un email al cliente que confirma su llegada al banco y sus datos
-     * @param cliente
-     * @param destinatario
-     * @param Fecha
-     * @param Hora
-     * @return 
+     * @param cliente nombre del cliente
+     * @param destinatario correo del cliente
+     * @param Fecha fecha en que se atendio al cliente
+     * @param Hora hora en que se atendio al cliente
+     * @return boolean  sobre si se mando el mail
      */
     public boolean sendMail(String cliente, String destinatario, String Fecha, String Hora){
         this.destinatario = destinatario;
@@ -97,10 +97,10 @@ public class EmailClientes {
     
     /**
      * Metodo que envia al cliente un email cuando es su turno de pasar a la caja
-     * @param caja
-     * @param cliente
-     * @param destinatario
-     * @return 
+     * @param caja a la que tiene que pasar el cliente
+     * @param cliente nombre del cliente
+     * @param destinatario correo del cliente
+     * @return boolean de si se mando el mail o no
      */
     public boolean sendMail(String caja, String cliente, String destinatario){
         this.destinatario = destinatario;
