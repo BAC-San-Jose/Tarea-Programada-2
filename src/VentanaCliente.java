@@ -323,7 +323,7 @@ public class VentanaCliente extends javax.swing.JFrame {
                escribir.close(); 
             } 
             else if (CheckClienteR.isSelected()==true) {
-                File archivo=new File(System.getProperty("user.dir")+"/Clientes/Clientes/Regulares.txt");
+                File archivo=new File(System.getProperty("user.dir")+"/Clientes/Regulares.txt");
                 FileWriter escribir = new FileWriter(archivo,true);
                 escribir.write(++VentanaPrincipal.contadorRegulares+nl+NombreCliente.getText()+nl+CorreoCliente.getText()+nl+"Regulares"+nl+jLabel1.getText()+nl+jLabel2.getText()+nl);
                escribir.close(); 
