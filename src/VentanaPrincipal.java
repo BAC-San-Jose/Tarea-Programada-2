@@ -16,7 +16,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form Ventana
+     * Funcion constructora de VentanaPrincipal
      */
     public VentanaPrincipal() {
         FileWriter escribirEmbarazadas = null;
@@ -265,6 +265,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setBounds(0, 0, 690, 373);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Boton que devuelve el nombre y la imagen del banco a la configuracion inicial
+     * @param evt 
+     */
     private void BtnPredeterminadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPredeterminadoActionPerformed
         // TODO add your handling code here:
         NombreVentana.setText("Sistema de Atención a Clientes BAC");
@@ -275,6 +279,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         texto = "Sistema de Atención a Clientes BAC";
     }//GEN-LAST:event_BtnPredeterminadoActionPerformed
 
+    /**
+     * Funcion que cambia el nombre del banco
+     * @param evt 
+     */
     private void BtnCambiarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCambiarNombreActionPerformed
         // TODO add your handling code here:  
         if("".equals(TxtNombre.getText())){}
@@ -288,7 +296,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             
         
     }//GEN-LAST:event_BtnCambiarNombreActionPerformed
-
+    
+    /**
+     * Funcion que cambia el logo del banco
+     * @param evt 
+     */
     private void BtncambiarLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtncambiarLogoActionPerformed
         // TODO add your handling code here:
         //Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("\\Imagenes\\wallpaper-1133041.jpg")));
@@ -315,6 +327,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                             
     }//GEN-LAST:event_BtncambiarLogoActionPerformed
 
+    /**
+     * Funcion que inicializa el sistema, si ya se introdujo un numero de cajas
+     * @param evt 
+     */
     private void BtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAceptarActionPerformed
         // TODO add your handling code here:
         if (CantidadCajas.getValue().equals(0)){
@@ -398,7 +414,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static String Dato;
     public static ArrayList Cajas;
     public static ArrayList DisponibilidadCajas;
-    
     public static Queue Discapacitados;
     public static Queue Mayores;
     public static Queue Embarazadas;

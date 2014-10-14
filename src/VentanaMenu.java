@@ -5,10 +5,11 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+
 public class VentanaMenu extends javax.swing.JFrame implements Runnable {
 
     /**
-     * Creates new form VentanaMenu
+     * Metodo constructor de clase VentanaMenu
      */
     public VentanaMenu() {
         initComponents();
@@ -233,12 +234,20 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Metodo para abrir la ventana de graficos
+     * @param evt 
+     */
     private void BtnGraficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGraficosActionPerformed
         Graficos graficos = new Graficos ();
         graficos.setVisible(true);
         //hide();
     }//GEN-LAST:event_BtnGraficosActionPerformed
-
+    
+    /**
+     * Metodo para salir del programa
+     * @param evt 
+     */
     private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
         VentanaPrincipal.imagen = "/Imagenes/Logo BAC.gif";
         VentanaPrincipal.texto = "Sistema de Atención a Clientes BAC";
@@ -247,17 +256,29 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         hide();
     }//GEN-LAST:event_botonSalirActionPerformed
 
+    /**
+     * Metodo para abrir la ventana cliente
+     * @param evt 
+     */
     private void ventanaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventanaClienteActionPerformed
         VentanaCliente cliente = new VentanaCliente ();
         cliente.setVisible(true);
         //hide();
     }//GEN-LAST:event_ventanaClienteActionPerformed
 
+    /**
+     * Metodo para abrir la ventana de la lista de clientes
+     * @param evt 
+     */
     private void BtnTablaListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTablaListaActionPerformed
         ListaClientes tabla = new ListaClientes();
         tabla.setVisible(true);
     }//GEN-LAST:event_BtnTablaListaActionPerformed
 
+    /**
+     * ComboBox con las cajas
+     * @param evt 
+     */
     private void ListaCajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListaCajasActionPerformed
         Indice=(int)ListaCajas.getSelectedIndex();
         try {
@@ -274,16 +295,27 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         }
     }//GEN-LAST:event_ListaCajasActionPerformed
 
+    /**
+     * Cambia la disponibilidad de la caja seleccionada a disponible
+     * @param evt 
+     */
     private void CheckDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckDisponibleActionPerformed
         CheckOcupada.setSelected(false);
         confirmar();
     }//GEN-LAST:event_CheckDisponibleActionPerformed
 
+    /**
+     * Cambia la disponibilidad de la caja seleccionada a ocupada
+     * @param evt 
+     */
     private void CheckOcupadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckOcupadaActionPerformed
         CheckDisponible.setSelected(false);
         confirmar();
     }//GEN-LAST:event_CheckOcupadaActionPerformed
 
+    /**
+     * Cambia la disponibilidad de las cajas en la lista DisponibilidadCajas
+     */
     public void confirmar (){
         Indice=(int)ListaCajas.getSelectedIndex();
         if (CheckOcupada.isSelected()==true){
@@ -354,6 +386,9 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
     public int Indice;
     public Thread actualizar;
     
+    /**
+     * Metodo que le pone la imagen del Banco a la ventana
+     */
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
             String file = VentanaPrincipal.imagen;
@@ -364,6 +399,9 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         }
     }
     
+    /**
+     * Metodo que le pone el nombre del banco a la ventana
+     */
     public void setTexto (){
         String texto = VentanaPrincipal.texto;
         if (!"Sistema de Atención a Clientes BAC".equals(texto)){
@@ -375,6 +413,10 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         }
     }
     
+    /**
+     * Determina si hay un siguiente cliente
+     * @return Boolean sobre el siguiente cliente en la lista 
+     */
     public static boolean nextLista(){
         if(VentanaPrincipal.Discapacitados.getSize()==0){
             if(VentanaPrincipal.Mayores.getSize()==0){
@@ -417,6 +459,11 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         return true;
     }
   
+    /**
+     * Envia mail al cliente
+     * @param caja
+     * @return Boolean sobre si se mando el mail o no
+     */
     public boolean sendEmail(int caja){
         if (nextLista() == true){
             String Nombre = VentanaPrincipal.Prioridad.getPersona().getNombre();
@@ -429,6 +476,9 @@ public class VentanaMenu extends javax.swing.JFrame implements Runnable {
         return false;
     }
     
+    /**
+     * Pone a correr al reloj
+     */
     public void run(){
         while(true){
             try {

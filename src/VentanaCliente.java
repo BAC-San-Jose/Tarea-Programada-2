@@ -13,11 +13,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static org.omg.CORBA.AnySeqHelper.insert;
 
-
+/**
+ * Clase de la ventana para agregar nuevos clientes al sistema
+ */
 public class VentanaCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form NewJFrame
+     * Metodo constructor de Ventana Cliente
      */
     public VentanaCliente() {
         EnvioEmail = new EmailClientes("tecbanco67@gmail.com","AAAaaa123",VentanaPrincipal.imagen,VentanaPrincipal.imagen,"Correo Confirmacion");
@@ -265,6 +267,10 @@ public class VentanaCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Metodo que evita que se seleccionen todos los radiobuttons
+     * @param evt 
+     */
     private void CheckClienteDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteDActionPerformed
         CheckClienteM.setSelected(false);
         CheckClienteE.setSelected(false);
@@ -272,12 +278,23 @@ public class VentanaCliente extends javax.swing.JFrame {
         CheckClienteR.setSelected(false);
     }//GEN-LAST:event_CheckClienteDActionPerformed
     
+    /**
+     * Metodo que valida que el email sea valido
+     * @param email
+     * @return 
+     */
     public static boolean validateEmail(String email) {
         Pattern pattern = Pattern.compile(PatronEmail);
  
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+    
+    /**
+     * Boton que valida que los datos esten correctos, registra al cliente en el sistema 
+     * y envia un email de confirmacion a este 
+     * @param evt 
+     */
     private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
         String nl = System.getProperty("line.separator");
         try {
@@ -358,6 +375,10 @@ public class VentanaCliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
+    /**
+     * Metodo que evita que se seleccionen todos los radiobuttons
+     * @param evt 
+     */
     private void CheckClienteMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteMActionPerformed
         CheckClienteD.setSelected(false);
         CheckClienteE.setSelected(false);
@@ -365,13 +386,21 @@ public class VentanaCliente extends javax.swing.JFrame {
         CheckClienteR.setSelected(false);
     }//GEN-LAST:event_CheckClienteMActionPerformed
 
+    /**
+     * Metodo que evita que se seleccionen todos los radiobuttons
+     * @param evt 
+     */
     private void CheckClienteEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteEActionPerformed
         CheckClienteM.setSelected(false);
         CheckClienteD.setSelected(false);
         CheckClienteC.setSelected(false);
         CheckClienteR.setSelected(false);
     }//GEN-LAST:event_CheckClienteEActionPerformed
-
+    
+    /**
+     * Metodo que evita que se seleccionen todos los radiobuttons
+     * @param evt 
+     */
     private void CheckClienteCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteCActionPerformed
         CheckClienteM.setSelected(false);
         CheckClienteE.setSelected(false);
@@ -379,6 +408,10 @@ public class VentanaCliente extends javax.swing.JFrame {
         CheckClienteR.setSelected(false);
     }//GEN-LAST:event_CheckClienteCActionPerformed
 
+    /**
+     * Metodo que evita que se seleccionen todos los radiobuttons
+     * @param evt 
+     */
     private void CheckClienteRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckClienteRActionPerformed
         CheckClienteM.setSelected(false);
         CheckClienteE.setSelected(false);
@@ -386,6 +419,10 @@ public class VentanaCliente extends javax.swing.JFrame {
         CheckClienteD.setSelected(false);
     }//GEN-LAST:event_CheckClienteRActionPerformed
 
+    /**
+     * Cierra la VentanaCliente
+     * @param evt 
+     */
     private void BotonCancelRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCancelRegistroActionPerformed
         //VentanaMenu menu = new VentanaMenu ();
         //menu.setVisible(true);
@@ -459,6 +496,9 @@ public class VentanaCliente extends javax.swing.JFrame {
     public static final String PatronEmail="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+
             "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     
+    /**
+     * Metodo que le pone la imagen del Banco a la ventana
+     */
     public void setImagen(){
         if (!"/Imagenes/Logo BAC.gif".equals(VentanaPrincipal.imagen)){
             String file = VentanaPrincipal.imagen;
@@ -469,6 +509,9 @@ public class VentanaCliente extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Metodo que le pone el nombre del banco a la ventana
+     */
     public void setTexto (){
         String texto = VentanaPrincipal.texto;
         if (!"Sistema de Atención a Clientes BAC".equals(texto)){
@@ -478,6 +521,5 @@ public class VentanaCliente extends javax.swing.JFrame {
         else {
             this.setTitle("BAC San Jose");
         }
-    }
-    
+    }   
 }

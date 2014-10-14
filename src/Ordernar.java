@@ -1,17 +1,27 @@
 import java.util.Scanner; 
 
-
+/**
+ * Clase que ordena los datos de la tabla de la ventana "ListaClientes"
+ */
 public class Ordernar {   
     
     private static Scanner leer = new Scanner(System.in); 
     
-    
+    /**
+     * 
+     * @param nombres 
+     */
     static void leer( String [] n){ 
         int tamaño = n.length; 
         for (int i = 0 ; i < tamaño ; i++ ){ 
             System.out.println(n[i]); 
             } 
     } 
+    
+    /**
+     * 
+     * @param alf 
+     */
     static void alfabeticamente(String [] alf){ 
         int tamaño = alf.length; 
         for(int pase = 0 ; pase < tamaño ; pase++ ){ 
@@ -31,7 +41,13 @@ public class Ordernar {
         String [] Nombres={"joes","asd","fefe","asdf"};
         p.Numeros(Nombres);
        
-    }   
+    }  
+    
+    /**
+     * 
+     * @param Recibe
+     * @return 
+     */
     public String Numeros(String [] Recibe){
         alfabeticamente(Recibe);
         return null;
