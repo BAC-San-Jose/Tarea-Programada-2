@@ -12,7 +12,7 @@ class ArrayList {
     public int maxSize;
     public String[] arreglo;
     public final int MAX_SIZE = 1000;
-
+    
     /**
      * Constructor de la clase
      * Se declara el valor de las variables que hacen falta 

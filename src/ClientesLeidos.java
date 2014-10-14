@@ -9,15 +9,20 @@ public class ClientesLeidos {
     int contador;
     int completo=2;
     String tipo;
-    ArrayList Lprincipal = null;
-    ArrayList Lsecundario = null;
+    ArrayList listaEmbarazadas = null;
+    ArrayList listaRegulares = null;
+    ArrayList listaMayores = null;
+    ArrayList listaDiscapacitados = null;
+    ArrayList listaCorporativos = null;
     
     public ClientesLeidos(){
-        Lprincipal = new ArrayList();
-        Lsecundario = new ArrayList();
-        
-        
+        listaEmbarazadas = new ArrayList();
+        listaRegulares = new ArrayList();
+        listaMayores = new ArrayList();
+        listaDiscapacitados = new ArrayList();
+        listaCorporativos = new ArrayList();
     }
+    
     public ArrayList Tipo() throws IOException {
       File archivo = null;
       FileReader fr = null;
@@ -42,13 +47,27 @@ public class ClientesLeidos {
                  tipo="Corporativos";
              }
                  
-            archivo = new File ("src/Clientes/"+tipo+".txt");
+            archivo = new File (System.getProperty("user.dir")+"/Clientes/"+tipo+".txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
             linea =br.readLine();
             for(int j=0;linea!=null;j++){
                 if (completo == contador ){
-                    Lsecundario.add(linea);
+                    if ("Embarazadas".equals(tipo)){
+                        listaEmbarazadas.add(linea);
+                    }
+                    if ("Discapacitados".equals(tipo)){
+                        listaDiscapacitados.add(linea);
+                    }
+                    if ("Regulares".equals(tipo)){
+                        listaRegulares.add(linea);
+                    }
+                    if ("Corporativos".equals(tipo)){
+                        listaCorporativos.add(linea);
+                    }
+                    if ("Mayores".equals(tipo)){
+                        listaMayores.add(linea);
+                    }
                     contador +=1;
                 }
                 else{
@@ -56,15 +75,12 @@ public class ClientesLeidos {
                     completo +=6;
                 }
             }
-            return Lsecundario;
+            //return Lsecundario;
         }
       }
       catch(Exception e){
          e.printStackTrace();
       }finally{
-         // En el finally cerramos el fichero, para asegurarnos
-         // que se cierra tanto si todo va bien como si salta 
-         // una excepcion.
          try{                    
             if( null != fr ){   
                fr.close();     
@@ -73,7 +89,6 @@ public class ClientesLeidos {
             e2.printStackTrace();
          }
       }
-        //return 0;
         return null;
     }
 
@@ -81,9 +96,10 @@ public class ClientesLeidos {
     private String String(int contador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-      //return resultado;
+    
     public static void main(String [] args) throws IOException{
-    ClientesLeidos prueba = new ClientesLeidos();
-    prueba.Tipo();
+        ClientesLeidos prueba = new ClientesLeidos();
+        prueba.Tipo();
+        
     }
 }
