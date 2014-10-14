@@ -18,7 +18,7 @@ public class ClientesLeidos {
         
         
     }
-    public int Tipo() throws IOException {
+    public ArrayList Tipo() throws IOException {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -45,21 +45,19 @@ public class ClientesLeidos {
             archivo = new File ("src/Clientes/"+tipo+".txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
-            for(int j=0;br.readLine()!=null;j++){
+            linea =br.readLine();
+            for(int j=0;linea!=null;j++){
                 if (completo == contador ){
-                    
-
-                    
+                    Lsecundario.add(linea);
                     contador +=1;
-                    completo +=6;
-
                 }
                 else{
                     contador += 1;
+                    completo +=6;
                 }
             }
+            return Lsecundario;
         }
-
       }
       catch(Exception e){
          e.printStackTrace();
@@ -75,7 +73,8 @@ public class ClientesLeidos {
             e2.printStackTrace();
          }
       }
-        return 0;
+        //return 0;
+        return null;
     }
 
 
@@ -83,5 +82,8 @@ public class ClientesLeidos {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
       //return resultado;
-    
+    public static void main(String [] args) throws IOException{
+    ClientesLeidos prueba = new ClientesLeidos();
+    prueba.Tipo();
+    }
 }
