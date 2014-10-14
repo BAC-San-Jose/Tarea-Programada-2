@@ -2,7 +2,7 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 
 /**
- * Clase ArrayLit para gestionar la lista de reproduccion
+ * Clase ArrayLit para gestionar la lista de clientes y datos
  */
 class ArrayList {
     /**
