@@ -54,7 +54,7 @@ public class ClientesLeidos {
             while((linea=br.readLine())!=null){
                 if (salto == 6){
                     salto = 1;
-                    System.out.println("si "+linea);
+                    //System.out.println("si "+linea);
                 }
                 else{
                     if ("Embarazadas".equals(tipo)){
@@ -91,6 +91,8 @@ public class ClientesLeidos {
       }
         return null;
     }
+
+
     private String String(int contador) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

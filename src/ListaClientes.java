@@ -1,4 +1,7 @@
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -6,6 +9,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ListaClientes extends javax.swing.JFrame {
 
+    Ordenar orden;
+    ClientesLeidos listas;
     /**
      * Metodo constructor de ListaClientes
      */
@@ -14,7 +19,7 @@ public class ListaClientes extends javax.swing.JFrame {
         getContentPane().setBackground(new java.awt.Color(229,55,55));
         TablaClientes.setVisible(false);
         this.setLocationRelativeTo(null);
-        
+        listas = new ClientesLeidos ();
     }
 
     @SuppressWarnings("unchecked")
@@ -102,8 +107,12 @@ public class ListaClientes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -119,16 +128,15 @@ public class ListaClientes extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Ordenar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonCancelar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addComponent(botonCancelar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CheckNombre)
                     .addComponent(CheckCorreo)
@@ -139,7 +147,7 @@ public class ListaClientes extends javax.swing.JFrame {
                     .addComponent(Crear)
                     .addComponent(Ordenar)
                     .addComponent(botonCancelar))
-                .addContainerGap())
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -150,18 +158,67 @@ public class ListaClientes extends javax.swing.JFrame {
      * @param evt 
      */
     private void CrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearActionPerformed
-        String [] Columnas={"Nombre","Correo","Prioridad","Hora","Fecha"};
-        DefaultTableModel Clientes = new DefaultTableModel(null, Columnas);
-        for (int a = 0; a< VentanaPrincipal.Clientes.getSize();a++){
-            String [] Cliente={VentanaPrincipal.Clientes.recorrerCola(a).getNombre(),
-                VentanaPrincipal.Clientes.recorrerCola(a).getCorreo(),
-                VentanaPrincipal.Clientes.recorrerCola(a).getTipoPrioridad(),
-                VentanaPrincipal.Clientes.recorrerCola(a).getHora(),
-                VentanaPrincipal.Clientes.recorrerCola(a).getFecha()};
-            Clientes.addRow(Cliente);
+        try {
+            listas.Tipo();
+            String [] Columnas={"Nombre","Correo","Prioridad","Hora","Fecha"};
+            DefaultTableModel Clientes = new DefaultTableModel(null, Columnas);
+            for (int a = 0; a< ClientesLeidos.listaCorporativos.getSize();a++){
+                String [] Cliente={
+                    ClientesLeidos.listaCorporativos.getElemento(a), //nombre
+                    ClientesLeidos.listaCorporativos.getElemento(a+1), // corre
+                    ClientesLeidos.listaCorporativos.getElemento(a+2), // prioridad
+                    ClientesLeidos.listaCorporativos.getElemento(a+3), // hora
+                    ClientesLeidos.listaCorporativos.getElemento(a+4),}; // fecha
+                Clientes.addRow(Cliente);
+                a = a+4;
+            }
+            for (int a = 0; a< ClientesLeidos.listaDiscapacitados.getSize();a++){
+                String [] Cliente={
+                    ClientesLeidos.listaDiscapacitados.getElemento(a), //nombre
+                    ClientesLeidos.listaDiscapacitados.getElemento(a+1), // corre
+                    ClientesLeidos.listaDiscapacitados.getElemento(a+2), // prioridad
+                    ClientesLeidos.listaDiscapacitados.getElemento(a+3), // hora
+                    ClientesLeidos.listaDiscapacitados.getElemento(a+4),}; // fecha
+                Clientes.addRow(Cliente);
+                a = a+4;
+            }
+            for (int a = 0; a< ClientesLeidos.listaEmbarazadas.getSize();a++){
+                String [] Cliente={
+                    ClientesLeidos.listaEmbarazadas.getElemento(a), //nombre
+                    ClientesLeidos.listaEmbarazadas.getElemento(a+1), // corre
+                    ClientesLeidos.listaEmbarazadas.getElemento(a+2), // prioridad
+                    ClientesLeidos.listaEmbarazadas.getElemento(a+3), // hora
+                    ClientesLeidos.listaEmbarazadas.getElemento(a+4),}; // fecha
+                Clientes.addRow(Cliente);
+                a = a+4;
+            }
+            for (int a = 0; a< ClientesLeidos.listaMayores.getSize();a++){
+                String [] Cliente={
+                    ClientesLeidos.listaMayores.getElemento(a), //nombre
+                    ClientesLeidos.listaMayores.getElemento(a+1), // corre
+                    ClientesLeidos.listaMayores.getElemento(a+2), // prioridad
+                    ClientesLeidos.listaMayores.getElemento(a+3), // hora
+                    ClientesLeidos.listaMayores.getElemento(a+4),}; // fecha
+                Clientes.addRow(Cliente);
+                a = a+4;
+            }
+            for (int a = 0; a< ClientesLeidos.listaRegulares.getSize();a++){
+                String [] Cliente={
+                    ClientesLeidos.listaRegulares.getElemento(a), //nombre
+                    ClientesLeidos.listaRegulares.getElemento(a+1), // corre
+                    ClientesLeidos.listaRegulares.getElemento(a+2), // prioridad
+                    ClientesLeidos.listaRegulares.getElemento(a+3), // hora
+                    ClientesLeidos.listaRegulares.getElemento(a+4),}; // fecha
+                Clientes.addRow(Cliente);
+                a = a+4;
+            }
+            TablaClientes.setModel(Clientes);
+            TablaClientes.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
-        TablaClientes.setModel(Clientes);
-        TablaClientes.setVisible(true);
     }//GEN-LAST:event_CrearActionPerformed
     
     /**
